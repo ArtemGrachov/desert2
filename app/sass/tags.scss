@@ -1,0 +1,84 @@
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea {
+    width: 100%;
+    border-radius: rem(3px);
+    border: none;
+    padding: rem(14px);
+}
+
+input[type="checkbox"] {
+    display: none;
+    &+label {
+        &:before {
+            display: inline-block;
+            content: "";
+            font-size: rem(12px);
+            width: rem(20px);
+            height: rem(20px);
+            background: white;
+            margin-top: rem(-4px);
+            margin-right: rem(10px);
+            vertical-align: middle;
+            border-radius: rem(4px);
+        }
+    }
+    &:checked+label:before {
+        content: "\f00c";
+        color: white;
+        background: $light-brown;
+        font-family: 'FontAwesome'
+    }
+}
+
+input[type="radio"] {
+    display: none;
+    &+label {
+        &:before {
+            content: "";
+            display: inline-block;
+            width: rem(20px);
+            height: rem(20px);
+            background: white;
+            vertical-align: middle;
+            border-radius: 50%;
+            border: rem(5px) solid white;
+            margin-top: rem(-4px);
+            margin-right: rem(10px);
+            box-shadow: 0 0 2px 0 #d2d2d2;
+        }
+    }
+    &:checked+label:before {
+        background: $light-brown;
+    }
+}
+
+.input-group {
+    margin: 0 0 rem(20px);
+    display: flex;
+    flex-direction: row-reverse;
+    input {
+        border-radius: 0 rem(5px) rem(5px) 0;
+    }
+    input {
+        border-radius: 0 rem(5px) rem(5px) 0;
+    }
+    &__icon {
+        width: rem(45px);
+        background: #f0efe9;
+        border-radius: rem(5px) 0 0 rem(5px);
+        padding: rem(10px);
+        flex-basis: rem(45px);
+        text-align: center;
+        color: #c4cbcd;
+    }
+}
+
+.icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    fill: currentColor;
+    vertical-align: middle;
+}

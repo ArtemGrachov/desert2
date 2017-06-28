@@ -1,6 +1,5 @@
 html,
 body {
-    min-height: 100%;
     height: 100%;
     color: $blue;
 }
@@ -45,4 +44,106 @@ h6 {
 .maincontent {
     width: 100%;
     height: 100%;
+}
+
+.btn {
+    color: white;
+    background: rgba($light-brown, .85);
+    display: inline-block;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    font-family: 'RobotoMedium';
+    padding: rem(11px) rem(20px);
+    &:hover {
+        background: rgba($dark-brown, 0.85);
+    }
+}
+
+.window {
+    overflow: hidden;
+    border-radius: rem(5px);
+    backface-visibility: hidden;
+    width: rem(380px);
+    &-content {
+        padding: rem(40px) rem(20px) rem(20px);
+    }
+    &-btns {
+        display: table;
+        width: 100%;
+        &__list {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: table-row;
+        }
+        &__item {
+            display: table-cell;
+            border-left: 1px solid #e2c68c;
+            border-right: 1px solid #e2c68c;
+            &:hover {
+                border-color: #d5b683;
+            }
+            &:first-child {
+                border-left: 0;
+            }
+            &:last-child {
+                border-right: 0;
+            }
+        }
+        &__link {
+            border-radius: 0;
+            width: 100%;
+        }
+    }
+}
+
+.title {
+    &-block {
+        width: 100%;
+        text-align: center;
+        line-height: normal;
+        &-large {
+            margin: rem(70px) 0;
+        }
+        &-medium {
+            margin: 0 0 rem(30px);
+        }
+    }
+    &-large,
+    &-medium {
+        text-transform: uppercase;
+        font-family: 'SansusRegular';
+        text-align: center;
+        vertical-align: middle;
+        line-height: normal;
+    }
+    &-large {
+        color: $dark-grey;
+        font-size: rem(63px);
+    }
+    &-medium {
+        color: $light-grey;
+        margin-bottom: rem(30px);
+        font-size: rem(35px);
+    }
+    &-dec {
+        background: rgba( $dark-grey, .2);
+        border-radius: 50%;
+        display: inline-block;
+        vertical-align: middle;
+        margin: rem(2px);
+        &-1 {
+            width: rem(6px);
+            height: rem(6px);
+        }
+        &-2 {
+            width: rem(10px);
+            height: rem(10px);
+        }
+        &-3 {
+            width: rem(15px);
+            height: rem(15px);
+        }
+    }
 }
