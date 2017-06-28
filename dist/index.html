@@ -10,50 +10,53 @@
 </head>
 
 <body>
-    <main class="welcome">
-        <div class="auth-block"><a class="auth__btn" href="#">Авторизоваться</a></div>
-        <div class="window window_greet">
-            <div class="window-top">
-                <div class="avatar">
-                    <div class="avatar__img"><img class="avatar__pic" src="http://lorempixel.com/output/nature-q-c-200-200-2.jpg" alt=""></div>
-                    <div class="avatar__name">Владимир Астахов</div>
-                    <div class="avatar__title">Личный сайт веб разработчика</div>
+    <div class="welcome-wrapper">
+        <div class="desert"></div>
+        <main class="welcome">
+            <div class="auth-block"><a class="auth__btn" href="#">Авторизоваться</a></div>
+            <div class="window window_greet">
+                <div class="window-top">
+                    <div class="avatar">
+                        <div class="avatar__img"><img class="avatar__pic" src="http://lorempixel.com/output/nature-q-c-200-200-2.jpg" alt=""></div>
+                        <div class="avatar__name">Владимир Астахов</div>
+                        <div class="avatar__title">Личный сайт веб разработчика</div>
+                    </div>
+                    <ul class="socials-list">
+                        <li class="socials__item"><a class="socials__link" href="#">VK</a></li>
+                        <li class="socials__item"><a class="socials__link" href="#">GIT</a></li>
+                        <li class="socials__item"> <a class="socials__link" href="#">IN</a></li>
+                    </ul>
                 </div>
-                <ul class="socials-list">
-                    <li class="socials__item"><a class="socials__link" href="#">VK</a></li>
-                    <li class="socials__item"><a class="socials__link" href="#">GIT</a></li>
-                    <li class="socials__item"> <a class="socials__link" href="#">IN</a></li>
-                </ul>
-            </div>
-            <div class="window-btn">
-                <ul class="window-btn__list">
-                    <li class="window-btn__item"><a class="window-btn__link" href="works.html">Мои работы</a></li>
-                    <li class="window-btn__item"><a class="window-btn__link" href="about.html">Обо мне</a></li>
-                    <li class="window-btn__item"><a class="window-btn__link" href="blog.html">Блог</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="window window_auth">
-            <div class="window-content">
-                <div class="title-large">Авторизуйтесь</div>
-                <div class="input-group"><span class="input-group__icon"></span><input type="text" placeholder="Логин"></div>
-                <div class="input-group"><span class="input-group__icon"></span><input type="password" placeholder="Пароль"></div>
-                <div class="robot"><input type="checkbox" id="isRobot"><label for="isRobot">Я человек</label>
-                    <div class="robot-group">
-                        <div class="robot-group__title">Вы точно не робот?</div><input type="radio" name="isHuman" id="isHuman"><label for="isHuman">Да</label><input type="radio" name="isRobot" id="isRobot"><label for="isRobot">Не уверен</label></div>
+                <div class="window-btn">
+                    <ul class="window-btn__list">
+                        <li class="window-btn__item"><a class="window-btn__link" href="works.html">Мои работы</a></li>
+                        <li class="window-btn__item"><a class="window-btn__link" href="about.html">Обо мне</a></li>
+                        <li class="window-btn__item"><a class="window-btn__link" href="blog.html">Блог</a></li>
+                    </ul>
                 </div>
             </div>
-            <div class="window-btn">
-                <ul class="window-btn__list">
-                    <li class="window-btn__item"><a class="window-btn__link" href="#">На главную</a></li>
-                    <li class="window-btn__item"><a class="window-btn__link" href="#">Войти</a></li>
-                </ul>
+            <div class="window window_auth">
+                <div class="window-content">
+                    <div class="title-large">Авторизуйтесь</div>
+                    <div class="input-group"><span class="input-group__icon"></span><input type="text" placeholder="Логин"></div>
+                    <div class="input-group"><span class="input-group__icon"></span><input type="password" placeholder="Пароль"></div>
+                    <div class="robot"><input type="checkbox" id="isRobot"><label for="isRobot">Я человек</label>
+                        <div class="robot-group">
+                            <div class="robot-group__title">Вы точно не робот?</div><input type="radio" name="isHuman" id="isHuman"><label for="isHuman">Да</label><input type="radio" name="isRobot" id="isRobot"><label for="isRobot">Не уверен</label></div>
+                    </div>
+                </div>
+                <div class="window-btn">
+                    <ul class="window-btn__list">
+                        <li class="window-btn__item"><a class="window-btn__link" href="#">На главную</a></li>
+                        <li class="window-btn__item"><a class="window-btn__link" href="#">Войти</a></li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </main>
-    <footer class="welcome-footer">
-        <div class="welcome-footer__block">(с) Владимир Астахов | создано с любовью в LoftShool | 2016</div>
-    </footer>
+        </main>
+        <footer class="welcome-footer">
+            <div class="welcome-footer__block">(с) Владимир Астахов | создано с любовью в LoftShool | 2016</div>
+        </footer>
+    </div>
     <script src="/js/libs.min.js"></script>
     <script src="/js/main.js"></script>
 </body>

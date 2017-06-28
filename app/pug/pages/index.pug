@@ -4,44 +4,46 @@ block variables
     - var title = "Welcome!"
 
 block content
-    main.welcome
-        .auth-block
-            a.auth__btn(href="#") Авторизоваться
-        .window.window_greet
-            .window-top
-                include ../includes/avatar.pug
-                include ../includes/socials.pug
-            .window-btn
-                ul.window-btn__list
-                    li.window-btn__item
-                        a.window-btn__link(href="works.html") Мои работы
-                    li.window-btn__item
-                        a.window-btn__link(href="about.html") Обо мне
-                    li.window-btn__item
-                        a.window-btn__link(href="blog.html") Блог
-        .window.window_auth
-            .window-content
-                .title-large Авторизуйтесь
-                .input-group
-                    span.input-group__icon
-                    input(type="text" placeholder="Логин")
-                .input-group
-                    span.input-group__icon
-                    input(type="password" placeholder="Пароль")
-                .robot
-                    input(type="checkbox" id="isRobot")
-                    label(for="isRobot") Я человек
-                    .robot-group
-                        .robot-group__title Вы точно не робот?
-                        input(type="radio" name="isHuman" id="isHuman")
-                        label(for="isHuman") Да
-                        input(type="radio" name="isRobot" id="isRobot")
-                        label(for="isRobot") Не уверен
-            .window-btn
-                ul.window-btn__list
-                    li.window-btn__item
-                        a.window-btn__link(href="#") На главную
-                    li.window-btn__item
-                        a.window-btn__link(href="#") Войти
-    footer.welcome-footer
-        .welcome-footer__block (с) Владимир Астахов | создано с любовью в LoftShool | 2016
+    .welcome-wrapper
+        .desert
+        main.welcome
+            .auth-block
+                a.auth__btn(href="#") Авторизоваться
+            .window.window_greet
+                .window-top
+                    include ../includes/avatar.pug
+                    include ../includes/socials.pug
+                .window-btn
+                    ul.window-btn__list
+                        li.window-btn__item
+                            a.window-btn__link(href="works.html") Мои работы
+                        li.window-btn__item
+                            a.window-btn__link(href="about.html") Обо мне
+                        li.window-btn__item
+                            a.window-btn__link(href="blog.html") Блог
+            .window.window_auth
+                .window-content
+                    .title-large Авторизуйтесь
+                    .input-group
+                        span.input-group__icon
+                        input(type="text" placeholder="Логин")
+                    .input-group
+                        span.input-group__icon
+                        input(type="password" placeholder="Пароль")
+                    .robot
+                        input(type="checkbox" id="isRobot")
+                        label(for="isRobot") Я человек
+                        .robot-group
+                            .robot-group__title Вы точно не робот?
+                            input(type="radio" name="isHuman" id="isHuman")
+                            label(for="isHuman") Да
+                            input(type="radio" name="isRobot" id="isRobot")
+                            label(for="isRobot") Не уверен
+                .window-btn
+                    ul.window-btn__list
+                        li.window-btn__item
+                            a.window-btn__link(href="#") На главную
+                        li.window-btn__item
+                            a.window-btn__link(href="#") Войти
+        footer.welcome-footer
+            .welcome-footer__block (с) Владимир Астахов | создано с любовью в LoftShool | 2016

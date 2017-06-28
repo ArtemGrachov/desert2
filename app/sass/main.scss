@@ -1,5 +1,43 @@
+@font-face {
+    font-family: 'SansusRegular';
+    src: url('../fonts/Sansus-Webissimo-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'RobotoMedium';
+    src: url('../fonts/Roboto-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'RobotoRegular';
+    src: url('../fonts/Roboto-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'RobotoBold';
+    src: url('../fonts/Roboto-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'RobotoLight';
+    src: url('../fonts/Roboto-Light.ttf');
+}
+
 *,
 *:before,
 *:after {
     outline: 1px solid blue;
 }
+
+$light-brown: #e7a731;
+$dark-brown: #cd8920;
+$light-grey: #5d5155;
+$dark-grey: #373e42;
+$blue: #6da3bd;
+$red: #e44845;
+$html-font-size: 16px;
+$footer-height: 147px;
+@import "_misc/mixins.scss";
+@import "style.scss";
+@import "tags.scss";
+@import "pages/welcome.scss";

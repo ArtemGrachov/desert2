@@ -23,6 +23,7 @@ $.gulp.task('default', [
     'scripts',
     'js-libs',
     'img',
+    'fonts',
     'browser-sync',
     'sprite',
     'watch'
