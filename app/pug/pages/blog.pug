@@ -1,0 +1,42 @@
+extends ../templates/page.pug
+
+block variables
+    - var title = "Welcome!"
+
+block content
+    .wrapper
+        .maincontent
+            header.header_blog
+                .header-top
+                    include ../includes/socials.pug
+                    .nav-toggle
+                        span.nav-toggle__element _
+                        span.nav-toggle__element _
+                        span.nav-toggle__element _
+                .avatar
+                    .avatar__img
+                        img.avatar__pic(src="http://lorempixel.com/output/nature-q-c-200-200-2.jpg" alt="")
+                    .blog-title БЛОГ
+                    .avatar__title Статьи, которые я написал
+            .blog
+                aside.sidebar
+                    nav.blog-nav
+                        ul.blog-nav-list
+                            li.blog-nav__item
+                                a.blog-nav__link(href="#") Самое важное в SASS
+                            li.blog-nav__item
+                                a.blog-nav__link(href="#") Приёмы в вёрстке, без которых не обходится ни один сайт
+                            li.blog-nav__item
+                                a.blog-nav__link(href="#") Самый необходимый набор Gulp плагинов
+                            li.blog-nav__item
+                                a.blog-nav__link(href="#") Почему я выбрал Jade
+                main.content
+                    ul.articles-list
+                        li.articles-item
+                            .articles__title Самое важное в SASS
+                            .articles__date 22 ноября 2016
+                            .articles__body
+                                p Nulla qui eu dolor est non enim pariatur cupidatat. Qui proident nulla amet est irure cupidatat tempor cupidatat do minim. Ea esse consequat pariatur veniam Lorem ipsum ipsum.
+                                p Exercitation aute est magna Lorem.
+                                p Elit nulla nostrud sit id anim exercitation voluptate ex officia ex. Consectetur commodo eu ad reprehenderit pariatur qui fugiat magna ea non aliqua ea. Do aute aliqua ad veniam qui laborum sint. In nulla fugiat officia id consequat irure culpa voluptate do ut. Non ex ipsum velit nulla eu veniam.
+    include ../sections/footer.pug

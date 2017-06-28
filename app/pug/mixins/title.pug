@@ -1,0 +1,12 @@
+mixin title(text,cls)
+    .title-block
+        span.title-dec-1
+        span.title-dec-2
+        if cls == 'large'
+            span.title-dec-3
+        div(class="title-" + cls)=text
+        if cls == 'large'
+            span.title-dec-3
+        span.title-dec-2
+        span.title-dec-1
+        

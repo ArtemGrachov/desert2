@@ -1,0 +1,44 @@
+extends ../templates/page.pug
+
+block variables
+    - var title = "Мои работы"
+
+block content
+    .wrapper
+        .maincontent
+            include ../sections/header.pug
+            .works
+                +page-header('Мои работы','urltest')
+                .slider HERE IS SLIDER
+                .quotes
+                    +page-header('Что обо мне говорят','urltest')
+                    ul.quotes-list
+                        li.quotes__item
+                            .quotes__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+                            .quotes-author
+                                .quotes-author__avatar
+                                    img(src="#" alt="").quotes-author__avatar-pic
+                                .quotes-author__name Ковальчук Дмитрий
+                                .quotes-author__occ основатель Loftschool
+                        li.quotes__item
+                            .quotes__text Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
+                            .quotes-author
+                                .quotes-author__avatar
+                                    img(src="#" alt="").quotes-author__avatar-pic
+                                .quotes-author__name Зар Захаров
+                                .quotes-author__occ преподаватель
+                .contacts
+                    .window.window_contacts
+                        .window-content
+                            .title-medium Связаться со мной
+                            input(type="text" placeholder="Имя")
+                            input(type="email" placeholder="Email")
+                            textarea(placeholder="Ваше сообщение")
+                        .window-btn
+                            ul.window-btn__list
+                                li.window-btn__item
+                                    a.window-btn__link(href="#") Отправить
+                                li.window-btn__item
+                                    a.window-btn__link(href="#") Очистить
+
+    include ../sections/footer.pug
