@@ -29,28 +29,24 @@
     outline: 0px solid blue;
 }
 
-.header-top:after, .blog:after, .header-top:before, .blog:before {
+.header-top:after, .blog:after, .quotes-list:after, .header-top:before, .blog:before, .quotes-list:before {
     content: "";
     display: table;
 }
 
-.header-top:after, .blog:after {
+.header-top:after, .blog:after, .quotes-list:after {
     clear: both;
-}
-
-html,
-body {
-    height: 100%;
-    color: #6da3bd;
 }
 
 html {
     font-size: 16px;
+    min-height: 100%;
 }
 
 body {
     font-family: 'RobotoRegular';
     color: #5d5155;
+    height: 100%;
     line-height: 1.6;
 }
 
@@ -75,12 +71,6 @@ h6 {
 .wrapper {
     min-height: 100%;
     overflow: hidden;
-}
-
-.wrapper:after {
-    content: "";
-    display: block;
-    height: 147px;
 }
 
 .maincontent {
@@ -112,6 +102,8 @@ h6 {
     width: 23.75rem;
     -webkit-transition: 1s;
     transition: 1s;
+    background: rgba(215, 191, 155, 0.3);
+    margin: auto;
 }
 
 .window-content {
@@ -249,6 +241,7 @@ textarea {
     border: none;
     padding: 0.625rem 1.25rem;
     line-height: inherit;
+    margin-bottom: 1.25rem;
 }
 
 input[type="checkbox"] {
@@ -333,6 +326,10 @@ input[type="radio"]:checked + label:before {
     color: #c4cbcd;
 }
 
+.input-group > input {
+    margin: 0;
+}
+
 .icon {
     display: inline-block;
     width: 1em;
@@ -358,7 +355,7 @@ input[type="radio"]:checked + label:before {
 
 .avatar__name {
     margin-top: 0.625rem;
-    font-size: 1.75rem;
+    font-size: 2.1875rem;
     font-family: 'RobotoMedium';
 }
 
@@ -390,8 +387,20 @@ input[type="radio"]:checked + label:before {
 .header {
     width: 100vw;
     height: 100vh;
-    background-image: url("../img/sand.jpg");
-    background-position: left 15%;
+    min-height: 40.625rem;
+    background-image: url("../img/misc/bg.svg"), url("../img/sand.jpg");
+    background-position: center 130%, left 15%;
+    background-repeat: no-repeat, repeat-x;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
 }
 
 .header-top {
@@ -405,6 +414,16 @@ input[type="radio"]:checked + label:before {
 
 .header-top .socials__link:hover {
     color: #cd8920;
+}
+
+.header-to-bottom {
+    text-align: center;
+    margin-bottom: 7.75rem;
+}
+
+.header-to-bottom__btn {
+    color: white;
+    font-size: 1.625rem;
 }
 
 .nav-toggle {
@@ -579,6 +598,10 @@ input[type="radio"]:checked + label:before {
     margin: 1.25rem 0 0.625rem;
 }
 
+.welcome .avatar__name {
+    font-size: 1.75rem;
+}
+
 .wrapper_welcome {
     height: 100%;
 }
@@ -692,4 +715,78 @@ input[type="radio"]:checked + label:before {
 
 .articles__date {
     color: #cd8920;
+}
+
+.works_body {
+    background-color: #f0e6d2;
+    background-image: url("../img/works/sand.png");
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}
+
+.slider {
+    background: white;
+}
+
+.contacts_window {
+    margin-bottom: 9.75rem;
+}
+
+.contacts_window__textarea {
+    min-height: 8.75rem;
+    margin-bottom: 0;
+}
+
+.quotes {
+    width: 50rem;
+    margin: auto;
+}
+
+.quotes-list {
+    list-style: none;
+    margin: 2.8125rem 0 4.375rem;
+    padding: 0;
+    overflow: hidden;
+}
+
+.quotes__item {
+    width: 23.75rem;
+    margin: 0 0.625rem;
+    float: left;
+}
+
+.quotes__text {
+    margin: 0 0 1.3125rem;
+}
+
+.quotes-author {
+    color: #cd8920;
+}
+
+.quotes-author-person {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 1rem;
+}
+
+.quotes-author__name {
+    font-family: 'RobotoBold';
+}
+
+.quotes-author__avatar {
+    width: 4.875rem;
+    height: 4.875rem;
+    background-image: url("http://lorempixel.com/output/nature-q-c-640-480-2.jpg");
+    background-size: cover;
+    vertical-align: middle;
+    display: inline-block;
+    border-radius: 50%;
+}
+
+.quotes-author__avatar_kovalchuk {
+    background-image: url("../img/works/kovalchuk.png");
+}
+
+.quotes-author__avatar_zakharov {
+    background-image: url("../img/works/zakharov.png");
 }

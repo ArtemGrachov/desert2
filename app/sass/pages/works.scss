@@ -1,0 +1,68 @@
+.works {
+    &_body {
+        background-color: #f0e6d2;
+        background-image: url('../img/works/sand.png');
+        background-repeat: no-repeat;
+        background-position: center bottom;
+    }
+}
+
+.slider {
+    background: white;
+}
+
+.contacts {
+    &_window {
+        margin-bottom: rem(156px);
+        &__textarea {
+            min-height: rem(140px);
+            margin-bottom: 0;
+        }
+    }
+}
+
+.quotes {
+    width: rem(800px);
+    margin: auto;
+    &-list {
+        @extend %clearfix;
+        list-style: none;
+        margin: rem(45px) 0 rem(70px);
+        padding: 0;
+        overflow: hidden;
+    }
+    &__item {
+        width: rem(380px);
+        margin: 0 rem(10px);
+        float: left;
+    }
+    &__text {
+        margin: 0 0 rem(21px);
+    }
+    &-author {
+        color: $dark-brown;
+        &-person {
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: rem(16px);
+        }
+        &__name {
+            font-family: 'RobotoBold';
+        }
+        &__avatar {
+            width: rem(78px);
+            height: rem(78px);
+            background-image: url('http://lorempixel.com/output/nature-q-c-640-480-2.jpg');
+            background-size: cover;
+            vertical-align: middle;
+            display: inline-block;
+            border-radius: 50%;
+            &_kovalchuk {
+                background-image: url('../img/works/kovalchuk.png');
+            }
+            &_zakharov {
+                background-image: url('../img/works/zakharov.png');
+            }
+        }
+    }
+}

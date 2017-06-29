@@ -1,16 +1,12 @@
-html,
-body {
-    height: 100%;
-    color: $blue;
-}
-
 html {
     font-size: $html-font-size;
+    min-height: 100%;
 }
 
 body {
     font-family: 'RobotoRegular';
     color: $light-grey;
+    height: 100%;
     line-height: 1.6;
 }
 
@@ -34,11 +30,11 @@ h6 {
 .wrapper {
     min-height: 100%;
     overflow: hidden;
-    &:after {
-        content: "";
-        display: block;
-        height: $footer-height;
-    }
+    // &:after {
+    //     content: "";
+    //     display: block;
+    //     height: $footer-height;
+    // }
 }
 
 .maincontent {
@@ -67,6 +63,8 @@ h6 {
     backface-visibility: hidden;
     width: rem(380px);
     transition: 1s;
+    background: rgba(#d7bf9b, .3);
+    margin: auto;
     &-content {
         padding: rem(40px) rem(20px) rem(20px);
     }

@@ -2,7 +2,10 @@ header.header
     .header-top
         include ../includes/socials.pug
         .nav-toggle
-            span.nav-toggle__element _
-            span.nav-toggle__element _
-            span.nav-toggle__element _
+            div.nav-toggle__element.nav-toggle__element_tgl-first
+            div.nav-toggle__element.nav-toggle__element_tgl-second
+            div.nav-toggle__element.nav-toggle__element_tgl-third
     include ../includes/avatar.pug
+    .header-to-bottom
+        a.header-to-bottom__btn(href="#")
+            +icon('portf_arrow_down','')

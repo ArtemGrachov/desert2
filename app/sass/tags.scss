@@ -22,6 +22,7 @@ textarea {
     border: none;
     padding: rem(10px) rem(20px);
     line-height: inherit;
+    margin-bottom: rem(20px);
 }
 
 input[type="checkbox"] {
@@ -90,6 +91,9 @@ input[type="radio"] {
         flex-shrink: 0;
         text-align: center;
         color: #c4cbcd;
+    }
+    &>input {
+        margin: 0;
     }
 }
 

@@ -59,6 +59,11 @@
     .socials {
         margin: rem(20px) 0 rem(10px);
     }
+    .avatar {
+        &__name {
+            font-size: rem(28px);
+        }
+    }
 }
 
 .wrapper_welcome {

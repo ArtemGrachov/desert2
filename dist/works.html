@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/css/main.css">
 </head>
 
-<body>
+<body class="works_body">
     <div class="wrapper">
         <div class="maincontent">
             <header class="header">
@@ -21,19 +21,25 @@
                             <li class="socials__item"> <a class="socials__link" href="#"><i class="fa fa-linkedin" aria-hidden="true">       </i></a></li>
                         </ul>
                     </div>
-                    <div class="nav-toggle"><span class="nav-toggle__element">_</span><span class="nav-toggle__element">_</span><span class="nav-toggle__element">_</span></div>
+                    <div class="nav-toggle">
+                        <div class="nav-toggle__element nav-toggle__element_tgl-first"></div>
+                        <div class="nav-toggle__element nav-toggle__element_tgl-second"></div>
+                        <div class="nav-toggle__element nav-toggle__element_tgl-third"></div>
+                    </div>
                 </div>
                 <div class="avatar">
                     <div class="avatar__img"></div>
                     <div class="avatar__name">Владимир Астахов</div>
                     <div class="avatar__title">Личный сайт веб разработчика</div>
                 </div>
+                <div class="header-to-bottom"><a class="header-to-bottom__btn" href="#"><svg class="icon "><use xlink:href="img/sprite/sprite.svg#portf_arrow_down"></use></svg></a></div>
             </header>
             <div class="works">
-                <div class="header-block">
-                    <div class="title-large">Мои работы</div>
+                <div class="slider">
+                    <div class="header-block">
+                        <div class="title-large">Мои работы</div>
+                    </div>
                 </div>
-                <div class="slider">HERE IS SLIDER</div>
                 <div class="quotes">
                     <div class="header-block">
                         <div class="title-large">Что обо мне говорят</div>
@@ -42,35 +48,40 @@
                         <li class="quotes__item">
                             <div class="quotes__text">Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!</div>
                             <div class="quotes-author">
-                                <div class="quotes-author__avatar"><img class="quotes-author__avatar-pic" src="#" alt=""></div>
-                                <div class="quotes-author__name">Ковальчук Дмитрий</div>
-                                <div class="quotes-author__occ">основатель Loftschool</div>
+                                <div class="quotes-author__avatar quotes-author__avatar_kovalchuk"></div>
+                                <div class="quotes-author-person">
+                                    <div class="quotes-author__name">Ковальчук Дмитрий</div>
+                                    <div class="quotes-author__occ">основатель Loftschool</div>
+                                </div>
                             </div>
                         </li>
                         <li class="quotes__item">
                             <div class="quotes__text">Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!</div>
                             <div class="quotes-author">
-                                <div class="quotes-author__avatar"><img class="quotes-author__avatar-pic" src="#" alt=""></div>
-                                <div class="quotes-author__name">Зар Захаров</div>
-                                <div class="quotes-author__occ">преподаватель</div>
+                                <div class="quotes-author__avatar quotes-author__avatar_zakharov"></div>
+                                <div class="quotes-author-person">
+                                    <div class="quotes-author__name">Зар Захаров</div>
+                                    <div class="quotes-author__occ">преподаватель</div>
+                                </div>
                             </div>
                         </li>
                     </ul>
                 </div>
                 <div class="contacts">
-                    <div class="window window_contacts">
+                    <div class="window contacts_window">
                         <div class="window-content">
-                            <div class="title-medium">Связаться со мной</div><input type="text" placeholder="Имя"><input type="email" placeholder="Email"><textarea placeholder="Ваше сообщение"></textarea></div>
-                        <div class="window-btn">
-                            <ul class="window-btn__list">
-                                <li class="window-btn__item"><a class="window-btn__link" href="#">Отправить</a></li>
-                                <li class="window-btn__item"><a class="window-btn__link" href="#">Очистить</a></li>
+                            <div class="title-block title-block_medium "><span class="title-medium">Связаться со мной</span></div><input type="text" placeholder="Имя"><input type="email" placeholder="Email"><textarea class="contacts_window__textarea" placeholder="Ваше сообщение"></textarea></div>
+                        <div
+                            class="window-btns">
+                            <ul class="window-btns__list">
+                                <li class="window-btns__item"><a class="window-btns__link btn" href="#">Отправить</a></li>
+                                <li class="window-btns__item"><a class="window-btns__link btn" href="#">Очистить</a></li>
                             </ul>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
     <footer class="footer">
         <div class="footer-block footer-block_left">

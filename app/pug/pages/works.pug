@@ -1,44 +1,45 @@
 extends ../templates/page.pug
 
 block variables
-    - var title = "Мои работы"
+    - var title = 'Мои работы'
+    - var bodyStyle = 'works_body'
 
 block content
     .wrapper
         .maincontent
             include ../sections/header.pug
             .works
-                +page-header('Мои работы','urltest')
-                .slider HERE IS SLIDER
+                .slider
+                    +page-header('Мои работы','urltest')
                 .quotes
                     +page-header('Что обо мне говорят','urltest')
                     ul.quotes-list
                         li.quotes__item
                             .quotes__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
                             .quotes-author
-                                .quotes-author__avatar
-                                    img(src="#" alt="").quotes-author__avatar-pic
-                                .quotes-author__name Ковальчук Дмитрий
-                                .quotes-author__occ основатель Loftschool
+                                .quotes-author__avatar.quotes-author__avatar_kovalchuk
+                                .quotes-author-person                                
+                                    .quotes-author__name Ковальчук Дмитрий
+                                    .quotes-author__occ основатель Loftschool
                         li.quotes__item
                             .quotes__text Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
                             .quotes-author
-                                .quotes-author__avatar
-                                    img(src="#" alt="").quotes-author__avatar-pic
-                                .quotes-author__name Зар Захаров
-                                .quotes-author__occ преподаватель
+                                .quotes-author__avatar.quotes-author__avatar_zakharov
+                                .quotes-author-person
+                                    .quotes-author__name Зар Захаров
+                                    .quotes-author__occ преподаватель
                 .contacts
-                    .window.window_contacts
+                    .window.contacts_window
                         .window-content
-                            .title-medium Связаться со мной
+                            +title('Связаться со мной','medium','')
                             input(type="text" placeholder="Имя")
                             input(type="email" placeholder="Email")
-                            textarea(placeholder="Ваше сообщение")
-                        .window-btn
-                            ul.window-btn__list
-                                li.window-btn__item
-                                    a.window-btn__link(href="#") Отправить
-                                li.window-btn__item
-                                    a.window-btn__link(href="#") Очистить
+                            textarea(placeholder="Ваше сообщение").contacts_window__textarea
+                        .window-btns
+                            ul.window-btns__list
+                                li.window-btns__item
+                                    a.window-btns__link.btn(href="#") Отправить
+                                li.window-btns__item
+                                    a.window-btns__link.btn(href="#") Очистить
 
     include ../sections/footer.pug
