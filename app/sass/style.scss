@@ -153,4 +153,15 @@ h6 {
             height: rem(15px);
         }
     }
+    &_white {
+        .title {
+            &-dec {
+                background: rgba(white, .4);
+            }
+            &-large,
+            &-medium {
+                color: white;
+            }
+        }
+    }
 }

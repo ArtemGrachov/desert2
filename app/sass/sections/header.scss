@@ -5,9 +5,10 @@
     background-image: url('../img/sand.jpg');
     background-position: left 15%;
     &-top {
-        padding: rem(20px) rem(20px) rem(18px);
+        padding: rem(20px) rem(20px) rem(8px);
         @extend %clearfix;
         .socials {
+            padding: 0 rem(10px);
             float: left;
             &__link {
                 &:hover {

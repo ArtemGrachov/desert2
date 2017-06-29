@@ -1,9 +1,10 @@
 .socials {
+    text-align: center;
     &-list {
         padding: 0;
-        margin: 0;
+        margin: 0 rem(-12px);
         list-style: none;
-        text-align: center;
+        line-height: 1;
     }
     &__item {
         display: inline-block;

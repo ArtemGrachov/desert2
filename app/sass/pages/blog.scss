@@ -8,14 +8,7 @@
     padding-top: rem(70px);
     &-title {
         margin: rem(30px) 0 0;
-        .title {
-            &-dec {
-                background: rgba(white, .4)
-            }
-            &-large {
-                color: white;
-            }
-        }
+        @extend .title_white;
     }
     &-nav {
         &-list {

@@ -215,6 +215,14 @@ h6 {
     height: 0.9375rem;
 }
 
+.title_white .title-dec, .blog-title .title-dec {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.title_white .title-large, .blog-title .title-large, .title_white .title-medium, .blog-title .title-medium, .title_white .articles__title, .blog-title .articles__title {
+    color: white;
+}
+
 a {
     color: #6da3bd;
     font-family: 'RobotoMedium';
@@ -354,11 +362,15 @@ input[type="radio"]:checked + label:before {
     font-family: 'RobotoMedium';
 }
 
+.socials {
+    text-align: center;
+}
+
 .socials-list {
     padding: 0;
-    margin: 0;
+    margin: 0 -0.75rem;
     list-style: none;
-    text-align: center;
+    line-height: 1;
 }
 
 .socials__item {
@@ -383,10 +395,11 @@ input[type="radio"]:checked + label:before {
 }
 
 .header-top {
-    padding: 1.25rem 1.25rem 1.125rem;
+    padding: 1.25rem 1.25rem 0.5rem;
 }
 
 .header-top .socials {
+    padding: 0 0.625rem;
     float: left;
 }
 
@@ -404,6 +417,73 @@ input[type="radio"]:checked + label:before {
     width: 2.5rem;
     border-radius: 0.125rem;
     margin: 0.625rem;
+}
+
+.footer {
+    height: 147px;
+    background: rgba(55, 62, 66, 0.85);
+    color: white;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 1.5rem 0 1.25rem;
+}
+
+.footer-block {
+    padding: 0 1.875rem;
+}
+
+.footer-block_left {
+    width: 26.125rem;
+}
+
+.footer-block_center {
+    border-left: 1px solid #767b7d;
+}
+
+.footer-block_right {
+    border-left: 1px solid #767b7d;
+}
+
+.footer__descr {
+    opacity: .5;
+}
+
+.footer__descr_white {
+    opacity: 1;
+}
+
+.footer-nav-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    margin: 0 -1.0625rem;
+}
+
+.footer-nav__item {
+    display: inline-block;
+}
+
+.footer-nav__link {
+    text-decoration: none;
+    color: white;
+    margin: 0 1.0625rem;
+}
+
+.footer .contacts-list {
+    padding: 0;
+    margin: 0;
+    opacity: .5;
+    list-style: none;
+    line-height: 1.65;
+}
+
+.footer .socials {
+    margin-top: 2.5rem;
+    text-align: left;
 }
 
 .desert {
@@ -545,14 +625,6 @@ input[type="radio"]:checked + label:before {
 
 .blog-title {
     margin: 1.875rem 0 0;
-}
-
-.blog-title .title-dec {
-    background: rgba(255, 255, 255, 0.4);
-}
-
-.blog-title .title-large {
-    color: white;
 }
 
 .blog-nav-list {
