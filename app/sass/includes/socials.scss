@@ -10,7 +10,10 @@
     }
     &__link {
         font-size: rem(28px);
-        color: white;
+        color: rgba(white, .7);
         margin: 0 rem(12px);
+        &:hover {
+            color: white;
+        }
     }
 }

@@ -108,10 +108,10 @@ h6 {
         width: 100%;
         text-align: center;
         line-height: normal;
-        &-large {
+        &_large {
             margin: rem(70px) 0;
         }
-        &-medium {
+        &_medium {
             margin: 0 0 rem(32px);
         }
     }
@@ -126,18 +126,20 @@ h6 {
     &-large {
         color: $dark-grey;
         font-size: rem(63px);
+        margin: 0 rem(30px);
     }
     &-medium {
         color: $light-grey;
         margin-bottom: rem(30px);
+        margin: 0 rem(5px);
         font-size: rem(35px);
     }
     &-dec {
-        background: rgba( $dark-grey, .2);
+        background: rgba( $dark-grey, .4);
         border-radius: 50%;
         display: inline-block;
         vertical-align: middle;
-        margin: rem(2px);
+        margin: rem(-2px) rem(2px) rem(2px);
         &-1 {
             width: rem(6px);
             height: rem(6px);

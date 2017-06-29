@@ -1,0 +1,19 @@
+.header {
+    // background: url('../img/misc/bg.svg') no-repeat 50% 120%, url('../img/sand.jpg') left center;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../img/sand.jpg');
+    background-position: left 15%;
+    &-top {
+        padding: rem(20px) rem(20px) rem(18px);
+        @extend %clearfix;
+        .socials {
+            float: left;
+            &__link {
+                &:hover {
+                    color: $dark-brown;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,14 @@
+.nav {
+    &-toggle {
+        float: right;
+    }
+    &-toggle {
+        &__element {
+            background: white;
+            height: rem(5px);
+            width: rem(40px);
+            border-radius: rem(2px);
+            margin: rem(10px);
+        }
+    }
+}

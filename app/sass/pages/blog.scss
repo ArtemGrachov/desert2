@@ -1,0 +1,19 @@
+.header_blog {
+    height: rem(396px);
+    width: auto;
+}
+
+.blog {
+    outline: 1px solid green;
+    &-title {
+        margin: rem(30px) 0 0;
+        .title {
+            &-dec {
+                background: rgba(white, .4)
+            }
+            &-large {
+                color: white;
+            }
+        }
+    }
+}

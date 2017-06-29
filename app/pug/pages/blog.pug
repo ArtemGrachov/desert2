@@ -6,17 +6,16 @@ block variables
 block content
     .wrapper
         .maincontent
-            header.header_blog
+            header.header.header_blog
                 .header-top
                     include ../includes/socials.pug
                     .nav-toggle
-                        span.nav-toggle__element _
-                        span.nav-toggle__element _
-                        span.nav-toggle__element _
+                        div.nav-toggle__element.nav-toggle__element_tgl-first
+                        div.nav-toggle__element.nav-toggle__element_tgl-second
+                        div.nav-toggle__element.nav-toggle__element_tgl-third
                 .avatar
                     .avatar__img
-                        img.avatar__pic(src="http://lorempixel.com/output/nature-q-c-200-200-2.jpg" alt="")
-                    .blog-title БЛОГ
+                    +title('Блог','large','blog-title')
                     .avatar__title Статьи, которые я написал
             .blog
                 aside.sidebar

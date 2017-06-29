@@ -29,6 +29,15 @@
     outline: 0px solid blue;
 }
 
+.header-top:after, .header-top:before {
+    content: "";
+    display: table;
+}
+
+.header-top:after {
+    clear: both;
+}
+
 html,
 body {
     height: 100%;
@@ -154,11 +163,11 @@ h6 {
     line-height: normal;
 }
 
-.title-block-large {
+.title-block_large {
     margin: 4.375rem 0;
 }
 
-.title-block-medium {
+.title-block_medium {
     margin: 0 0 2rem;
 }
 
@@ -173,20 +182,22 @@ h6 {
 .title-large {
     color: #373e42;
     font-size: 3.9375rem;
+    margin: 0 1.875rem;
 }
 
 .title-medium {
     color: #5d5155;
     margin-bottom: 1.875rem;
+    margin: 0 0.3125rem;
     font-size: 2.1875rem;
 }
 
 .title-dec {
-    background: rgba(55, 62, 66, 0.2);
+    background: rgba(55, 62, 66, 0.4);
     border-radius: 50%;
     display: inline-block;
     vertical-align: middle;
-    margin: 0.125rem;
+    margin: -0.125rem 0.125rem 0.125rem;
 }
 
 .title-dec-1 {
@@ -347,8 +358,43 @@ input[type="radio"]:checked + label:before {
 
 .socials__link {
     font-size: 1.75rem;
-    color: white;
+    color: rgba(255, 255, 255, 0.7);
     margin: 0 0.75rem;
+}
+
+.socials__link:hover {
+    color: white;
+}
+
+.header {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../img/sand.jpg");
+    background-position: left 15%;
+}
+
+.header-top {
+    padding: 1.25rem 1.25rem 1.125rem;
+}
+
+.header-top .socials {
+    float: left;
+}
+
+.header-top .socials__link:hover {
+    color: #cd8920;
+}
+
+.nav-toggle {
+    float: right;
+}
+
+.nav-toggle__element {
+    background: white;
+    height: 0.3125rem;
+    width: 2.5rem;
+    border-radius: 0.125rem;
+    margin: 0.625rem;
 }
 
 .desert {
@@ -361,6 +407,8 @@ input[type="radio"]:checked + label:before {
     height: 100%;
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
+    -webkit-animation: background 120s linear infinite;
+    animation: background 120s linear infinite;
     position: fixed;
     z-index: -1;
     top: 0;
@@ -475,4 +523,25 @@ input[type="radio"]:checked + label:before {
 .robot-group__title {
     font-family: 'RobotoBold';
     margin: 0 0 0.1875rem;
+}
+
+.header_blog {
+    height: 24.75rem;
+    width: auto;
+}
+
+.blog {
+    outline: 1px solid green;
+}
+
+.blog-title {
+    margin: 1.875rem 0 0;
+}
+
+.blog-title .title-dec {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.blog-title .title-large {
+    color: white;
 }
