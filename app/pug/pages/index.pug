@@ -7,7 +7,7 @@ block content
     .wrapper_welcome
         .desert
         main.welcome
-            a.btn.btn-auth(href="#") Авторизоваться
+            a.btn.btn-auth.show-auth(href="#") Авторизоваться
             section.welcome-forms
                 .window.window_greet
                     .window-content
@@ -21,16 +21,16 @@ block content
                                 a.window-btns__link.btn(href="about.html") Обо мне
                             li.window-btns__item
                                 a.window-btns__link.btn(href="blog.html") Блог
-                .window.window_auth
+                .window.window_auth.window_rotate
                     .window-content
                         +title('Авторизуйтесь','medium')
                         .input-group
                             input(type="text" placeholder="Логин")
-                            span.input-group__icon
+                            .input-group__icon
                                 +icon('login','')
                         .input-group
                             input(type="password" placeholder="Пароль")
-                            span.input-group__icon
+                            .input-group__icon
                                 +icon('password','')
                         .robot
                             input(type="checkbox" id="checkHuman")
@@ -43,9 +43,9 @@ block content
                                 label(for="isRobot") Не уверен
                     .window-btns
                         ul.window-btns__list
-                            li.window-btns__item
-                                a.window-btns__link.btn(href="#") На главную
-                            li.window-btns__item
+                            li.window-btns__item.window-btns__item_half
+                                a.window-btns__link.btn.show-greet(href="#") На главную
+                            li.window-btns__item.window-btns__item_half
                                 a.window-btns__link.btn(href="#") Войти
             footer.welcome-footer
                 .welcome-footer__block © Владимир Астахов | создано с любовью в LoftShool | 2016

@@ -12,7 +12,7 @@
 <body>
     <div class="wrapper_welcome">
         <div class="desert"></div>
-        <main class="welcome"><a class="btn btn-auth" href="#">Авторизоваться</a>
+        <main class="welcome"><a class="btn btn-auth show-auth" href="#">Авторизоваться</a>
             <section class="welcome-forms">
                 <div class="window window_greet">
                     <div class="window-content">
@@ -37,12 +37,16 @@
                         </ul>
                     </div>
                 </div>
-                <div class="window window_auth">
+                <div class="window window_auth window_rotate">
                     <div class="window-content">
                         <div class="title-block title-block-medium"><span class="title-dec title-dec-1"></span><span class="title-dec title-dec-2"></span><span class="title-medium">Авторизуйтесь</span><span class="title-dec title-dec-2"></span><span class="title-dec title-dec-1"></span></div>
                         <div
-                            class="input-group"><input type="text" placeholder="Логин"><span class="input-group__icon"><svg class="icon "><use xlink:href="img/sprite/sprite.svg#login"></use></svg></span></div>
-                    <div class="input-group"><input type="password" placeholder="Пароль"><span class="input-group__icon"><svg class="icon "><use xlink:href="img/sprite/sprite.svg#password"></use></svg></span></div>
+                            class="input-group"><input type="text" placeholder="Логин">
+                            <div class="input-group__icon"><svg class="icon "><use xlink:href="img/sprite/sprite.svg#login"></use></svg></div>
+                    </div>
+                    <div class="input-group"><input type="password" placeholder="Пароль">
+                        <div class="input-group__icon"><svg class="icon "><use xlink:href="img/sprite/sprite.svg#password"></use></svg></div>
+                    </div>
                     <div class="robot"><input type="checkbox" id="checkHuman"><label for="checkHuman">Я человек</label>
                         <div class="robot-group">
                             <div class="robot-group__title">Вы точно не робот?</div><input type="radio" name="checkRobot" id="isHuman"><label for="isHuman">Да</label><input type="radio" name="checkRobot" id="isRobot"><label for="isRobot">Не уверен</label></div>
@@ -50,8 +54,8 @@
                 </div>
                 <div class="window-btns">
                     <ul class="window-btns__list">
-                        <li class="window-btns__item"><a class="window-btns__link btn" href="#">На главную</a></li>
-                        <li class="window-btns__item"><a class="window-btns__link btn" href="#">Войти</a></li>
+                        <li class="window-btns__item window-btns__item_half"><a class="window-btns__link btn show-greet" href="#">На главную</a></li>
+                        <li class="window-btns__item window-btns__item_half"><a class="window-btns__link btn" href="#">Войти</a></li>
                     </ul>
                 </div>
     </div>

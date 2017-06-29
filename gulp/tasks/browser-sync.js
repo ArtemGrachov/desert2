@@ -3,7 +3,8 @@ module.exports = function() {
         $.browserSync.init({
             server: {
                 baseDir: $.cfg.dist
-            }
+            },
+            notify: false
         });
     })
 }

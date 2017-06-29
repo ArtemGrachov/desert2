@@ -11,7 +11,7 @@ html {
 body {
     font-family: 'RobotoRegular';
     color: $light-grey;
-    line-height: 1.65;
+    line-height: 1.6;
 }
 
 *,
@@ -54,7 +54,8 @@ h6 {
     text-decoration: none;
     text-align: center;
     font-family: 'RobotoMedium';
-    padding: rem(11px) rem(20px);
+    padding: rem(10px) rem(27px);
+    line-height: 1.45;
     &:hover {
         background: rgba($dark-brown, 0.85);
     }
@@ -65,6 +66,7 @@ h6 {
     border-radius: rem(5px);
     backface-visibility: hidden;
     width: rem(380px);
+    transition: 1s;
     &-content {
         padding: rem(40px) rem(20px) rem(20px);
     }
@@ -90,6 +92,9 @@ h6 {
             &:last-child {
                 border-right: 0;
             }
+            &_half {
+                width: 50%;
+            }
         }
         &__link {
             border-radius: 0;
@@ -107,7 +112,7 @@ h6 {
             margin: rem(70px) 0;
         }
         &-medium {
-            margin: 0 0 rem(30px);
+            margin: 0 0 rem(32px);
         }
     }
     &-large,

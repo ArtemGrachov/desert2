@@ -30,11 +30,12 @@
     background: rgba(#d7bf9b, .6);
 }
 
-.window_auth {}
+.window_rotate {
+    transform: rotateY(180deg);
+}
 
 .window_greet {
     position: absolute;
-    transform: rotateY(180deg);
 }
 
 .welcome {
@@ -45,7 +46,6 @@
     align-items: center;
     justify-content: space-between;
     color: white;
-    line-height: 1.5;
     &-footer {
         background: none;
         height: auto;
@@ -57,7 +57,7 @@
         color: white;
     }
     .socials {
-        margin: rem(22px) 0 rem(12px);
+        margin: rem(20px) 0 rem(10px);
     }
 }
 
@@ -73,11 +73,20 @@
         background: white;
         color: $dark-brown;
     }
+    &_disabled {
+        opacity: 0;
+        pointer-events: none;
+    }
 }
 
 .robot {
     text-align: center;
+    margin-bottom: rem(15px);
     &-group {
         margin: rem(10px) 0 0;
+        &__title {
+            font-family: 'RobotoBold';
+            margin: 0 0 rem(3px);
+        }
     }
 }

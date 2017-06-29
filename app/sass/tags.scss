@@ -1,3 +1,10 @@
+a,
+input,
+input+label:before,
+.input-icon {
+    transition: 500ms;
+}
+
 input[type="text"],
 input[type="password"],
 input[type="email"],
@@ -5,7 +12,8 @@ textarea {
     width: 100%;
     border-radius: rem(3px);
     border: none;
-    padding: rem(14px);
+    padding: rem(10px) rem(20px);
+    line-height: inherit;
 }
 
 input[type="checkbox"] {
@@ -18,10 +26,11 @@ input[type="checkbox"] {
             width: rem(20px);
             height: rem(20px);
             background: white;
-            margin-top: rem(-4px);
+            margin-top: rem(-5px);
             margin-right: rem(10px);
             vertical-align: middle;
             border-radius: rem(4px);
+            line-height: rem(20px);
         }
     }
     &:checked+label:before {
@@ -35,17 +44,18 @@ input[type="checkbox"] {
 input[type="radio"] {
     display: none;
     &+label {
+        margin: 0 rem(21px);
         &:before {
             content: "";
             display: inline-block;
-            width: rem(20px);
-            height: rem(20px);
-            background: white;
             vertical-align: middle;
+            width: rem(18px);
+            height: rem(18px);
+            background: white;
             border-radius: 50%;
             border: rem(5px) solid white;
-            margin-top: rem(-4px);
             margin-right: rem(10px);
+            margin-top: rem(-3px);
             box-shadow: 0 0 2px 0 #d2d2d2;
         }
     }
@@ -65,11 +75,11 @@ input[type="radio"] {
         border-radius: 0 rem(5px) rem(5px) 0;
     }
     &__icon {
-        width: rem(45px);
         background: #f0efe9;
         border-radius: rem(5px) 0 0 rem(5px);
-        padding: rem(10px);
-        flex-basis: rem(45px);
+        width: rem(45px);
+        padding: rem(8px);
+        flex-shrink: 0;
         text-align: center;
         color: #c4cbcd;
     }
