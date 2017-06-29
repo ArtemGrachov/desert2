@@ -1,3 +1,11 @@
+a {
+    color: $blue;
+    font-family: 'RobotoMedium';
+    &:hover {
+        text-decoration: none;
+    }
+}
+
 a,
 input,
 input+label:before,

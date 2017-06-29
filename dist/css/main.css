@@ -29,12 +29,12 @@
     outline: 0px solid blue;
 }
 
-.header-top:after, .header-top:before {
+.header-top:after, .blog:after, .header-top:before, .blog:before {
     content: "";
     display: table;
 }
 
-.header-top:after {
+.header-top:after, .blog:after {
     clear: both;
 }
 
@@ -171,7 +171,7 @@ h6 {
     margin: 0 0 2rem;
 }
 
-.title-large, .title-medium {
+.title-large, .title-medium, .articles__title {
     text-transform: uppercase;
     font-family: 'SansusRegular';
     text-align: center;
@@ -185,7 +185,7 @@ h6 {
     margin: 0 1.875rem;
 }
 
-.title-medium {
+.title-medium, .articles__title {
     color: #5d5155;
     margin-bottom: 1.875rem;
     margin: 0 0.3125rem;
@@ -213,6 +213,15 @@ h6 {
 .title-dec-3 {
     width: 0.9375rem;
     height: 0.9375rem;
+}
+
+a {
+    color: #6da3bd;
+    font-family: 'RobotoMedium';
+}
+
+a:hover {
+    text-decoration: none;
 }
 
 a,
@@ -481,7 +490,7 @@ input[type="radio"]:checked + label:before {
     text-align: center;
 }
 
-.welcome .title-medium,
+.welcome .title-medium, .welcome .articles__title,
   .welcome .title-large {
     color: white;
 }
@@ -531,7 +540,7 @@ input[type="radio"]:checked + label:before {
 }
 
 .blog {
-    outline: 1px solid green;
+    padding-top: 4.375rem;
 }
 
 .blog-title {
@@ -544,4 +553,71 @@ input[type="radio"]:checked + label:before {
 
 .blog-title .title-large {
     color: white;
+}
+
+.blog-nav-list {
+    list-style: none;
+    margin: -0.75rem 0;
+    padding: 0;
+}
+
+.blog-nav__item {
+    margin: 0.75rem 0;
+}
+
+.blog-nav__link {
+    display: block;
+    color: #5d5155;
+    text-decoration: none;
+    text-align: right;
+    padding: 0.5rem 1.125rem;
+    border-right: 0.1875rem solid transparent;
+    font-family: 'RobotoRegular';
+}
+
+.blog-nav__link_active {
+    font-family: 'RobotoMedium';
+    color: #e7a731;
+    border-color: #e7a731;
+}
+
+.blog .sidebar {
+    width: 25%;
+    float: left;
+    padding-left: 0.625rem;
+    margin-left: 0.625rem;
+}
+
+.blog .content {
+    float: left;
+    width: 65%;
+    padding: 0 1.25rem;
+    margin-left: 4.9375rem;
+}
+
+.articles-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.articles-item {
+    padding: 0 0 3.9375rem;
+    margin: 0 0 4.375rem;
+    border-bottom: 5px solid #ecebe4;
+}
+
+.articles-item:last-child {
+    border: none;
+}
+
+.articles__title {
+    text-align: left;
+    text-transform: none;
+    margin: 0 0 0.75rem;
+    line-height: 1.2;
+}
+
+.articles__date {
+    color: #cd8920;
 }
