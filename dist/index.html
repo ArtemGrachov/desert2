@@ -39,31 +39,36 @@
                 </div>
                 <div class="window window_auth window_rotate">
                     <div class="window-content">
-                        <div class="title-block title-block_medium title_white"><span class="title-dec title-dec-1"></span><span class="title-dec title-dec-2"></span><span class="title-medium">Авторизуйтесь</span><span class="title-dec title-dec-2"></span><span class="title-dec title-dec-1"></span></div>
-                        <div
-                            class="input-group"><input type="text" placeholder="Логин">
+                        <div class="title-block title-block_medium title_white">
+                            <div class="title-dec title-dec-1"></div>
+                            <div class="title-dec title-dec-2"></div>
+                            <div class="title-medium">Авторизуйтесь</div>
+                            <div class="title-dec title-dec-2"></div>
+                            <div class="title-dec title-dec-1"></div>
+                        </div>
+                        <div class="input-group"><input type="text" placeholder="Логин">
                             <div class="input-group__icon"><svg class="icon "><use xlink:href="img/sprite/sprite.svg#login"></use></svg></div>
+                        </div>
+                        <div class="input-group"><input type="password" placeholder="Пароль">
+                            <div class="input-group__icon"><svg class="icon "><use xlink:href="img/sprite/sprite.svg#password"></use></svg></div>
+                        </div>
+                        <div class="robot"><input type="checkbox" id="checkHuman"><label for="checkHuman">Я человек</label>
+                            <div class="robot-group">
+                                <div class="robot-group__title">Вы точно не робот?</div><input type="radio" name="checkRobot" id="isHuman"><label for="isHuman">Да</label><input type="radio" name="checkRobot" id="isRobot"><label for="isRobot">Не уверен</label></div>
+                        </div>
                     </div>
-                    <div class="input-group"><input type="password" placeholder="Пароль">
-                        <div class="input-group__icon"><svg class="icon "><use xlink:href="img/sprite/sprite.svg#password"></use></svg></div>
-                    </div>
-                    <div class="robot"><input type="checkbox" id="checkHuman"><label for="checkHuman">Я человек</label>
-                        <div class="robot-group">
-                            <div class="robot-group__title">Вы точно не робот?</div><input type="radio" name="checkRobot" id="isHuman"><label for="isHuman">Да</label><input type="radio" name="checkRobot" id="isRobot"><label for="isRobot">Не уверен</label></div>
+                    <div class="window-btns">
+                        <ul class="window-btns__list">
+                            <li class="window-btns__item window-btns__item_half"><a class="window-btns__link btn show-greet" href="#">На главную</a></li>
+                            <li class="window-btns__item window-btns__item_half"><a class="window-btns__link btn" href="#">Войти</a></li>
+                        </ul>
                     </div>
                 </div>
-                <div class="window-btns">
-                    <ul class="window-btns__list">
-                        <li class="window-btns__item window-btns__item_half"><a class="window-btns__link btn show-greet" href="#">На главную</a></li>
-                        <li class="window-btns__item window-btns__item_half"><a class="window-btns__link btn" href="#">Войти</a></li>
-                    </ul>
-                </div>
-    </div>
-    </section>
-    <footer class="welcome-footer">
-        <div class="welcome-footer__block">© Владимир Астахов | создано с любовью в LoftShool | 2016</div>
-    </footer>
-    </main>
+            </section>
+            <footer class="welcome-footer">
+                <div class="welcome-footer__block">© Владимир Астахов | создано с любовью в LoftShool | 2016</div>
+            </footer>
+        </main>
     </div>
     <script src="/js/libs.min.js"></script>
     <script src="/js/main.js"></script>

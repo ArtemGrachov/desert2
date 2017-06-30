@@ -105,7 +105,7 @@ h6 {
     &-block {
         width: 100%;
         text-align: center;
-        line-height: normal;
+        line-height: 1.2;
         &_large {
             margin: rem(70px) 0;
         }
@@ -119,7 +119,8 @@ h6 {
         font-family: 'SansusRegular';
         text-align: center;
         vertical-align: middle;
-        line-height: normal;
+        line-height: 1.17;
+        display: inline-block;
     }
     &-large {
         color: $dark-grey;

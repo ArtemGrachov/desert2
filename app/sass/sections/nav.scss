@@ -1,9 +1,27 @@
 .nav {
     display: none;
     position: fixed;
-    background: rgba($light-brown, .87);
     width: 100vw;
     height: 100vh;
+    &:before,
+    &:after {
+        background: rgba($light-brown, .87);
+        width: 0vw;
+        height: 100vh;
+        position: absolute;
+        display: block;
+        content: '';
+        z-index: -1;
+        transition: 300ms;
+    }
+    &:before {
+        top: 0;
+        left: 0;
+    }
+    &:after {
+        top: 0;
+        right: 0;
+    }
     &-list {
         padding: 0;
         margin: 0;
@@ -20,6 +38,7 @@
         @extend .title-large;
         text-decoration: none;
         color: white;
+        display: none;
         .title {
             &-block {
                 margin: 0;
@@ -56,6 +75,13 @@
             .nav-toggle__el {
                 //!!!!!!!!!!!!!
             }
+        }
+    }
+    &_active {
+        // background: blue;
+        &:before,
+        &:after {
+            width: 50vw;
         }
     }
 }

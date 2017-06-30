@@ -29,20 +29,23 @@ let scrollBottom = function() {
 }
 
 let toggleNav = function() {
-    $('.nav-toggle').on('click', function(e) {
-        e.preventDefault();
-        $(this).toggleClass('nav-toggle_active');
-        $('.nav').fadeToggle();
+    $('.nav-toggle-btn').on('click', function() {
+        let nav = $('.nav');
+
+        if (nav.hasClass('nav_active')) {
+            nav.fadeToggle(300, function() { nav.removeClass('nav_active'); });
+        } else {
+            nav.toggle(0, function() {
+                nav.addClass('nav_active');
+            });
+        }
     })
 }
-
 
 let drawCircleChart = function(chartDiam, strokeWidth) {
     let charts = $('.chart'),
         chartRadius = (chartDiam - strokeWidth) / 2,
         charPi = (chartDiam - strokeWidth) * Math.PI;
-
-    console.log(charPi);
     for (let i = 0; i < charts.length; i++) {
         let chartName = $(charts[i]).find('.chart__name').html(),
             chartValue = $(charts[i]).find('.chart__value').html(),

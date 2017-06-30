@@ -1,6 +1,7 @@
 .about {
     @extend %clearfix;
     background: #efeee9;
+    padding-bottom: rem(12px);
     &-body {
         background: url('../img/misc/nsb-map.jpg');
         background-position: bottom center;
@@ -12,7 +13,7 @@
         background-size: cover;
     }
     &-title {
-        margin-top: 0;
+        margin: 0 auto rem(44px);
     }
 }
 
@@ -25,14 +26,27 @@
         margin: auto;
     }
     &-title {
-        margin-top: rem(42px);
+        margin: rem(40px) auto rem(25px);
     }
 }
 
 .skills {
     float: left;
     width: 50%;
-    padding: rem(10px);
+    padding: rem(10px) 0 0 rem(40px);
+    &-header {
+        margin: auto;
+        text-align: center;
+        .title-medium {
+            width: rem(260px);
+        }
+    }
+    &__descr {
+        margin-bottom: rem(42px);
+    }
+    &-block {
+        margin: rem(15px) 0 rem(7px);
+    }
     &-list {
         margin: 0;
         padding: 0;
@@ -41,7 +55,7 @@
     }
     &-item {
         display: inline-block;
-        margin: rem(18px);
+        margin: rem(8px) rem(16px);
     }
     &__title {
         font-size: rem(28px);
@@ -50,7 +64,7 @@
 }
 
 .contacts {
-    height: rem(828px);
+    height: rem(827px);
     display: flex;
     &-window {
         background: rgba(#fcfcfc, .85)
