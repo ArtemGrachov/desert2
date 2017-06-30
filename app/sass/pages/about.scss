@@ -1,0 +1,73 @@
+.about {
+    @extend %clearfix;
+    background: #efeee9;
+    &-body {
+        background: url('../img/misc/nsb-map.jpg');
+        background-position: bottom center;
+        background-repeat: no-repeat;
+    }
+    &-avatar {
+        background: url('../img/misc/avatar-large.jpg');
+        height: rem(390px);
+        background-size: cover;
+    }
+    &-title {
+        margin-top: 0;
+    }
+}
+
+.bio {
+    float: left;
+    width: 50%;
+    padding: rem(10px);
+    &-block {
+        width: rem(443px);
+        margin: auto;
+    }
+    &-title {
+        margin-top: rem(42px);
+    }
+}
+
+.skills {
+    float: left;
+    width: 50%;
+    padding: rem(10px);
+    &-list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        margin: 0 rem(-18px);
+    }
+    &-item {
+        display: inline-block;
+        margin: rem(18px);
+    }
+    &__title {
+        font-size: rem(28px);
+        font-family: 'RobotoMedium';
+    }
+}
+
+.contacts {
+    height: rem(828px);
+    display: flex;
+    &-window {
+        background: rgba(#fcfcfc, .85)
+    }
+    &-icon {
+        color: $light-brown;
+        vertical-align: middle;
+        width: rem(25px);
+        height: rem(25px);
+        margin-right: rem(10px);
+    }
+    &-list {
+        margin: 0;
+        list-style: none;
+        padding: 0 rem(20px);
+    }
+    &__item {
+        margin: rem(18px) 0;
+    }
+}

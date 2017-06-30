@@ -2,37 +2,22 @@
     width: 100vw;
     height: 100vh;
     min-height: rem(650px);
-    ////////////////////////
     background-image: url('../img/misc/bg.svg'), url('../img/sand.jpg');
     background-position: center 130%, left 15%;
     background-repeat: no-repeat, repeat-x;
-    ////////////////////////
-    // background-image: url('../img/sand.jpg');
-    // background-position: left 15%;
-    // background-repeat: repeat-x;
-    ///////////////////////
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     &-top {
-        padding: rem(20px) rem(20px) rem(8px);
+        padding: rem(28px);
         @extend %clearfix;
         .socials {
-            padding: 0 rem(10px);
             float: left;
             &__link {
                 &:hover {
                     color: $dark-brown;
                 }
             }
-        }
-    }
-    &-to-bottom {
-        text-align: center;
-        margin-bottom: rem(124px);
-        &__btn {
-            color: white;
-            font-size: rem(26px);
         }
     }
 }

@@ -1,14 +1,61 @@
 .nav {
-    &-toggle {
-        float: right;
+    display: none;
+    position: fixed;
+    background: rgba($light-brown, .87);
+    width: 100vw;
+    height: 100vh;
+    &-list {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+    }
+    &__link {
+        padding: rem(45px) 0;
+        display: block;
+        @extend .title-large;
+        text-decoration: none;
+        color: white;
+        .title {
+            &-block {
+                margin: 0;
+            }
+            &-large {
+                color: white;
+            }
+            &-dec {
+                background: none;
+            }
+        }
+        &:hover {
+            .title-dec {
+                background: white;
+            }
+        }
     }
     &-toggle {
-        &__element {
+        position: absolute;
+        right: rem(30px);
+        &__el {
             background: white;
             height: rem(5px);
             width: rem(40px);
+            transition: 300ms;
             border-radius: rem(2px);
-            margin: rem(10px);
+            position: relative;
+            &_second {
+                margin: rem(10px) 0;
+            }
+        }
+        &_active {
+            position: fixed;
+            .nav-toggle__el {
+                //!!!!!!!!!!!!!
+            }
         }
     }
 }

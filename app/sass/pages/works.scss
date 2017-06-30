@@ -1,5 +1,5 @@
 .works {
-    &_body {
+    &-body {
         background-color: #f0e6d2;
         background-image: url('../img/works/sand.png');
         background-repeat: no-repeat;
@@ -11,23 +11,13 @@
     background: white;
 }
 
-.contacts {
-    &_window {
-        margin-bottom: rem(156px);
-        &__textarea {
-            min-height: rem(140px);
-            margin-bottom: 0;
-        }
-    }
-}
-
 .quotes {
     width: rem(800px);
     margin: auto;
     &-list {
         @extend %clearfix;
         list-style: none;
-        margin: rem(45px) 0 rem(70px);
+        margin: rem(45px) 0 rem(72px);
         padding: 0;
         overflow: hidden;
     }
@@ -63,6 +53,15 @@
             &_zakharov {
                 background-image: url('../img/works/zakharov.png');
             }
+        }
+    }
+}
+
+.feedback {
+    &_window {
+        &__textarea {
+            min-height: rem(140px);
+            margin-bottom: 0;
         }
     }
 }

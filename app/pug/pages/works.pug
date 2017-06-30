@@ -1,45 +1,44 @@
-extends ../templates/page.pug
+extends ../templates/layout.pug
 
 block variables
     - var title = 'Мои работы'
-    - var bodyStyle = 'works_body'
+    - var bodyStyle = 'works-body'
 
 block content
-    .wrapper
-        .maincontent
-            include ../sections/header.pug
-            .works
-                .slider
-                    +page-header('Мои работы','urltest')
-                .quotes
-                    +page-header('Что обо мне говорят','urltest')
-                    ul.quotes-list
-                        li.quotes__item
-                            .quotes__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-                            .quotes-author
-                                .quotes-author__avatar.quotes-author__avatar_kovalchuk
-                                .quotes-author-person                                
-                                    .quotes-author__name Ковальчук Дмитрий
-                                    .quotes-author__occ основатель Loftschool
-                        li.quotes__item
-                            .quotes__text Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
-                            .quotes-author
-                                .quotes-author__avatar.quotes-author__avatar_zakharov
-                                .quotes-author-person
-                                    .quotes-author__name Зар Захаров
-                                    .quotes-author__occ преподаватель
-                .contacts
-                    .window.contacts_window
-                        .window-content
-                            +title('Связаться со мной','medium','')
-                            input(type="text" placeholder="Имя")
-                            input(type="email" placeholder="Email")
-                            textarea(placeholder="Ваше сообщение").contacts_window__textarea
-                        .window-btns
-                            ul.window-btns__list
-                                li.window-btns__item
-                                    a.window-btns__link.btn(href="#") Отправить
-                                li.window-btns__item
-                                    a.window-btns__link.btn(href="#") Очистить
-
-    include ../sections/footer.pug
+    include ../sections/header.pug
+    .works
+        .slider
+            +page-header('Мои работы','urltest')
+        .quotes
+            +page-header('Что обо мне говорят','urltest')
+            ul.quotes-list
+                li.quotes__item
+                    .quotes__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+                    .quotes-author
+                        .quotes-author__avatar.quotes-author__avatar_kovalchuk
+                        .quotes-author-person                                
+                            .quotes-author__name Ковальчук Дмитрий
+                            .quotes-author__occ основатель Loftschool
+                li.quotes__item
+                    .quotes__text Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
+                    .quotes-author
+                        .quotes-author__avatar.quotes-author__avatar_zakharov
+                        .quotes-author-person
+                            .quotes-author__name Зар Захаров
+                            .quotes-author__occ преподаватель
+        .feedback
+            .window.feedback_window
+                .window-content
+                    +title('Связаться со мной','medium','')
+                    input(type="text" placeholder="Имя")
+                    input(type="email" placeholder="Email")
+                    textarea(placeholder="Ваше сообщение").feedback_window__textarea
+                .window-btns
+                    ul.window-btns__list
+                        li.window-btns__item
+                            a.window-btns__link.btn(href="#") Отправить
+                        li.window-btns__item
+                            a.window-btns__link.btn(href="#") Очистить
+        .view-toggle
+            a.view-toggle__btn.view-toggle__btn_up(href="#")
+                +icon('portf_arrow_up','')

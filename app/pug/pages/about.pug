@@ -1,78 +1,87 @@
-extends ../templates/page.pug
+extends ../templates/layout.pug
 
 block variables
-    - var title = "Обо мне"
+    - var title = 'Обо мне'
+    - var bodyStyle = 'about-body'
 
 block content
-    .wrapper
-        .maincontent
-            include ../sections/header.pug
-            .about
-                .bio
-                    +title('Обо мне','large')
-                    .about-avatar
-                        img.about__lic(src="#" alt="")
-                    +title('Кто я','medium')
-                    .bio-text
-                        p Duis incididunt nisi laboris ut adipisicing excepteur deserunt duis est laboris est laboris sint. Proident ea ipsum veniam anim aute aliquip sit occaecat elit consequat ut non. Lorem voluptate adipisicing esse adipisicing quis culpa enim Lorem id consectetur minim voluptate.
-                        p Sit mollit labore aliquip non eiusmod elit consequat exercitation reprehenderit non do laboris.
-                .skills
-                    +title('Чем я могу быть вам полезен','medium')
-                    .skills__descr    
-                        p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
-                    .charts
-                        div.skills-block
-                            h3.skills__title Frontend
-                            ul.skills-list
-                                li.skills-item
-                                    div.chart
-                                        div.chart__value 90
-                                        div.chart__name HTML5
-                                li.skills-item
-                                    div.chart
-                                        div.chart__value 85
-                                        div.chart__name CSS3
-                                li.skills-item
-                                    div.chart
-                                        div.chart__value 85
-                                        div.chart__name JavaScript & JQuery
-                        div.skills-block
-                            h3.skills__title Backend
-                            ul.skills-list
-                                li.skills-item
-                                    div.chart
-                                        div.chart__value 45
-                                        div.chart__name PHP
-                                li.skills-item
-                                    div.chart
-                                        div.chart__value 55
-                                        div.chart__name mySQL
-                                li.skills-item
-                                    div.chart
-                                        div.chart__value 40
-                                        div.chart__name Node.js & npm
-                                li.skills-item
-                                    div.chart
-                                        div.chart__value 65
-                                        div.chart__name Mongo.db
-                        div.skills-block
-                            h3.skills__title WorkFlow
-                            ul.skills-list
-                                li.skills-item
-                                    div.chart
-                                        div.chart__value 80
-                                        div.chart__name Git
-                                li.skills-item
-                                    div.chart
-                                        div.chart__value 70
-                                        div.chart__name Gulp
-                                li.skills-item
-                                    div.chart
-                                        div.chart__value 85
-                                        div.chart__name Bower
-                .contacts
-                    .window.window_contacts
-                        .window-top
-                            .title-medium Контакты
-                            include ../includes/contacts.pug
-    include ../sections/footer.pug
+    include ../sections/header.pug
+    .about
+        .bio
+            .bio-block
+                +title('Обо мне','large','about-title')
+                .about-avatar
+                +title('Кто я','medium','bio-title')
+                .bio-text
+                    p Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                    p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите,как тут всё классно и красиво!
+        .skills
+            +title('Чем я могу быть вам полезен','medium')
+            .skills__descr    
+                p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
+                div.skills-block
+                    .skills__title Frontend
+                    ul.skills-list
+                        li.skills-item
+                            div.chart
+                                div.chart__value 90
+                                div.chart__name HTML5
+                        li.skills-item
+                            div.chart
+                                div.chart__value 85
+                                div.chart__name CSS3
+                        li.skills-item
+                            div.chart
+                                div.chart__value 85
+                                div.chart__name JavaScript & JQuery
+                div.skills-block
+                    .skills__title Backend
+                    ul.skills-list
+                        li.skills-item
+                            div.chart
+                                div.chart__value 45
+                                div.chart__name PHP
+                        li.skills-item
+                            div.chart
+                                div.chart__value 55
+                                div.chart__name mySQL
+                        li.skills-item
+                            div.chart
+                                div.chart__value 40
+                                div.chart__name Node.js & npm
+                        li.skills-item
+                            div.chart
+                                div.chart__value 65
+                                div.chart__name Mongo.db
+                div.skills-block
+                    .skills__title WorkFlow
+                    ul.skills-list
+                        li.skills-item
+                            div.chart
+                                div.chart__value 80
+                                div.chart__name Git
+                        li.skills-item
+                            div.chart
+                                div.chart__value 70
+                                div.chart__name Gulp
+                        li.skills-item
+                            div.chart
+                                div.chart__value 85
+                                div.chart__name Bower
+    .contacts
+        .window.contacts-window
+            .window-content
+                +title('Контакты','medium','')
+                ul.contacts-list
+                    li.contacts__item 
+                        +icon('skype','contacts-icon')
+                        | skype_kdn
+                    li.contacts__item 
+                        +icon('envelope2','contacts-icon')
+                        | astahov@gmail.com
+                    li.contacts__item 
+                        +icon('phone2','contacts-icon')
+                        | +7 931 200 93 24
+                    li.contacts__item 
+                        +icon('map_marker','contacts-icon')
+                        | Новосибирск, ул. Инская, д.14

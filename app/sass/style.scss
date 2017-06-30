@@ -129,7 +129,7 @@ h6 {
     &-medium {
         color: $light-grey;
         margin-bottom: rem(30px);
-        margin: 0 rem(5px);
+        margin: 0;
         font-size: rem(35px);
     }
     &-dec {
@@ -161,5 +161,27 @@ h6 {
                 color: white;
             }
         }
+    }
+}
+
+.view-toggle {
+    text-align: center;
+    margin: rem(58px) 0;
+    &__btn {
+        color: white;
+        font-size: rem(26px);
+    }
+}
+
+.chart {
+    color: $light-brown;
+    font-size: rem(12px);
+    circle {
+        fill: rgba(0, 0, 0, 0);
+        stroke: #dfdcd5;
+    }
+    circle:nth-child(2n) {
+        fill: rgba(0, 0, 0, 0);
+        stroke: $light-brown;
     }
 }
