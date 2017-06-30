@@ -1,11 +1,11 @@
 mixin title(text,size,cls)
     div(class="title-block title-block_" + size + ' '+ cls)
-        .title-dec.title-dec-1
-        .title-dec.title-dec-2
+        span.title-dec.title-dec-1
+        span.title-dec.title-dec-2
         if size == 'large'
-            .title-dec.title-dec-3
+            span.title-dec.title-dec-3
         div(class="title-" + size)=text        
         if size == 'large'
-            .title-dec.title-dec-3
-        .title-dec.title-dec-2
-        .title-dec.title-dec-1
+            span.title-dec.title-dec-3
+        span.title-dec.title-dec-2
+        span.title-dec.title-dec-1

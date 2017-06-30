@@ -1,16 +1,17 @@
 extends ../templates/layout.pug
 
 block variables
-    - var title = "Welcome!"
+    - var title = "Блог"
 
 block content
     header.header.header_blog
         .header-top
             include ../includes/socials.pug
             .nav-toggle
-                div.nav-toggle__el.nav-toggle__el_first
-                div.nav-toggle__el.nav-toggle__el_second
-                div.nav-toggle__el.nav-toggle__el_third
+                a.nav-toggle-btn(href="#")
+                    div.nav-toggle__el.nav-toggle__el_first
+                    div.nav-toggle__el.nav-toggle__el_second
+                    div.nav-toggle__el.nav-toggle__el_third
         .avatar
             .avatar__img
             +title('Блог','large','blog-title')

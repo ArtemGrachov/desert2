@@ -30,14 +30,19 @@ let scrollBottom = function() {
 
 let toggleNav = function() {
     $('.nav-toggle-btn').on('click', function() {
-        let nav = $('.nav');
+        let nav = $('.nav'),
+            navToggle = $('.nav-toggle');
 
         if (nav.hasClass('nav_active')) {
-            nav.fadeToggle(300, function() { nav.removeClass('nav_active'); });
+            nav.fadeToggle(300, function() {
+                nav.removeClass('nav_active');
+            });
+            navToggle.removeClass('nav-toggle_active');
         } else {
             nav.toggle(0, function() {
                 nav.addClass('nav_active');
             });
+            navToggle.addClass('nav-toggle_active');
         }
     })
 }

@@ -34,11 +34,11 @@
     }
     &__link {
         padding: rem(45px) 0;
-        display: block;
         @extend .title-large;
         text-decoration: none;
         color: white;
-        display: none;
+        transition: 300ms;
+        display: block;
         .title {
             &-block {
                 margin: 0;
@@ -48,6 +48,7 @@
             }
             &-dec {
                 background: none;
+                transition: 300ms;
             }
         }
         &:hover {

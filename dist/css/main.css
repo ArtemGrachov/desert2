@@ -29,12 +29,12 @@
     outline: 0px solid blue;
 }
 
-.header-top:after, .blog:after, .quotes-list:after, .about:after, .header-top:before, .blog:before, .quotes-list:before, .about:before {
+.header-top:after, .blog:after, .slider:after, .quotes-list:after, .about:after, .header-top:before, .blog:before, .slider:before, .quotes-list:before, .about:before {
     content: "";
     display: table;
 }
 
-.header-top:after, .blog:after, .quotes-list:after, .about:after {
+.header-top:after, .blog:after, .slider:after, .quotes-list:after, .about:after {
     clear: both;
 }
 
@@ -190,7 +190,7 @@ h6 {
     border-radius: 50%;
     display: inline-block;
     vertical-align: middle;
-    margin: -0.125rem 0.125rem 0.125rem;
+    margin: -0.125rem 0.1875rem;
 }
 
 .title-dec-1 {
@@ -218,6 +218,7 @@ h6 {
 
 .view-toggle {
     text-align: center;
+    z-index: 1;
     margin: 3.625rem 0;
 }
 
@@ -415,9 +416,10 @@ input[type="radio"]:checked + label:before {
     width: 100vw;
     height: 100vh;
     min-height: 40.625rem;
-    background-image: url("../img/misc/bg.svg"), url("../img/sand.jpg");
-    background-position: center 130%, left 15%;
-    background-repeat: no-repeat, repeat-x;
+    background-image: url("../img/sand.jpg");
+    background-color: #faecdc;
+    background-position: left bottom;
+    background-repeat: repeat-x;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -428,6 +430,7 @@ input[type="radio"]:checked + label:before {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
+    overflow: hidden;
 }
 
 .header-top {
@@ -440,6 +443,21 @@ input[type="radio"]:checked + label:before {
 
 .header-top .socials__link:hover {
     color: #cd8920;
+}
+
+.header__bg {
+    width: 50vw;
+    position: absolute;
+    bottom: 0;
+    fill: white;
+}
+
+.header__bg_left {
+    left: 0;
+}
+
+.header__bg_right {
+    right: 0;
 }
 
 .nav {
@@ -491,10 +509,11 @@ input[type="radio"]:checked + label:before {
 
 .nav__link {
     padding: 2.8125rem 0;
-    display: block;
     text-decoration: none;
     color: white;
-    display: none;
+    -webkit-transition: 300ms;
+    transition: 300ms;
+    display: block;
 }
 
 .nav__link .title-block {
@@ -507,6 +526,8 @@ input[type="radio"]:checked + label:before {
 
 .nav__link .title-dec {
     background: none;
+    -webkit-transition: 300ms;
+    transition: 300ms;
 }
 
 .nav__link:hover .title-dec {

@@ -9,6 +9,7 @@
 
 .slider {
     background: white;
+    @extend %clearfix;
 }
 
 .quotes {
