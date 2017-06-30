@@ -850,7 +850,7 @@ input[type="radio"]:checked + label:before {
 }
 
 .slider-item {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
 }
 
@@ -897,10 +897,11 @@ input[type="radio"]:checked + label:before {
 .slider-ctrl {
     outline: 1px solid red;
     position: absolute;
-    width: 50vw;
+    width: 50%;
     height: 30vh;
     bottom: 0;
-    right: 0;
+    left: 50%;
+    background: rgba(195, 189, 174, 0.7);
 }
 
 .slider-ctrl-prev, .slider-ctrl-next {
@@ -908,6 +909,10 @@ input[type="radio"]:checked + label:before {
     height: 100%;
     float: left;
     outline: 1px solid orange;
+}
+
+.slider-ctrl__link {
+    color: white;
 }
 
 .quotes {

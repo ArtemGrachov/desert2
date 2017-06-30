@@ -11,6 +11,12 @@ block content
             +page-header('Мои работы','urltest')
             .slider
                 .slider-ctrl
+                    .slider-ctrl-prev
+                        a(href="#").slider-ctrl__link
+                            +icon('portf_arrow_down','')
+                    .slider-ctrl-next
+                        a(href="#").slider-ctrl__link  
+                            +icon('portf_arrow_up','')                  
                 ul.slider-list
                     li.slider-item.slider-item_active
                         .slider-descr
