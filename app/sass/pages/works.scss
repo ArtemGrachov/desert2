@@ -5,11 +5,74 @@
         background-repeat: no-repeat;
         background-position: center bottom;
     }
+    &-top {
+        background: white;
+        @extend %clearfix;
+    }
 }
 
 .slider {
-    background: white;
-    @extend %clearfix;
+    position: relative;
+    &-list {
+        @extend %clearfix;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        height: 100vh;
+    }
+    &-item {
+        // position: absolute;
+        width: 100vw;
+        height: 100vh;
+    }
+    &-descr {
+        height: 100vh;
+        width: 50%;
+        outline: 1px solid green;
+        float: left;
+        text-align: center;
+        display: flex;
+        &-block {
+            width: 70%;
+            margin: auto;
+        }
+    }
+    &__info {
+        text-transform: uppercase;
+        padding: rem(20px) 0;
+        margin: rem(40px) 0;
+        border-top: 2px solid #aeaeab;
+        border-bottom: 2px solid #aeaeab;
+        color: $dark-brown;
+    }
+    &-img {
+        width: 50%;
+        height: 100vh;
+        padding-bottom: 30vh;
+        float: right;
+        outline: 1px solid blue;
+    }
+    &__pic {
+        max-height: 100%;
+        max-width: 100%;
+        display: block;
+        margin: auto;
+    }
+    &-ctrl {
+        outline: 1px solid red;
+        position: absolute;
+        width: 50vw;
+        height: 30vh;
+        bottom: 0;
+        right: 0;
+        &-prev,
+        &-next {
+            width: 50%;
+            height: 100%;
+            float: left;
+            outline: 1px solid orange;
+        }
+    }
 }
 
 .quotes {

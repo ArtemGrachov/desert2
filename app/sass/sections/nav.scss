@@ -3,6 +3,7 @@
     position: fixed;
     width: 100vw;
     height: 100vh;
+    z-index: 10;
     &:before,
     &:after {
         background: rgba($light-brown, .87);
@@ -73,6 +74,7 @@
         }
         &_active {
             position: fixed;
+            z-index: 10;
             .nav-toggle__el {
                 //!!!!!!!!!!!!!
             }

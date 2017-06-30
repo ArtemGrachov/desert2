@@ -7,8 +7,55 @@ block variables
 block content
     include ../sections/header.pug
     .works
-        .slider
+        .works-top
             +page-header('Мои работы','urltest')
+            .slider
+                .slider-ctrl
+                ul.slider-list
+                    li.slider-item.slider-item_active
+                        .slider-descr
+                            .slider-descr-block
+                                .slider__name
+                                    +title('Сайт школы онлайн образования','medium','slider-title')
+                                .slider__info HTML, CSS, JavaScript
+                                a(href="#").btn.slider-btn
+                                    i.fa.fa-link(aria-hidden="true")
+                                    | Посмотреть сайт
+                        .slider-img
+                            img(src="../img/works/slider/work-1.png").slider__pic
+                    li.slider-item
+                        .slider-descr
+                            .slider-descr-block
+                                .slider__name
+                                    +title('itLoft','medium','slider-title')
+                                .slider__info HTML, CSS, JavaScript
+                                a(href="#").btn.slider-btn
+                                    i.fa.fa-link(aria-hidden="true")
+                                    | Посмотреть сайт
+                        .slider-img
+                            img(src="../img/works/slider/work-2.png").slider__pic
+                    li.slider-item
+                        .slider-descr
+                            .slider-descr-block
+                                .slider__name
+                                    +title('Loftblog','medium','slider-title')
+                                .slider__info HTML, CSS, JavaScript
+                                a(href="#").btn.slider-btn
+                                    i.fa.fa-link(aria-hidden="true")
+                                    | Посмотреть сайт
+                        .slider-img
+                            img(src="../img/works/slider/work-3.png").slider__pic
+                    li.slider-item
+                        .slider-descr
+                            .slider-descr-block
+                                .slider__name
+                                    +title('Атма йога','medium','slider-title')
+                                .slider__info HTML, CSS, JavaScript
+                                a(href="#").btn.slider-btn
+                                    i.fa.fa-link(aria-hidden="true")
+                                    | Посмотреть сайт
+                        .slider-img
+                            img(src="../img/works/slider/work-4.png").slider__pic
         .quotes
             +page-header('Что обо мне говорят','urltest')
             ul.quotes-list

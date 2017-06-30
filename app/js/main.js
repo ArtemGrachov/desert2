@@ -29,7 +29,8 @@ let scrollBottom = function() {
 }
 
 let toggleNav = function() {
-    $('.nav-toggle-btn').on('click', function() {
+    $('.nav-toggle-btn').on('click', function(e) {
+        e.preventDefault();
         let nav = $('.nav'),
             navToggle = $('.nav-toggle');
 

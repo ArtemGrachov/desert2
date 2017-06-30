@@ -55,6 +55,9 @@ h6 {
     &:hover {
         background: rgba($dark-brown, 0.85);
     }
+    .fa {
+        margin-right: rem(10px);
+    }
 }
 
 .window {
@@ -120,7 +123,8 @@ h6 {
         text-align: center;
         vertical-align: middle;
         line-height: 1.17;
-        display: inline-block;
+        // display: inline-block;
+        position: relative;
     }
     &-large {
         color: $dark-grey;
@@ -132,25 +136,6 @@ h6 {
         margin-bottom: rem(30px);
         margin: 0;
         font-size: rem(35px);
-    }
-    &-dec {
-        background: rgba( $dark-grey, .4);
-        border-radius: 50%;
-        display: inline-block;
-        vertical-align: middle;
-        margin: rem(-2px) rem(3px);
-        &-1 {
-            width: rem(6px);
-            height: rem(6px);
-        }
-        &-2 {
-            width: rem(10px);
-            height: rem(10px);
-        }
-        &-3 {
-            width: rem(15px);
-            height: rem(15px);
-        }
     }
     &_white {
         .title {
