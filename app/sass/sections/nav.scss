@@ -35,7 +35,6 @@
     }
     &__link {
         padding: rem(45px) 0;
-        @extend .title-large;
         text-decoration: none;
         color: white;
         transition: $transition;

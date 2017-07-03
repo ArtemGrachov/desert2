@@ -105,48 +105,20 @@ h6 {
 }
 
 .title {
-    &-block {
-        width: 100%;
-        text-align: center;
-        line-height: 1.2;
-        &_large {
-            margin: rem(70px) 0;
-        }
-        &_medium {
-            margin: 0 0 rem(32px);
-        }
-    }
     &-large,
     &-medium {
-        text-transform: uppercase;
         font-family: 'SansusRegular';
+        text-transform: uppercase;
         text-align: center;
-        vertical-align: middle;
-        line-height: 1.17;
-        // display: inline-block;
-        position: relative;
+        line-height: 1;
     }
     &-large {
-        color: $dark-grey;
         font-size: rem(63px);
-        margin: 0 rem(30px);
+        margin: rem(70px) 0;
     }
     &-medium {
-        color: $light-grey;
-        margin-bottom: rem(30px);
-        margin: 0;
         font-size: rem(35px);
-    }
-    &_white {
-        .title {
-            &-dec {
-                background: rgba(white, .4);
-            }
-            &-large,
-            &-medium {
-                color: white;
-            }
-        }
+        margin: 0 0 rem(30px);
     }
 }
 
