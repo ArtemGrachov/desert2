@@ -2,7 +2,6 @@ let authWindow = function() {
     let showGreet = $('.show-greet'),
         showAuth = $('.show-auth');
 
-
     showAuth.on('click', function(e) {
         e.preventDefault();
         $('.window').toggleClass('window_rotate');
@@ -74,7 +73,8 @@ let slider = (function() {
             let _this = this;
 
             $('.slider').each(function() {
-                $(this).find('.slider-item').first().addClass('slider-item_active');
+                $(this).find('.slider-item').first()
+                    .addClass('slider-item_active');
             });
 
             $('.slider-ctrl__link_prev').on('click', function(e) {
@@ -96,69 +96,93 @@ let slider = (function() {
                 slideActive = slider.find('.slider-item_active'),
                 slideNext = slideActive.next(),
                 slidePrev = slideActive.prev(),
-                sliderCtrlPrev = slider.find('.slider-ctrl-prev'),
-                sliderCtrlNext = slider.find('.slider-ctrl-next'),
                 slideNew;
 
-            if (!slideNext.length) slideNext = slider.find('.slider-item').first();
-            if (!slidePrev.length) slidePrev = slider.find('.slider-item').last();
+            if (!slideNext.length) slideNext = slider
+                .find('.slider-item')
+                .first();
+            if (!slidePrev.length) slidePrev = slider
+                .find('.slider-item')
+                .last();
 
             if (direction == 'prev') {
                 slideNew = slidePrev;
             } else {
                 slideNew = slideNext;
             }
+            _this.smallSlide(slider, slideActive, direction);
 
             slideActive.fadeOut(300, function() {
                 slideNew.fadeIn();
                 slideNew.addClass('slider-item_active');
-                slideNew.siblings().removeClass('slider-item_active');
+                slideNew.siblings()
+                    .removeClass('slider-item_active');
 
             })
+        },
+        smallSlide: function(slider, activeSlide, direction = 'none') {
+            let slideNext = activeSlide.next(),
+                slidePrev = activeSlide.prev();
+            if (!slideNext.length) slideNext = slider
+                .find('.slider-item')
+                .first();
+            if (!slidePrev.length) slidePrev = slider
+                .find('.slider-item')
+                .last();
+
+            let slideAfterNext = slideNext.next(),
+                slideAfterPrev = slidePrev.prev();
+            if (!slideAfterNext.length) slideAfterNext = slider
+                .find('.slider-item')
+                .first();
+            if (!slideAfterPrev.length) slideAfterPrev = slider
+                .find('.slider-item')
+                .last();
+
+            let ctrlPrevBgBlock = slider.find('.slider-ctrl-prev')
+                .find('.slider-ctrl-bg-block'),
+                ctrlNextBgBlock = slider.find('.slider-ctrl-next')
+                .find('.slider-ctrl-bg-block'),
+                ctrlPrevFirst = slider.find('.slider-ctrl-prev')
+                .find('.slider-ctrl__bg_first'),
+                ctrlPrevSecond = slider.find('.slider-ctrl-prev')
+                .find('.slider-ctrl__bg_second'),
+                ctrlNextFirst = slider.find('.slider-ctrl-next')
+                .find('.slider-ctrl__bg_first'),
+                ctrlNextSecond = slider.find('.slider-ctrl-next')
+                .find('.slider-ctrl__bg_second');
+
+            ctrlPrevFirst.css(
+                'background-image', `url(${slidePrev.find('.slider__pic').attr('src')})`
+            )
+            ctrlPrevSecond.css(
+                'background-image', `url(${slideAfterPrev.find('.slider__pic').attr('src')})`
+            )
+            ctrlNextFirst.css(
+                'background-image', `url(${slideNext.find('.slider__pic').attr('src')})`
+            )
+            ctrlNextSecond.css(
+                'background-image', `url(${slideAfterNext.find('.slider__pic').attr('src')})`
+            )
+
+            if (direction != 'none') {
+                if (direction == 'next') {
+                    ctrlPrevBgBlock.css({ top: '-100%' });
+                    ctrlNextBgBlock.css({ top: 0 });
+
+                    ctrlPrevBgBlock.animate({ top: 0 }, 1000);
+                    ctrlNextBgBlock.animate({ top: '-100%' }, 1000);
+                } else {
+                    ctrlPrevBgBlock.css({ top: 0 });
+                    ctrlNextBgBlock.css({ top: '-100%' });
+
+                    ctrlPrevBgBlock.animate({ top: '-100%' }, 1000);
+                    ctrlNextBgBlock.animate({ top: 0 }, 1000);
+                }
+            }
+
         }
     }
-
-    // let sliderList = $('.slider-list'),
-    //     activeSlide = $('.slider-item_active'),
-    //     nextSlide = activeSlide.next(),
-    //     prevSlide = activeSlide.prev(),
-    //     ctrlPrev = $('.slider-ctrl-prev'),
-    //     ctrlNext = $('.slider-ctrl-next'),
-    //     newSlide;
-
-    // if (!nextSlide.length) {
-    //     nextSlide = sliderList.find('.slider-item').first();
-    // }
-    // if (!prevSlide.length) {
-    //     prevSlide = sliderList.find('.slider-item').last();
-    // }
-
-    // if ($(this).parent().hasClass('slider-ctrl-prev')) {
-    //     newSlide = prevSlide;
-    // } else {
-    //     newSlide = nextSlide;
-    // }
-
-    // newSlide.addClass('slider-item_active');
-    // newSlide.siblings().removeClass('slider-item_active');
-
-    // let newPrev = newSlide.prev(),
-    //     newNext = newSlide.next();
-
-    // if (!newNext.length) {
-    //     newNext = sliderList.find('.slider-item').first();
-    // }
-    // if (!newPrev.length) {
-    //     newPrev = sliderList.find('.slider-item').last();
-    // }
-
-    // let newPrevImg = newPrev.find('.slider__pic').attr('src'),
-    //     newNextImg = newNext.find('.slider__pic').attr('src');
-    // console.log(newPrevImg, newNextImg);
-    // ctrlPrev.css('background-image', `url(${newPrevImg})`);
-    // ctrlNext.css('background-image', `url(${newNextImg})`);
-
-
 })();
 
 $(document).ready(function() {
