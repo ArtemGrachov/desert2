@@ -13,20 +13,20 @@
         background-size: cover;
     }
     &-title {
-        margin: 0 auto rem(44px);
+        margin: 0 auto rem(39px);
     }
 }
 
 .bio {
     float: left;
     width: 50%;
-    padding: rem(10px);
+    padding: rem(8px) rem(10px);
     &-block {
         width: rem(443px);
         margin: auto;
     }
     &-title {
-        margin: rem(40px) auto rem(25px);
+        margin: rem(38px) auto rem(23px);
     }
 }
 
@@ -34,12 +34,9 @@
     float: left;
     width: 50%;
     padding: rem(10px) 0 0 rem(40px);
-    &-header {
-        margin: auto;
-        text-align: center;
-        .title-medium {
-            width: rem(260px);
-        }
+    &-title {
+        width: rem(260px);
+        margin-bottom: rem(25px);
     }
     &__descr {
         margin-bottom: rem(42px);

@@ -16,6 +16,9 @@ block content
             .avatar__img
             .title-large.blog-title Блог
             .avatar__title Статьи, которые я написал
+        .view-toggle
+            a.view-toggle__btn.view-toggle__btn_down(href="#")
+                +icon('portf_arrow_down','')
         svg(preserveAspectRatio="none" viewBox="0 0 1000 200" class="header__bg header__bg_right")
             path(fill-rule="evenodd" clip-rule="evenodd" d="M0 200L1000 0v400H0V200z")
         svg(preserveAspectRatio="none" viewBox="0 0 1000 200" class="header__bg header__bg_left")
@@ -34,16 +37,29 @@ block content
                         a.blog-nav__link(href="#") Почему я выбрал Jade
         main.content
             ul.articles-list
-                li.articles-item
-                    div.articles__title Самое важное в SASS
-                    div.articles__date 22 ноября 2016
-                    div.articles-content
-                        p Таким образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке направлений прогрессивного развития. Разнообразный и богатый опыт новая модель организационной деятельности играет важную роль в формировании новых предложений. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия.
-                        p Не следует, однако забывать, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации модели развития. С другой стороны рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям.
-                        img(src="/img/blog/articles/blog-pic1.jpg")
-                li.articles-item
-                    div.articles__title Приёмы в вёрстке, без которых не обходится ни один сайт
-                    div.articles__date 13 ноября 2016
-                    div.articles-content
-                        p Таким образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке направлений прогрессивного развития. Разнообразный и богатый опыт новая модель организационной деятельности играет важную роль в формировании новых предложений. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия.
-                        p Не следует, однако забывать, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации модели развития. С другой стороны рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям.
+                +blog-article('Самое важное в SASS','22 ноября 2016')
+                    p Таким образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке направлений прогрессивного развития. Разнообразный и богатый опыт новая модель организационной деятельности играет важную роль в формировании новых предложений. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия.
+                    p Не следует, однако забывать, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации модели развития. С другой стороны рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям.
+                    img(src="/img/blog/articles/blog-pic1.jpg")
+                +blog-article('Приёмы в вёрстке, без которых не обходится ни один сайт','13 ноября 2016')
+                    p Таким образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке направлений прогрессивного развития. Разнообразный и богатый опыт новая модель организационной деятельности играет важную роль в формировании новых предложений. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия.
+                    p Не следует, однако забывать, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации модели развития. С другой стороны рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям.
+                +blog-article('Самый необходимый набор Gulp плагинов','3 июля 2017')
+                    p Cupidatat duis aliquip minim aliquip velit eiusmod nostrud non.
+                    p Magna magna Lorem adipisicing dolore qui minim fugiat nostrud mollit velit. Commodo nostrud aliquip irure id officia. Enim officia voluptate voluptate fugiat anim Lorem sint id irure occaecat aliquip irure.
+                    p Mollit aute sunt amet in duis nisi proident duis commodo.
+                    p Ex qui ullamco laborum aliqua ut id amet ipsum eu ut aliquip dolore est. Fugiat culpa aute aliqua ex mollit officia nulla reprehenderit sit adipisicing proident et. Qui aliquip est fugiat aliqua.
+                    p Proident et aute occaecat reprehenderit elit voluptate cupidatat dolor occaecat tempor pariatur ad. Velit fugiat sint dolore nisi fugiat exercitation pariatur non do mollit aliqua excepteur Lorem. Sunt do nostrud sint enim irure nulla sit nulla esse. Ipsum amet exercitation reprehenderit ex ut id proident exercitation commodo laboris.
+                    p Consectetur quis aute cupidatat deserunt reprehenderit aliqua ea esse excepteur tempor. Cillum non velit proident incididunt aute esse pariatur est pariatur sit aliquip et incididunt. Excepteur nulla quis mollit reprehenderit proident. Laboris culpa adipisicing consectetur laborum commodo ipsum ex ipsum anim laboris proident dolore mollit. Fugiat voluptate commodo id mollit minim ad ut enim amet.
+                    p Minim anim ea et excepteur consequat nostrud sit nisi culpa nisi. Id aliquip proident laboris minim sunt labore. Laboris nisi est duis fugiat reprehenderit. Enim in irure aute occaecat exercitation enim deserunt. Irure officia aute laboris qui nostrud veniam. Amet in quis aute magna Lorem ipsum qui excepteur labore culpa deserunt. Adipisicing sunt amet incididunt sit ex.
+                    p Nisi occaecat in id fugiat ullamco sunt. Ex proident excepteur reprehenderit anim deserunt incididunt voluptate laborum. Minim reprehenderit ipsum nostrud irure occaecat. Aute sint ullamco tempor eiusmod ex ut pariatur voluptate in minim dolor non anim minim. Aliqua adipisicing ipsum adipisicing Lorem. Labore ullamco aliqua anim eiusmod culpa.
+                +blog-article('Почему я выбрал Jade','3 июля 2017')
+                    p Amet velit sit aute nulla aliqua. Id mollit veniam deserunt nostrud magna culpa ex elit. Esse eu proident eu laborum cillum do est culpa ut mollit do. Reprehenderit qui id elit officia adipisicing. Eiusmod aute culpa laborum eu nulla excepteur sint cupidatat veniam ea. Aliquip deserunt excepteur id velit pariatur.
+                    p Cillum aute adipisicing proident laborum.
+                    p Sit ullamco occaecat veniam adipisicing laborum labore labore voluptate dolore.
+                    p Non mollit minim voluptate eiusmod id cillum ad ullamco nulla labore in do aute.
+                    p Tempor esse enim ad ad consectetur et Lorem eiusmod minim proident incididunt. Nisi laborum ullamco veniam occaecat voluptate eu sint consequat in id est tempor ut. Qui culpa qui ad duis veniam aute cupidatat quis dolor adipisicing labore deserunt consequat minim. Qui officia proident occaecat aliqua consequat commodo enim duis commodo et eiusmod officia eu.
+                    p Anim anim Lorem consectetur sit sit id fugiat. Officia dolore deserunt aliqua nostrud. Esse enim sit sunt pariatur id dolore dolor in. Ullamco non reprehenderit minim consectetur exercitation voluptate id laborum amet consectetur aliqua cupidatat dolor. Labore mollit aliquip do pariatur aliquip. Duis voluptate velit adipisicing non reprehenderit deserunt.
+                    p Culpa irure duis ad deserunt enim pariatur incididunt fugiat. Reprehenderit voluptate ea nulla irure. Nostrud nulla sunt officia fugiat velit. Minim labore consectetur minim adipisicing in nulla duis voluptate exercitation sint qui adipisicing pariatur non. Officia ea elit irure labore tempor magna proident do Lorem. Quis nulla ipsum ad incididunt velit sint labore ex. Ea nostrud nostrud laboris amet tempor ipsum amet reprehenderit nostrud ad laboris laboris adipisicing.
+                    p Eiusmod magna sunt incididunt ea labore ex deserunt nulla cillum eu et qui officia ex. Proident occaecat tempor anim magna id incididunt cillum aute reprehenderit aliqua irure cillum magna. Esse irure magna adipisicing excepteur aliqua consequat esse exercitation Lorem qui.
+                

@@ -110,15 +110,17 @@ h6 {
         font-family: 'SansusRegular';
         text-transform: uppercase;
         text-align: center;
-        line-height: 1;
+        line-height: 1.15;
+        position: relative;
     }
     &-large {
         font-size: rem(63px);
-        margin: rem(70px) 0;
+        margin: rem(70px) auto;
+        position: relative;
     }
     &-medium {
         font-size: rem(35px);
-        margin: 0 0 rem(30px);
+        margin: 0 auto rem(30px);
     }
 }
 

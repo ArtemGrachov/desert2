@@ -157,17 +157,19 @@ h6 {
     font-family: 'SansusRegular';
     text-transform: uppercase;
     text-align: center;
-    line-height: 1;
+    line-height: 1.15;
+    position: relative;
 }
 
 .title-large {
     font-size: 3.9375rem;
-    margin: 4.375rem 0;
+    margin: 4.375rem auto;
+    position: relative;
 }
 
 .title-medium, .articles__title {
     font-size: 2.1875rem;
-    margin: 0 0 1.875rem;
+    margin: 0 auto 1.875rem;
 }
 
 .view-toggle {
@@ -828,12 +830,19 @@ input[type="radio"]:checked + label:before {
     margin: auto;
 }
 
-.blog {
-    padding-top: 4.375rem;
-}
-
 .blog-title {
     margin: 1.875rem 0 0;
+}
+
+.blog-nav {
+    padding-top: 4.6875rem;
+}
+
+.blog-nav_fixed {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 25%;
 }
 
 .blog-nav-list {
@@ -864,15 +873,16 @@ input[type="radio"]:checked + label:before {
 
 .blog .sidebar {
     width: 25%;
+    height: 100%;
+    min-height: 100vh;
     float: left;
-    padding-left: 0.625rem;
-    margin-left: 0.625rem;
 }
 
 .blog .content {
     float: left;
     width: 65%;
     padding: 0 1.25rem;
+    padding-top: 4.375rem;
     margin-left: 4.9375rem;
 }
 
@@ -1105,13 +1115,13 @@ input[type="radio"]:checked + label:before {
 }
 
 .about-title {
-    margin: 0 auto 2.75rem;
+    margin: 0 auto 2.4375rem;
 }
 
 .bio {
     float: left;
     width: 50%;
-    padding: 0.625rem;
+    padding: 0.5rem 0.625rem;
 }
 
 .bio-block {
@@ -1120,7 +1130,7 @@ input[type="radio"]:checked + label:before {
 }
 
 .bio-title {
-    margin: 2.5rem auto 1.5625rem;
+    margin: 2.375rem auto 1.4375rem;
 }
 
 .skills {
@@ -1129,13 +1139,9 @@ input[type="radio"]:checked + label:before {
     padding: 0.625rem 0 0 2.5rem;
 }
 
-.skills-header {
-    margin: auto;
-    text-align: center;
-}
-
-.skills-header .title-medium, .skills-header .articles__title {
+.skills-title {
     width: 16.25rem;
+    margin-bottom: 1.5625rem;
 }
 
 .skills__descr {

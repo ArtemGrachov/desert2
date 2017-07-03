@@ -210,10 +210,43 @@ let slider = (function() {
     }
 })();
 
+let blogMenu = function() {
+    let sidebar = $('.sidebar'),
+        blogNav = $('.blog-nav'),
+        articles = $('.articles-item'),
+        articlesTop = [],
+        navPos = 0;
+
+
+    for (let i = 0; i < articles.length; i++) {
+        articlesTop.push($(articles[i]).offset().top);
+    }
+    console.log(articlesTop);
+
+    $(document).on('scroll', function() {
+        let scrollTop = $(window).scrollTop();
+
+        for (let i = 0; i < articlesTop.length; i++) {
+            if (articlesTop[i] < scrollTop) {
+                navPos = i;
+                $('.blog-nav__link_active').removeClass('blog-nav__link_active');
+                $('.blog-nav__link').eq(i).addClass('.blog-nav__link_active');
+            }
+        }
+
+        if (scrollTop > sidebar.offset().top) {
+            blogNav.addClass('blog-nav_fixed');
+        } else {
+            blogNav.removeClass('blog-nav_fixed');
+        }
+    })
+}
+
 $(document).ready(function() {
     authWindow();
     scrollBottom();
     toggleNav();
     drawCircleChart(110, 20);
     slider.init();
+    blogMenu();
 })

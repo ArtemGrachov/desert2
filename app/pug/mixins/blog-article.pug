@@ -1,0 +1,6 @@
+mixin blog-article(title,data)
+    li.articles-item
+        div.articles__title #{title}
+        div.articles__date #{data}
+        div.articles-content
+            block
