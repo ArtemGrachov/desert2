@@ -3,16 +3,14 @@ header.header
         include ../includes/socials.pug
         .nav-toggle
             a.nav-toggle-btn(href="#")
-                div.nav-toggle__el.nav-toggle__el_first
-                div.nav-toggle__el.nav-toggle__el_second
-                div.nav-toggle__el.nav-toggle__el_third
+                div.nav-toggle__el
+                div.nav-toggle__el
+                div.nav-toggle__el
     include ../includes/avatar.pug
     .view-toggle
         a.view-toggle__btn.view-toggle__btn_down(href="#")
             +icon('portf_arrow_down','')
-    <svg preserveAspectRatio="none" viewBox="0 0 1000 200" class="header__bg header__bg_right">
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M0 200L1000 0v400H0V200z"></path>
-    </svg>
-    <svg preserveAspectRatio="none" viewBox="0 0 1000 200" class="header__bg header__bg_left">
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0l1000 200v200H0V0z"></path>
-    </svg>
+    svg(preserveAspectRatio="none" viewBox="0 0 1000 200" class="header__bg header__bg_right")
+        path(fill-rule="evenodd" clip-rule="evenodd" d="M0 200L1000 0v400H0V200z")
+    svg(preserveAspectRatio="none" viewBox="0 0 1000 200" class="header__bg header__bg_left")
+        path(fill-rule="evenodd" clip-rule="evenodd" d="M0 0l1000 200v200H0V0z")

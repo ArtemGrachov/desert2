@@ -120,7 +120,6 @@ let slider = (function() {
                 slideNew.addClass('slider-item_active');
                 slideNew.siblings()
                     .removeClass('slider-item_active');
-
             })
         },
         smallSlide: function(slider, slideActive, direction = 'none') {

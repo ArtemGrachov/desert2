@@ -9,13 +9,17 @@ block content
             include ../includes/socials.pug
             .nav-toggle
                 a.nav-toggle-btn(href="#")
-                    div.nav-toggle__el.nav-toggle__el_first
-                    div.nav-toggle__el.nav-toggle__el_second
-                    div.nav-toggle__el.nav-toggle__el_third
+                    div.nav-toggle__el
+                    div.nav-toggle__el
+                    div.nav-toggle__el
         .avatar
             .avatar__img
             +title('Блог','large','blog-title')
             .avatar__title Статьи, которые я написал
+        svg(preserveAspectRatio="none" viewBox="0 0 1000 200" class="header__bg header__bg_right")
+            path(fill-rule="evenodd" clip-rule="evenodd" d="M0 200L1000 0v400H0V200z")
+        svg(preserveAspectRatio="none" viewBox="0 0 1000 200" class="header__bg header__bg_left")
+            path(fill-rule="evenodd" clip-rule="evenodd" d="M0 0l1000 200v200H0V0z")
     .blog
         aside.sidebar
             nav.blog-nav

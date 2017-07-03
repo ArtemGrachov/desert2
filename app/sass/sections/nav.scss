@@ -38,7 +38,7 @@
         @extend .title-large;
         text-decoration: none;
         color: white;
-        transition: 300ms;
+        transition: $transition;
         display: block;
         .title {
             &-block {
@@ -46,15 +46,6 @@
             }
             &-large {
                 color: white;
-            }
-            &-dec {
-                background: none;
-                transition: 300ms;
-            }
-        }
-        &:hover {
-            .title-dec {
-                background: white;
             }
         }
     }
@@ -65,26 +56,63 @@
             background: white;
             height: rem(5px);
             width: rem(40px);
-            transition: 300ms;
             border-radius: rem(2px);
             position: relative;
-            &_second {
-                margin: rem(10px) 0;
-            }
+            margin: 0 0 rem(10px);
         }
         &_active {
             position: fixed;
             z-index: 10;
             .nav-toggle__el {
-                //!!!!!!!!!!!!!
+                &:first-child {
+                    animation-name: nav-toggle-el1;
+                    animation-duration: $transition;
+                    animation-fill-mode: forwards;
+                }
+                &:nth-child(2) {
+                    animation-name: nav-toggle-el2;
+                    animation-duration: $transition;
+                    animation-fill-mode: forwards;
+                }
+                &:last-child {
+                    animation-name: nav-toggle-el3;
+                    animation-duration: $transition;
+                    animation-fill-mode: forwards;
+                }
             }
         }
     }
     &_active {
-        // background: blue;
         &:before,
         &:after {
             width: 50vw;
         }
+    }
+}
+
+@keyframes nav-toggle-el1 {
+    50% {
+        transform: translateY(rem(15px));
+    }
+    100% {
+        transform: translateY(rem(15px)) rotate(45deg);
+    }
+}
+
+@keyframes nav-toggle-el2 {
+    50% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-45deg);
+    }
+}
+
+@keyframes nav-toggle-el3 {
+    50% {
+        transform: translateY(rem(-15px));
+    }
+    100% {
+        opacity: 0;
     }
 }
