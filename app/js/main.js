@@ -73,8 +73,11 @@ let slider = (function() {
             let _this = this;
 
             $('.slider').each(function() {
-                $(this).find('.slider-item').first()
+                let $this = $(this);
+
+                $this.find('.slider-item').first()
                     .addClass('slider-item_active');
+                _this.smallSlide($this, $this.find('.slider-item_active'));
             });
 
             $('.slider-ctrl__link_prev').on('click', function(e) {
@@ -110,7 +113,7 @@ let slider = (function() {
             } else {
                 slideNew = slideNext;
             }
-            _this.smallSlide(slider, slideActive, direction);
+            _this.smallSlide(slider, slideNew, direction);
 
             slideActive.fadeOut(300, function() {
                 slideNew.fadeIn();
@@ -120,9 +123,19 @@ let slider = (function() {
 
             })
         },
-        smallSlide: function(slider, activeSlide, direction = 'none') {
-            let slideNext = activeSlide.next(),
-                slidePrev = activeSlide.prev();
+        smallSlide: function(slider, slideActive, direction = 'none') {
+            // buttons
+            let ctrlPrev = slider.find('.slider-ctrl-prev'),
+                ctrlNext = slider.find('.slider-ctrl-next'),
+                prevBgFirst = ctrlPrev.find('.slider-ctrl__bg').first(),
+                prevBgSecond = ctrlPrev.find('.slider-ctrl__bg').last(),
+                nextBgFirst = ctrlNext.find('.slider-ctrl__bg').first(),
+                nextBgSecond = ctrlNext.find('.slider-ctrl__bg').last();
+
+            // slides
+            let slideNext = slideActive.next(),
+                slidePrev = slideActive.prev();
+
             if (!slideNext.length) slideNext = slider
                 .find('.slider-item')
                 .first();
@@ -132,6 +145,7 @@ let slider = (function() {
 
             let slideAfterNext = slideNext.next(),
                 slideAfterPrev = slidePrev.prev();
+
             if (!slideAfterNext.length) slideAfterNext = slider
                 .find('.slider-item')
                 .first();
@@ -139,45 +153,57 @@ let slider = (function() {
                 .find('.slider-item')
                 .last();
 
-            let ctrlPrevBgBlock = slider.find('.slider-ctrl-prev')
-                .find('.slider-ctrl-bg-block'),
-                ctrlNextBgBlock = slider.find('.slider-ctrl-next')
-                .find('.slider-ctrl-bg-block'),
-                ctrlPrevFirst = slider.find('.slider-ctrl-prev')
-                .find('.slider-ctrl__bg_first'),
-                ctrlPrevSecond = slider.find('.slider-ctrl-prev')
-                .find('.slider-ctrl__bg_second'),
-                ctrlNextFirst = slider.find('.slider-ctrl-next')
-                .find('.slider-ctrl__bg_first'),
-                ctrlNextSecond = slider.find('.slider-ctrl-next')
-                .find('.slider-ctrl__bg_second');
+            // images
+            let imgActive = slideActive.find('.slider__pic').attr('src'),
+                imgPrev = slidePrev.find('.slider__pic').attr('src'),
+                imgAfterPrev = slideAfterPrev.find('.slider__pic').attr('src'),
+                imgNext = slideNext.find('.slider__pic').attr('src'),
+                imgAfterNext = slideAfterNext.find('.slider__pic').attr('src');
 
-            ctrlPrevFirst.css(
-                'background-image', `url(${slidePrev.find('.slider__pic').attr('src')})`
-            )
-            ctrlPrevSecond.css(
-                'background-image', `url(${slideAfterPrev.find('.slider__pic').attr('src')})`
-            )
-            ctrlNextFirst.css(
-                'background-image', `url(${slideNext.find('.slider__pic').attr('src')})`
-            )
-            ctrlNextSecond.css(
-                'background-image', `url(${slideAfterNext.find('.slider__pic').attr('src')})`
-            )
+            // console.log(imgAfterPrev, imgPrev, imgActive, imgNext, imgAfterNext)
 
-            if (direction != 'none') {
+            // moving
+            if (direction == 'none') {
+                prevBgFirst.css({ top: 0 });
+                prevBgFirst.css({ 'background-image': `url(${imgPrev})` });
+                nextBgFirst.css({ top: 0 });
+                nextBgFirst.css({ 'background-image': `url(${imgNext})` });
+            } else {
                 if (direction == 'next') {
-                    ctrlPrevBgBlock.css({ top: '-100%' });
-                    ctrlNextBgBlock.css({ top: 0 });
+                    // background-image
+                    prevBgFirst.css({ 'background-image': `url(${imgPrev})` });
+                    prevBgSecond.css({ 'background-image': `url(${imgAfterPrev})` });
+                    nextBgFirst.css({ 'background-image': `url(${imgActive})` });
+                    nextBgSecond.css({ 'background-image': `url(${imgNext})` });
 
-                    ctrlPrevBgBlock.animate({ top: 0 }, 1000);
-                    ctrlNextBgBlock.animate({ top: '-100%' }, 1000);
+                    // animation
+                    prevBgFirst.css({ top: '-100%' });
+                    prevBgSecond.css({ top: 0 });
+                    nextBgFirst.css({ top: 0 });
+                    nextBgSecond.css({ top: '100%' })
+
+                    prevBgFirst.animate({ top: 0 }, 1000);
+                    prevBgSecond.animate({ top: '100%' }, 1000);
+                    nextBgFirst.animate({ top: '-100%' }, 1000);
+                    nextBgSecond.animate({ top: 0 }, 1000);
+
                 } else {
-                    ctrlPrevBgBlock.css({ top: 0 });
-                    ctrlNextBgBlock.css({ top: '-100%' });
+                    // background-image
+                    prevBgFirst.css({ 'background-image': `url(${imgActive})` });
+                    prevBgSecond.css({ 'background-image': `url(${imgPrev})` });
+                    nextBgFirst.css({ 'background-image': `url(${imgNext})` });
+                    nextBgSecond.css({ 'background-image': `url(${imgAfterNext})` });
 
-                    ctrlPrevBgBlock.animate({ top: '-100%' }, 1000);
-                    ctrlNextBgBlock.animate({ top: 0 }, 1000);
+                    // animation
+                    prevBgFirst.css({ top: 0 });
+                    prevBgSecond.css({ top: '100%' });
+                    nextBgFirst.css({ top: '-100%' });
+                    nextBgSecond.css({ top: 0 })
+
+                    prevBgFirst.animate({ top: '-100%' }, 1000);
+                    prevBgSecond.animate({ top: 0 }, 1000);
+                    nextBgFirst.animate({ top: 0 }, 1000);
+                    nextBgSecond.animate({ top: '100%' }, 1000);
                 }
             }
 
