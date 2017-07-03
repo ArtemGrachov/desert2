@@ -12,17 +12,17 @@ block content
             .slider
                 .slider-ctrl
                     .slider-ctrl-prev
-                        a(href="#").slider-ctrl__link
-                            +icon('portf_arrow_down','')
+                        a(href="#").slider-ctrl__link.slider-ctrl__link_prev
+                            i.fa.fa-chevron-down(aria-hidden="true")
                     .slider-ctrl-next
-                        a(href="#").slider-ctrl__link  
-                            +icon('portf_arrow_up','')                  
+                        a(href="#").slider-ctrl__link.slider-ctrl__link_next
+                            i.fa.fa-chevron-up(aria-hidden="true")
                 ul.slider-list
-                    li.slider-item.slider-item_active
+                    li.slider-item
                         .slider-descr
                             .slider-descr-block
                                 .slider__name
-                                    +title('Сайт школы онлайн образования','medium','slider-title')
+                                    +title('#1 Сайт школы онлайн образования','medium','slider-title')
                                 .slider__info HTML, CSS, JavaScript
                                 a(href="#").btn.slider-btn
                                     i.fa.fa-link(aria-hidden="true")
@@ -33,7 +33,7 @@ block content
                         .slider-descr
                             .slider-descr-block
                                 .slider__name
-                                    +title('itLoft','medium','slider-title')
+                                    +title('#2 itLoft','medium','slider-title')
                                 .slider__info HTML, CSS, JavaScript
                                 a(href="#").btn.slider-btn
                                     i.fa.fa-link(aria-hidden="true")
@@ -44,7 +44,7 @@ block content
                         .slider-descr
                             .slider-descr-block
                                 .slider__name
-                                    +title('Loftblog','medium','slider-title')
+                                    +title('#3 Loftblog','medium','slider-title')
                                 .slider__info HTML, CSS, JavaScript
                                 a(href="#").btn.slider-btn
                                     i.fa.fa-link(aria-hidden="true")
@@ -55,7 +55,7 @@ block content
                         .slider-descr
                             .slider-descr-block
                                 .slider__name
-                                    +title('Атма йога','medium','slider-title')
+                                    +title('#4 Атма йога','medium','slider-title')
                                 .slider__info HTML, CSS, JavaScript
                                 a(href="#").btn.slider-btn
                                     i.fa.fa-link(aria-hidden="true")

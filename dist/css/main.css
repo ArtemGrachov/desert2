@@ -248,9 +248,29 @@ textarea {
     max-width: 100%;
     border-radius: 0.1875rem;
     border: none;
-    padding: 0.625rem 1.25rem;
+    padding: 0.5625rem 1.25rem;
+    border: 1px solid white;
     line-height: inherit;
     margin-bottom: 1.25rem;
+}
+
+input[type="text"]:focus,
+  input[type="password"]:focus,
+  input[type="email"]:focus,
+  textarea:focus {
+    border: 1px solid #e7a731;
+}
+
+input[type="text"]:focus + .input-group__icon,
+    input[type="password"]:focus + .input-group__icon,
+    input[type="email"]:focus + .input-group__icon,
+    textarea:focus + .input-group__icon {
+    color: #e7a731;
+}
+
+textarea {
+    -webkit-transition: 500ms;
+    transition: 500ms;
 }
 
 input[type="checkbox"] {
@@ -333,6 +353,8 @@ input[type="radio"]:checked + label:before {
     flex-shrink: 0;
     text-align: center;
     color: #c4cbcd;
+    -webkit-transition: 500ms;
+    transition: 500ms;
 }
 
 .input-group > input {
@@ -850,14 +872,19 @@ input[type="radio"]:checked + label:before {
 }
 
 .slider-item {
+    position: absolute;
     width: 100%;
     height: 100vh;
+    display: none;
+}
+
+.slider-item_active {
+    display: block;
 }
 
 .slider-descr {
     height: 100vh;
     width: 50%;
-    outline: 1px solid green;
     float: left;
     text-align: center;
     display: -webkit-box;
@@ -884,35 +911,60 @@ input[type="radio"]:checked + label:before {
     height: 100vh;
     padding-bottom: 30vh;
     float: right;
-    outline: 1px solid blue;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
 }
 
 .slider__pic {
-    max-height: 100%;
-    max-width: 100%;
+    max-height: 90%;
+    max-width: 90%;
     display: block;
     margin: auto;
 }
 
 .slider-ctrl {
-    outline: 1px solid red;
     position: absolute;
     width: 50%;
     height: 30vh;
     bottom: 0;
     left: 50%;
-    background: rgba(195, 189, 174, 0.7);
+    font-size: 2.75rem;
+    z-index: 1;
 }
 
 .slider-ctrl-prev, .slider-ctrl-next {
     width: 50%;
     height: 100%;
     float: left;
-    outline: 1px solid orange;
+    background-size: cover;
+    -webkit-transition: 500ms;
+    transition: 500ms;
 }
 
 .slider-ctrl__link {
     color: white;
+    text-shadow: 0 0 0.125rem rgba(0, 0, 0, 0.16);
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    background: rgba(195, 189, 174, 0.7);
+    position: relative;
+}
+
+.slider-ctrl__link:hover .fa {
+    top: 35%;
+}
+
+.slider-ctrl__link .fa {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -webkit-transition: 500ms;
+    transition: 500ms;
 }
 
 .quotes {

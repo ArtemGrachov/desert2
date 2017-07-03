@@ -10,7 +10,7 @@ a,
 input,
 input+label:before,
 .input-icon {
-    transition: 500ms;
+    transition: $transition;
 }
 
 input[type="text"],
@@ -21,9 +21,20 @@ textarea {
     max-width: 100%;
     border-radius: rem(3px);
     border: none;
-    padding: rem(10px) rem(20px);
+    padding: rem(9px) rem(20px);
+    border: 1px solid white;
     line-height: inherit;
     margin-bottom: rem(20px);
+    &:focus {
+        border: 1px solid $light-brown;
+        +.input-group__icon {
+            color: $light-brown;
+        }
+    }
+}
+
+textarea {
+    transition: $transition;
 }
 
 input[type="checkbox"] {
@@ -47,7 +58,7 @@ input[type="checkbox"] {
         content: "\f00c";
         color: white;
         background: $light-brown;
-        font-family: 'FontAwesome'
+        font-family: 'FontAwesome';
     }
 }
 
@@ -92,6 +103,7 @@ input[type="radio"] {
         flex-shrink: 0;
         text-align: center;
         color: #c4cbcd;
+        transition: $transition;
     }
     &>input {
         margin: 0;
