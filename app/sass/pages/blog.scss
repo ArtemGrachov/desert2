@@ -23,10 +23,10 @@
         &-list {
             list-style: none;
             margin: rem(-12px) 0;
-            padding: 0;
+            padding: 0 0 0 rem(10px);
         }
         &__item {
-            margin: rem(12px) 0;
+            margin: rem(10px) 0;
         }
         &__link {
             display: block;
@@ -54,9 +54,7 @@
     .content {
         float: left;
         width: 65%;
-        padding: 0 rem(20px);
-        padding-top: rem(70px);
-        margin-left: rem(79px);
+        padding: rem(68px)0 0 rem(98px);
     }
 }
 
@@ -68,7 +66,7 @@
     }
     &-item {
         padding: 0 0 rem(63px);
-        margin: 0 0 rem(70px);
+        margin: 0 0 rem(68px);
         border-bottom: 5px solid #ecebe4;
         &:last-child {
             border: none;
@@ -77,15 +75,12 @@
     &__title {
         text-align: left;
         text-transform: none;
-        margin: 0 0 rem(12px);
+        margin: 0 0 rem(10px);
         line-height: 1.2;
         @extend .title-medium;
     }
     &__date {
         color: $dark-brown;
-        margin: 0 0 rem(17px);
+        margin: 0 0 rem(16px);
     }
-    // &-content {
-    //     line-height: 1.65;
-    // }
 }

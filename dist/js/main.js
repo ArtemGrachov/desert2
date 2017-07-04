@@ -31,7 +31,8 @@ let toggleNav = function() {
     $('.nav-toggle-btn').on('click', function(e) {
         e.preventDefault();
         let nav = $('.nav'),
-            navToggle = $('.nav-toggle');
+            navToggle = $('.nav-toggle'),
+            navItems = $('.nav__item');
 
         if (nav.hasClass('nav_active')) {
             nav.fadeToggle(300, function() {
@@ -43,6 +44,14 @@ let toggleNav = function() {
                 nav.addClass('nav_active');
             });
             navToggle.addClass('nav-toggle_active');
+            console.log(navItems.length);
+            for (let i = 0; i < navItems.length; i++) {
+                $(navItems[i]).css('opacity', 0);
+                setTimeout(function() {
+                    $(navItems[i]).animate({ 'opacity': 1 }, 200);
+                }, 200 * i)
+            }
+
         }
     })
 }
