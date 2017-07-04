@@ -1,0 +1,12 @@
+mixin slider-item(title,descr,link,img)
+    li.slider-item
+        .slider-img
+            img(src=img).slider__pic
+        .slider-descr
+            .slider-descr-block
+                .slider__name
+                    .title-medium.slider-title #{title}
+                .slider__info #{descr}
+                a(href=link target="_blank").btn.slider-btn
+                    i.fa.fa-link(aria-hidden="true")
+                    | Посмотреть 

@@ -42,6 +42,12 @@
     }
 }
 
+@mixin iphone {
+    @media screen and (max-width: 320px) {
+        @content;
+    }
+}
+
 @mixin media-query($width) {
     @media screen and (max-width: $width) {
         @content;

@@ -18,9 +18,7 @@
     &-nav {
         padding-top: rem(75px);
         @include media-query(900px) {
-            position: fixed;
-            right: 100%;
-            top: 0;
+            display: none;
         }
         &_fixed {
             position: fixed;
@@ -70,10 +68,13 @@
     .content {
         float: left;
         width: 65%;
-        padding: rem(68px)0 0 rem(98px);
+        padding: rem(68px) 0 0 rem(98px);
         @include media-query(900px) {
             width: 100%;
             padding: rem(68px) rem(24px) 0;
+        }
+        @include iphone {
+            padding: rem(32px) rem(10px) 0;
         }
     }
 }
@@ -104,6 +105,9 @@
         @extend .title-medium;
         @include tablets {
             margin: 0 0 rem(6px);
+        }
+        @include iphone {
+            margin-bottom: rem(7px);
         }
     }
     &__date {

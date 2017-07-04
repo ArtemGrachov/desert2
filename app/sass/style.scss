@@ -59,6 +59,9 @@ h6 {
     .fa {
         margin-right: rem(10px);
     }
+    @include iphone {
+        padding: rem(11px) rem(20px);
+    }
 }
 
 .window {
@@ -71,6 +74,9 @@ h6 {
     margin: auto;
     @include tablets {
         width: rem(348px);
+    }
+    @include iphone {
+        width: rem(300px);
     }
     &-content {
         padding: rem(38px) rem(20px) rem(20px);
@@ -124,12 +130,19 @@ h6 {
             font-size: rem(49px);
             letter-spacing: rem(1px);
         }
+        @include iphone {
+            font-size: rem(35px);
+        }
     }
     &-medium {
         font-size: rem(35px);
         margin: 0 auto rem(30px);
         @include tablets {
             font-size: rem(30px);
+        }
+        @include iphone {
+            font-size: rem(21px);
+            line-height: 1.4;
         }
     }
 }

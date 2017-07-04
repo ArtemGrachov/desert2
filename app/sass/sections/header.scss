@@ -1,15 +1,10 @@
 .header {
     width: 100vw;
     height: 100vh;
-    // min-height: rem(650px);
-    // background-image: url('../img/misc/bg.svg'), url('../img/sand.jpg');
-    // background-position: center 130%, left 15%;
-    // background-repeat: no-repeat, repeat-x;
     background-image: url('../img/sand.jpg');
     background-color: #faecdc;
     background-position: left center;
     background-repeat: repeat-x;
-    ////
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -23,7 +18,13 @@
                 &:hover {
                     color: $dark-brown;
                 }
+                @include iphone {
+                    font-size: rem(24px);
+                }
             }
+        }
+        @include iphone {
+            padding: rem(8px);
         }
     }
     &__bg {

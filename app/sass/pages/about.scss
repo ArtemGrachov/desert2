@@ -14,6 +14,9 @@
         @include tablets {
             height: rem(416px);
         }
+        @include iphone {
+            height: rem(283px);
+        }
     }
     &-title {
         margin: 0 auto rem(39px);
@@ -23,12 +26,25 @@
 .bio {
     float: left;
     width: 50%;
-    padding: rem(8px) rem(10px);
+    padding: rem(8px) 0;
+    @include tablets {
+        background: $white;
+        width: auto;
+        float: none;
+        padding-bottom: rem(36px);
+    }
+    @include iphone {
+        padding-bottom: rem(13px);
+        background: none;
+    }
     &-block {
         width: rem(443px);
         margin: auto;
         @include tablets {
             width: rem(472px);
+        }
+        @include media-query(472px) {
+            width: 100%;
         }
     }
     &-title {
@@ -36,44 +52,58 @@
         @include tablets {
             margin: rem(48px) auto 0;
         }
+        @include iphone {
+            margin: rem(28px) auto 0;
+        }
     }
-    @include tablets {
-        background: $white;
-        width: auto;
-        float: none;
-        padding-bottom: rem(36px);
+    &-text {
+        line-height: 1.55;
+        @include iphone {
+            padding: 0 rem(10px);
+            line-height: 1.75;
+        }
     }
 }
 
 .skills {
     float: left;
     width: 50%;
-    padding: rem(12px) 0 0 rem(40px);
+    padding: rem(11px) 0 0 rem(40px);
     @include tablets {
         background: #f0ebde;
         width: auto;
         float: none;
-        padding: rem(46px) 0 0 rem(40px);
+        padding: rem(46px) rem(10px) rem(40px);
+    }
+    @include iphone {
+        padding: rem(29px) rem(10px) rem(40px);
     }
     &-header {
         width: rem(260px);
-        margin-bottom: rem(25px);
+        margin-bottom: rem(23px);
         @include tablets {
             margin-bottom: rem(8px);
+        }
+        @include iphone {
+            margin-bottom: rem(5px);
         }
     }
     &__descr {
         margin: 0 auto rem(42px);
+        line-height: 1.6;
         @include tablets {
             width: rem(472px);
             margin-bottom: rem(36px);
         }
+        @include media-query(472px) {
+            width: 100%;
+        }
+        @include iphone {
+            margin-bottom: rem(15px);
+        }
     }
     &-block {
-        margin: rem(15px) 0 rem(7px);
-        @include tablets {
-            margin-top: rem(25px);
-        }
+        margin-bottom: rem(14px);
     }
     &-list {
         margin: 0;
@@ -86,7 +116,7 @@
     }
     &-item {
         display: inline-block;
-        margin: rem(8px) rem(16px);
+        margin: rem(8px) rem(15px);
     }
     &__title {
         font-size: rem(28px);
@@ -118,5 +148,10 @@
     }
     &__item {
         margin: rem(18px) 0;
+    }
+    &-title {
+        @include iphone {
+            font-size: rem(35px);
+        }
     }
 }
