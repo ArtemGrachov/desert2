@@ -6,25 +6,61 @@
     justify-content: space-between;
     padding: rem(26px) 0 rem(20px);
     line-height: 1.55;
+    @include tablets {
+        padding-left: rem(24px);
+        padding-right: rem(24px);
+    }
+    @include tablets {
+        display: block;
+        height: $footer-height-tablets;
+    }
     &-block {
         padding: 0 rem(30px);
+        @include tablets {
+            padding: 0;
+        }
         &_left {
             width: rem(418px);
+            @include tablets {
+                text-align: center;
+                width: 100%;
+                padding-bottom: rem(16px);
+                border-bottom: 1px solid #767b7d;
+                margin-bottom: rem(14px)
+            }
         }
         &_center {
             border-left: 1px solid #767b7d;
+            @include tablets {
+                width: 60%;
+                float: left;
+                border: none;
+            }
         }
         &_right {
             border-left: 1px solid #767b7d;
+            @include tablets {
+                width: 40%;
+                float: right;
+                border: none;
+                text-align: right;
+            }
         }
     }
     &__descr {
         opacity: .5;
         font-family: 'RobotoLight';
+        @include tablets {
+            display: inline-block;
+        }
         &_white {
             font-family: 'RobotoRegular';
             opacity: 1;
             margin-bottom: rem(2px);
+            @include tablets {
+                display: block;
+                margin-bottom: rem(10px);
+            }
         }
     }
     &-nav {
@@ -34,6 +70,9 @@
             list-style: none;
             line-height: 1.6;
             margin: 0 rem(-17px);
+            @include tablets {
+                margin: 0 rem(-15px);
+            }
         }
         &__item {
             display: inline-block;
@@ -42,6 +81,9 @@
             text-decoration: none;
             color: white;
             margin: 0 rem(17px);
+            @include tablets {
+                margin: 0 rem(13.5px);
+            }
             &:hover {
                 color: $dark-brown;
             }
@@ -57,5 +99,8 @@
     .socials {
         margin-top: rem(40px);
         text-align: left;
+        @include tablets {
+            margin-top: rem(10px);
+        }
     }
 }

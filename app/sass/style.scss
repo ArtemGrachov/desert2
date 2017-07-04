@@ -9,6 +9,11 @@ body {
     height: 100%;
     line-height: 1.65;
     background: $white;
+    @include tablets {
+        font-size: rem(14px);
+        // line-height: 1.55;
+        background: white;
+    }
 }
 
 *,
@@ -64,6 +69,9 @@ h6 {
     transition: 1s;
     background: rgba(#d7bf9b, .3);
     margin: auto;
+    @include tablets {
+        width: rem(348px);
+    }
     &-content {
         padding: rem(38px) rem(20px) rem(20px);
     }
@@ -110,12 +118,19 @@ h6 {
     }
     &-large {
         font-size: rem(63px);
-        margin: rem(70px) 0;
+        margin: rem(70px) auto;
         letter-spacing: rem(1.8px);
+        @include tablets {
+            font-size: rem(49px);
+            letter-spacing: rem(1px);
+        }
     }
     &-medium {
         font-size: rem(35px);
         margin: 0 auto rem(30px);
+        @include tablets {
+            font-size: rem(30px);
+        }
     }
 }
 
@@ -126,6 +141,9 @@ h6 {
     &__btn {
         color: white;
         font-size: rem(26px);
+    }
+    @include tablets {
+        margin: rem(38px) 0;
     }
 }
 

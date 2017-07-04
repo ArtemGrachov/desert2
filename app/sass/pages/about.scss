@@ -11,6 +11,9 @@
         background: url('../img/misc/avatar-large.jpg');
         height: rem(390px);
         background-size: cover;
+        @include tablets {
+            height: rem(416px);
+        }
     }
     &-title {
         margin: 0 auto rem(39px);
@@ -24,9 +27,21 @@
     &-block {
         width: rem(443px);
         margin: auto;
+        @include tablets {
+            width: rem(472px);
+        }
     }
     &-title {
         margin: rem(38px) auto rem(23px);
+        @include tablets {
+            margin: rem(48px) auto 0;
+        }
+    }
+    @include tablets {
+        background: $white;
+        width: auto;
+        float: none;
+        padding-bottom: rem(36px);
     }
 }
 
@@ -34,21 +49,40 @@
     float: left;
     width: 50%;
     padding: rem(12px) 0 0 rem(40px);
-    &-title {
+    @include tablets {
+        background: #f0ebde;
+        width: auto;
+        float: none;
+        padding: rem(46px) 0 0 rem(40px);
+    }
+    &-header {
         width: rem(260px);
         margin-bottom: rem(25px);
+        @include tablets {
+            margin-bottom: rem(8px);
+        }
     }
     &__descr {
-        margin-bottom: rem(42px);
+        margin: 0 auto rem(42px);
+        @include tablets {
+            width: rem(472px);
+            margin-bottom: rem(36px);
+        }
     }
     &-block {
         margin: rem(15px) 0 rem(7px);
+        @include tablets {
+            margin-top: rem(25px);
+        }
     }
     &-list {
         margin: 0;
         padding: 0;
         list-style: none;
         margin: 0 rem(-18px);
+        @include tablets {
+            text-align: center;
+        }
     }
     &-item {
         display: inline-block;
@@ -57,6 +91,10 @@
     &__title {
         font-size: rem(28px);
         font-family: 'RobotoMedium';
+        @include tablets {
+            font-size: rem(21px);
+            text-align: center;
+        }
     }
 }
 

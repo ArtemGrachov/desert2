@@ -8,7 +8,8 @@ block content
     include ../sections/header.pug
     .works
         .works-top
-            +page-header('Мои работы','urltest')
+            //- +page-header('Мои работы','urltest')
+            .title-large.works-title Мои работы
             .slider
                 .slider-ctrl
                     .slider-ctrl-prev
@@ -23,51 +24,52 @@ block content
                         .slider-ctrl__bg
                 ul.slider-list
                     li.slider-item
-                        .slider-descr
-                            .slider-descr-block
-                                .slider__name
-                                    .title-medium Сайт школы онлайн образования
-                                .slider__info HTML, CSS, JavaScript
-                                a(href="#").btn.slider-btn
-                                    i.fa.fa-link(aria-hidden="true")
-                                    | Посмотреть сайт
                         .slider-img
                             img(src="../img/works/slider/work-1.png").slider__pic
-                    li.slider-item
                         .slider-descr
                             .slider-descr-block
                                 .slider__name
-                                    .title-medium itLoft
+                                    .title-medium.slider-title Сайт школы онлайн образования
                                 .slider__info HTML, CSS, JavaScript
                                 a(href="#").btn.slider-btn
                                     i.fa.fa-link(aria-hidden="true")
                                     | Посмотреть сайт
+                    li.slider-item
                         .slider-img
                             img(src="../img/works/slider/work-2.png").slider__pic
-                    li.slider-item
                         .slider-descr
                             .slider-descr-block
                                 .slider__name
-                                    .title-medium Loftblog
+                                    .title-medium.slider-title itLoft
                                 .slider__info HTML, CSS, JavaScript
                                 a(href="#").btn.slider-btn
                                     i.fa.fa-link(aria-hidden="true")
                                     | Посмотреть сайт
+                    li.slider-item
                         .slider-img
                             img(src="../img/works/slider/work-3.png").slider__pic
-                    li.slider-item
                         .slider-descr
                             .slider-descr-block
                                 .slider__name
-                                    .title-medium Атма йога
+                                    .title-medium.slider-title Loftblog
                                 .slider__info HTML, CSS, JavaScript
                                 a(href="#").btn.slider-btn
                                     i.fa.fa-link(aria-hidden="true")
                                     | Посмотреть сайт
+                    li.slider-item
                         .slider-img
                             img(src="../img/works/slider/work-4.png").slider__pic
+                        .slider-descr
+                            .slider-descr-block
+                                .slider__name
+                                    .title-medium.slider-title Атма йога
+                                .slider__info HTML, CSS, JavaScript
+                                a(href="#").btn.slider-btn
+                                    i.fa.fa-link(aria-hidden="true")
+                                    | Посмотреть сайт
         .quotes
-            +page-header('Что обо мне говорят','urltest')
+            //- +page-header('Что обо мне говорят','urltest')
+            .title-large.quotes-title Что обо мне говорят
             ul.quotes-list
                 li.quotes__item
                     .quotes__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!

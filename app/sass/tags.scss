@@ -120,4 +120,7 @@ input[type="radio"] {
 
 p {
     margin: rem(10px) 0;
+    @include tablets {
+        margin: rem(9px) 0;
+    }
 }

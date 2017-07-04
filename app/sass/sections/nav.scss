@@ -51,6 +51,9 @@
     &-toggle {
         position: absolute;
         right: rem(30px);
+        @include tablets {
+            right: rem(26px);
+        }
         &__el {
             background: white;
             height: rem(5px);

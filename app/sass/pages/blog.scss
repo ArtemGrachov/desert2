@@ -4,6 +4,9 @@
     .avatar {
         margin: auto;
     }
+    .header__bg {
+        fill: white;
+    }
 }
 
 .blog {
@@ -14,11 +17,20 @@
     }
     &-nav {
         padding-top: rem(75px);
+        @include media-query(900px) {
+            position: fixed;
+            right: 100%;
+            top: 0;
+        }
         &_fixed {
             position: fixed;
             left: rem(10px);
             top: 0;
             width: 25%;
+            @include media-query(900px) {
+                right: 100%;
+                left: auto;
+            }
         }
         &-list {
             list-style: none;
@@ -50,11 +62,19 @@
         // щоб залишилася ширина, коли меню стане фіксованим
         float: left;
         margin-left: rem(10px);
+        @include media-query(900px) {
+            width: 0;
+            margin: 0;
+        }
     }
     .content {
         float: left;
         width: 65%;
         padding: rem(68px)0 0 rem(98px);
+        @include media-query(900px) {
+            width: 100%;
+            padding: rem(68px) rem(24px) 0;
+        }
     }
 }
 
@@ -71,6 +91,10 @@
         &:last-child {
             border: none;
         }
+        @include tablets {
+            padding: 0 0 rem(44px);
+            margin: 0 0 rem(46px);
+        }
     }
     &__title {
         text-align: left;
@@ -78,9 +102,20 @@
         margin: 0 0 rem(10px);
         line-height: 1.2;
         @extend .title-medium;
+        @include tablets {
+            margin: 0 0 rem(6px);
+        }
     }
     &__date {
         color: $dark-brown;
         margin: 0 0 rem(16px);
+        @include tablets {
+            font-size: rem(14px);
+            // margin: 0 0 rem(6px);
+            margin: 0;
+        }
+    }
+    &-content {
+        line-height: 1.55;
     }
 }
