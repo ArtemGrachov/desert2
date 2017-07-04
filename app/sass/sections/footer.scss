@@ -4,7 +4,8 @@
     color: white;
     display: flex;
     justify-content: space-between;
-    padding: rem(24px) 0 rem(20px);
+    padding: rem(26px) 0 rem(20px);
+    line-height: 1.55;
     &-block {
         padding: 0 rem(30px);
         &_left {
@@ -19,8 +20,11 @@
     }
     &__descr {
         opacity: .5;
+        font-family: 'RobotoLight';
         &_white {
+            font-family: 'RobotoRegular';
             opacity: 1;
+            margin-bottom: rem(2px);
         }
     }
     &-nav {
@@ -28,6 +32,7 @@
             padding: 0;
             margin: 0;
             list-style: none;
+            line-height: 1.6;
             margin: 0 rem(-17px);
         }
         &__item {
@@ -37,6 +42,9 @@
             text-decoration: none;
             color: white;
             margin: 0 rem(17px);
+            &:hover {
+                color: $dark-brown;
+            }
         }
     }
     &-contacts-list {

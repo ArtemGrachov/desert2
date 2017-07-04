@@ -67,7 +67,8 @@ let drawCircleChart = function(chartDiam, strokeWidth) {
 }
 
 let slider = (function() {
-
+    let flag = true,
+        toggleSpeed = 500;
     return {
         init: function() {
             let _this = this;
@@ -85,6 +86,7 @@ let slider = (function() {
                 let $this = $(this),
                     slider = $this.closest('.slider');
                 _this.moveSlide(slider, 'prev');
+
             });
 
             $('.slider-ctrl__link_next').on('click', function(e) {
@@ -95,32 +97,36 @@ let slider = (function() {
             });
         },
         moveSlide: function(slider, direction) {
-            let _this = this,
-                slideActive = slider.find('.slider-item_active'),
-                slideNext = slideActive.next(),
-                slidePrev = slideActive.prev(),
-                slideNew;
+            if (flag) {
+                let _this = this,
+                    slideActive = slider.find('.slider-item_active'),
+                    slideNext = slideActive.next(),
+                    slidePrev = slideActive.prev(),
+                    slideNew;
+                flag = false;
 
-            if (!slideNext.length) slideNext = slider
-                .find('.slider-item')
-                .first();
-            if (!slidePrev.length) slidePrev = slider
-                .find('.slider-item')
-                .last();
+                if (!slideNext.length) slideNext = slider
+                    .find('.slider-item')
+                    .first();
+                if (!slidePrev.length) slidePrev = slider
+                    .find('.slider-item')
+                    .last();
 
-            if (direction == 'prev') {
-                slideNew = slidePrev;
-            } else {
-                slideNew = slideNext;
+                if (direction == 'prev') {
+                    slideNew = slidePrev;
+                } else {
+                    slideNew = slideNext;
+                }
+                _this.smallSlide(slider, slideNew, direction);
+
+                slideActive.fadeOut(toggleSpeed, function() {
+                    slideNew.fadeIn();
+                    slideNew.addClass('slider-item_active');
+                    slideNew.siblings()
+                        .removeClass('slider-item_active');
+                    flag = true;
+                })
             }
-            _this.smallSlide(slider, slideNew, direction);
-
-            slideActive.fadeOut(300, function() {
-                slideNew.fadeIn();
-                slideNew.addClass('slider-item_active');
-                slideNew.siblings()
-                    .removeClass('slider-item_active');
-            })
         },
         smallSlide: function(slider, slideActive, direction = 'none') {
             // buttons
@@ -181,10 +187,10 @@ let slider = (function() {
                     nextBgFirst.css({ top: 0 });
                     nextBgSecond.css({ top: '100%' })
 
-                    prevBgFirst.animate({ top: 0 }, 1000);
-                    prevBgSecond.animate({ top: '100%' }, 1000);
-                    nextBgFirst.animate({ top: '-100%' }, 1000);
-                    nextBgSecond.animate({ top: 0 }, 1000);
+                    prevBgFirst.animate({ top: 0 }, toggleSpeed);
+                    prevBgSecond.animate({ top: '100%' }, toggleSpeed);
+                    nextBgFirst.animate({ top: '-100%' }, toggleSpeed);
+                    nextBgSecond.animate({ top: 0 }, toggleSpeed);
 
                 } else {
                     // background-image
@@ -199,10 +205,10 @@ let slider = (function() {
                     nextBgFirst.css({ top: '-100%' });
                     nextBgSecond.css({ top: 0 })
 
-                    prevBgFirst.animate({ top: '-100%' }, 1000);
-                    prevBgSecond.animate({ top: 0 }, 1000);
-                    nextBgFirst.animate({ top: 0 }, 1000);
-                    nextBgSecond.animate({ top: '100%' }, 1000);
+                    prevBgFirst.animate({ top: '-100%' }, toggleSpeed);
+                    prevBgSecond.animate({ top: 0 }, toggleSpeed);
+                    nextBgFirst.animate({ top: 0 }, toggleSpeed);
+                    nextBgSecond.animate({ top: '100%' }, toggleSpeed);
                 }
             }
 
@@ -211,35 +217,43 @@ let slider = (function() {
 })();
 
 let blogMenu = function() {
-    let sidebar = $('.sidebar'),
-        blogNav = $('.blog-nav'),
-        articles = $('.articles-item'),
-        articlesTop = [],
-        navPos = 0;
+    if ($('.blog').length) {
+        let sidebar = $('.sidebar'),
+            blogNav = $('.blog-nav'),
+            articles = $('.articles-item'),
+            articlesTop = [],
+            navPos = 0;
 
+        for (let i = 0; i < articles.length; i++) {
+            articlesTop.push($(articles[i]).offset().top);
+        }
 
-    for (let i = 0; i < articles.length; i++) {
-        articlesTop.push($(articles[i]).offset().top);
-    }
-    console.log(articlesTop);
+        $(document).on('scroll', function() {
+            let scrollTop = $(window).scrollTop();
 
-    $(document).on('scroll', function() {
-        let scrollTop = $(window).scrollTop();
-
-        for (let i = 0; i < articlesTop.length; i++) {
-            if (articlesTop[i] < scrollTop) {
-                navPos = i;
-                $('.blog-nav__link_active').removeClass('blog-nav__link_active');
-                $('.blog-nav__link').eq(i).addClass('.blog-nav__link_active');
+            for (let i = 0; i < articlesTop.length; i++) {
+                if (articlesTop[i] < scrollTop + $(window).height() / 2) {
+                    navPos = i;
+                    $('.blog-nav__link_active').removeClass('blog-nav__link_active');
+                    $('.blog-nav__link').eq(i).addClass('blog-nav__link_active');
+                }
             }
-        }
 
-        if (scrollTop > sidebar.offset().top) {
-            blogNav.addClass('blog-nav_fixed');
-        } else {
-            blogNav.removeClass('blog-nav_fixed');
-        }
-    })
+            if (scrollTop > sidebar.offset().top) {
+                blogNav.addClass('blog-nav_fixed');
+            } else {
+                blogNav.removeClass('blog-nav_fixed');
+            }
+        })
+
+        $('.blog-nav__link').on('click', function(e) {
+            e.preventDefault();
+            let articleIndex = $(this).closest('.blog-nav__item').index(),
+                articleTop = $('.articles-item').eq(articleIndex).offset().top;
+            $('body, html').animate({ scrollTop: articleTop - 70 }, 1500);
+        })
+    }
+
 }
 
 $(document).ready(function() {

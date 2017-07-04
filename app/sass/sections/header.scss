@@ -1,7 +1,7 @@
 .header {
     width: 100vw;
     height: 100vh;
-    min-height: rem(650px);
+    // min-height: rem(650px);
     // background-image: url('../img/misc/bg.svg'), url('../img/sand.jpg');
     // background-position: center 130%, left 15%;
     // background-repeat: no-repeat, repeat-x;
@@ -30,7 +30,7 @@
         width: 50vw;
         position: absolute;
         bottom: 0;
-        fill: white;
+        fill: $white;
         &_left {
             left: 0;
         }

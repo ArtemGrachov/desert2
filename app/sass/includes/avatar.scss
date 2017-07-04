@@ -11,8 +11,9 @@
         margin: auto;
     }
     &__name {
-        margin-top: rem(23px);
+        margin-top: rem(13px);
         font-size: rem(35px);
+        line-height: 1.45;
         font-family: 'RobotoMedium';
     }
 }

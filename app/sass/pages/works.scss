@@ -6,7 +6,7 @@
         background-position: center bottom;
     }
     &-top {
-        background: white;
+        background: $white;
         @extend %clearfix;
     }
 }
@@ -40,13 +40,14 @@
             width: 70%;
             margin: auto;
         }
+        background: #f4f0e9;
     }
     &__info {
         text-transform: uppercase;
-        padding: rem(20px) 0;
-        margin: rem(40px) 0;
-        border-top: 2px solid #aeaeab;
-        border-bottom: 2px solid #aeaeab;
+        padding: rem(13px) 0;
+        margin: rem(27px) 0 rem(40px);
+        border-top: 1px solid #aeaeab;
+        border-bottom: 1px solid #aeaeab;
         color: $dark-brown;
     }
     &-img {
@@ -55,6 +56,7 @@
         padding-bottom: 30vh;
         float: right;
         display: flex;
+        background: #ebe5db;
     }
     &__pic {
         max-height: 90%;
@@ -127,6 +129,15 @@
     }
     &__text {
         margin: 0 0 rem(21px);
+        &:before {
+            display: block;
+            width: 100%;
+            height: rem(60px);
+            content: '\f10d';
+            font-family: 'FontAwesome';
+            font-size: rem(32px);
+            color: rgba($dark-brown, .2);
+        }
     }
     &-author {
         color: $dark-brown;
