@@ -7,12 +7,14 @@
     padding: rem(26px) 0 rem(20px);
     line-height: 1.55;
     @include tablets {
-        padding-left: rem(24px);
-        padding-right: rem(24px);
-    }
-    @include tablets {
+        padding: rem(26px) rem(24px) rem(20px);
         display: block;
         height: $footer-height-tablets;
+    }
+    @include iphone {
+        height: $footer-height-mobile;
+        padding: rem(15px) rem(11px) rem(20px);
+        line-height: inherit;
     }
     &-block {
         padding: 0 rem(30px);
@@ -28,6 +30,9 @@
                 border-bottom: 1px solid #767b7d;
                 margin-bottom: rem(14px)
             }
+            @include iphone {
+                padding-bottom: rem(14px);
+            }
         }
         &_center {
             border-left: 1px solid #767b7d;
@@ -35,6 +40,14 @@
                 width: 60%;
                 float: left;
                 border: none;
+            }
+            @include iphone {
+                width: 100%;
+                text-align: center;
+                float: none;
+                border-bottom: 1px solid #767b7d;
+                padding-bottom: rem(14px);
+                margin-bottom: rem(17px);
             }
         }
         &_right {
@@ -44,6 +57,11 @@
                 float: right;
                 border: none;
                 text-align: right;
+            }
+            @include iphone {
+                width: 100%;
+                float: none;
+                text-align: center;
             }
         }
     }
@@ -61,6 +79,9 @@
                 display: block;
                 margin-bottom: rem(10px);
             }
+            @include iphone {
+                font-family: 'RobotoLight';
+            }
         }
     }
     &-nav {
@@ -71,7 +92,10 @@
             line-height: 1.6;
             margin: 0 rem(-17px);
             @include tablets {
-                margin: 0 rem(-15px);
+                margin: 0 rem(-13.5px);
+            }
+            @include iphone {
+                margin: 0 rem(-4px);
             }
         }
         &__item {
@@ -83,6 +107,9 @@
             margin: 0 rem(17px);
             @include tablets {
                 margin: 0 rem(13.5px);
+            }
+            @include iphone {
+                margin: 0 rem(4px);
             }
             &:hover {
                 color: $dark-brown;
@@ -101,6 +128,9 @@
         text-align: left;
         @include tablets {
             margin-top: rem(10px);
+        }
+        @include iphone {
+            text-align: center;
         }
     }
 }

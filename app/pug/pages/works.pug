@@ -23,50 +23,10 @@ block content
                         .slider-ctrl__bg
                         .slider-ctrl__bg
                 ul.slider-list
-                    li.slider-item
-                        .slider-img
-                            img(src="../img/works/slider/work-1.png").slider__pic
-                        .slider-descr
-                            .slider-descr-block
-                                .slider__name
-                                    .title-medium.slider-title Сайт школы онлайн образования
-                                .slider__info HTML, CSS, JavaScript
-                                a(href="#").btn.slider-btn
-                                    i.fa.fa-link(aria-hidden="true")
-                                    | Посмотреть сайт
-                    li.slider-item
-                        .slider-img
-                            img(src="../img/works/slider/work-2.png").slider__pic
-                        .slider-descr
-                            .slider-descr-block
-                                .slider__name
-                                    .title-medium.slider-title itLoft
-                                .slider__info HTML, CSS, JavaScript
-                                a(href="#").btn.slider-btn
-                                    i.fa.fa-link(aria-hidden="true")
-                                    | Посмотреть сайт
-                    li.slider-item
-                        .slider-img
-                            img(src="../img/works/slider/work-3.png").slider__pic
-                        .slider-descr
-                            .slider-descr-block
-                                .slider__name
-                                    .title-medium.slider-title Loftblog
-                                .slider__info HTML, CSS, JavaScript
-                                a(href="#").btn.slider-btn
-                                    i.fa.fa-link(aria-hidden="true")
-                                    | Посмотреть сайт
-                    li.slider-item
-                        .slider-img
-                            img(src="../img/works/slider/work-4.png").slider__pic
-                        .slider-descr
-                            .slider-descr-block
-                                .slider__name
-                                    .title-medium.slider-title Атма йога
-                                .slider__info HTML, CSS, JavaScript
-                                a(href="#").btn.slider-btn
-                                    i.fa.fa-link(aria-hidden="true")
-                                    | Посмотреть сайт
+                    +slider-item('Сайт школы онлайн образования','HTML, CSS, JavaScript','https://loftschool.com','../img/works/slider/work-1.png')
+                    +slider-item('itLoft','HTML, CSS, JavaScript','https://itloft.ru','../img/works/slider/work-2.png')
+                    +slider-item('Loftblog','HTML, CSS, JavaScript','https://loftblog.ru','../img/works/slider/work-3.png')
+                    +slider-item('Атма йога','HTML, CSS, JavaScript','http://atmayoga.ru/','../img/works/slider/work-4.png')
         .quotes
             //- +page-header('Что обо мне говорят','urltest')
             .title-large.quotes-title Что обо мне говорят

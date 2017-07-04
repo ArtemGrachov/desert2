@@ -2,7 +2,7 @@
     background-color: #faecdc;
     background-repeat: repeat-x;
     background-image: url('../img/sand.jpg');
-    background-position: bottom left;
+    background-position: center left;
     background-size: 3056px auto;
     width: 6112px;
     height: 100%;
@@ -46,6 +46,9 @@
     align-items: center;
     justify-content: space-between;
     color: white;
+    @include iphone {
+        padding: rem(10px);
+    }
     &-footer {
         background: none;
         height: auto;
@@ -62,6 +65,9 @@
     .avatar {
         &__name {
             font-size: rem(28px);
+            @include iphone {
+                font-size: rem(21px);
+            }
         }
     }
 }
@@ -81,6 +87,9 @@
     &_disabled {
         opacity: 0;
         pointer-events: none;
+    }
+    @include iphone {
+        align-self: auto;
     }
 }
 

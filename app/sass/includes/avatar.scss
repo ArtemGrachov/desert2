@@ -17,5 +17,14 @@
         font-size: rem(35px);
         line-height: 1.45;
         font-family: 'RobotoMedium';
+        @include iphone {
+            font-size: rem(21px);
+            margin-top: rem(17px);
+        }
+    }
+    &__title {
+        @include iphone {
+            margin-top: rem(7px);
+        }
     }
 }

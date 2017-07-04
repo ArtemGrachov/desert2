@@ -54,6 +54,9 @@
         @include tablets {
             right: rem(26px);
         }
+        @include iphone {
+            right: rem(11px);
+        }
         &__el {
             background: white;
             height: rem(5px);
@@ -61,6 +64,11 @@
             border-radius: rem(2px);
             position: relative;
             margin: 0 0 rem(10px);
+            @include iphone {
+                width: rem(25px);
+                margin: 0 0 rem(6px);
+                height: rem(3px);
+            }
         }
         &_active {
             position: fixed;
