@@ -1416,9 +1416,15 @@ p {
     width: 50%;
     height: 100%;
     top: 0;
-    background-size: cover;
     position: absolute;
     z-index: -1;
+}
+
+.slider-ctrl__img {
+    display: block;
+    margin: auto;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .quotes {

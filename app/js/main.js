@@ -144,7 +144,11 @@ let slider = (function() {
                 prevBgFirst = ctrlPrev.find('.slider-ctrl__bg').first(),
                 prevBgSecond = ctrlPrev.find('.slider-ctrl__bg').last(),
                 nextBgFirst = ctrlNext.find('.slider-ctrl__bg').first(),
-                nextBgSecond = ctrlNext.find('.slider-ctrl__bg').last();
+                nextBgSecond = ctrlNext.find('.slider-ctrl__bg').last(),
+                prevBgFirstImg = prevBgFirst.find('.slider-ctrl__img'),
+                prevBgSecondImg = prevBgSecond.find('.slider-ctrl__img'),
+                nextBgFirstImg = nextBgFirst.find('.slider-ctrl__img'),
+                nextBgSecondImg = nextBgSecond.find('.slider-ctrl__img');
 
             // slides
             let slideNext = slideActive.next(),
@@ -174,21 +178,20 @@ let slider = (function() {
                 imgNext = slideNext.find('.slider__pic').attr('src'),
                 imgAfterNext = slideAfterNext.find('.slider__pic').attr('src');
 
-            // console.log(imgAfterPrev, imgPrev, imgActive, imgNext, imgAfterNext)
 
             // moving
             if (direction == 'none') {
                 prevBgFirst.css({ top: 0 });
-                prevBgFirst.css({ 'background-image': `url(${imgPrev})` });
+                prevBgFirstImg.attr('src', imgPrev);
                 nextBgFirst.css({ top: 0 });
-                nextBgFirst.css({ 'background-image': `url(${imgNext})` });
+                nextBgFirstImg.attr('src', imgNext);
             } else {
                 if (direction == 'next') {
-                    // background-image
-                    prevBgFirst.css({ 'background-image': `url(${imgPrev})` });
-                    prevBgSecond.css({ 'background-image': `url(${imgAfterPrev})` });
-                    nextBgFirst.css({ 'background-image': `url(${imgActive})` });
-                    nextBgSecond.css({ 'background-image': `url(${imgNext})` });
+                    // image
+                    prevBgFirstImg.attr('src', imgPrev);
+                    prevBgSecondImg.attr('src', imgAfterPrev);
+                    nextBgFirstImg.attr('src', imgActive);
+                    nextBgSecondImg.attr('src', imgNext);
 
                     // animation
                     prevBgFirst.css({ top: '-100%' });
@@ -202,11 +205,11 @@ let slider = (function() {
                     nextBgSecond.animate({ top: 0 }, toggleSpeed);
 
                 } else {
-                    // background-image
-                    prevBgFirst.css({ 'background-image': `url(${imgActive})` });
-                    prevBgSecond.css({ 'background-image': `url(${imgPrev})` });
-                    nextBgFirst.css({ 'background-image': `url(${imgNext})` });
-                    nextBgSecond.css({ 'background-image': `url(${imgAfterNext})` });
+                    // image
+                    prevBgFirstImg.attr('src', imgActive);
+                    prevBgSecondImg.attr('src', imgPrev);
+                    nextBgFirstImg.attr('src', imgNext);
+                    nextBgSecondImg.attr('src', imgAfterNext);
 
                     // animation
                     prevBgFirst.css({ top: 0 });
