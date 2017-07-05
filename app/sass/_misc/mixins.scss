@@ -48,6 +48,12 @@
     }
 }
 
+@mixin hd {
+    @media screen and (min-width: 1800px) {
+        @content;
+    }
+}
+
 @mixin media-query($width) {
     @media screen and (max-width: $width) {
         @content;

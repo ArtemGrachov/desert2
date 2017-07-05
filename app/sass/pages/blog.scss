@@ -1,5 +1,4 @@
 .header_blog {
-    // height: rem(396px);
     width: auto;
     .avatar {
         margin: auto;
@@ -8,23 +7,45 @@
 
 .blog {
     @extend %clearfix;
+    padding-top: rem(65px);
     &-title {
         margin: rem(30px) 0 0;
         line-height: 1;
     }
     &-nav {
-        padding-top: rem(75px);
+        position: absolute;
+        &_fixed {
+            top: 0;
+            width: 25%;
+            left: rem(10px);
+            position: fixed;
+            @include hd {
+                width: 20%;
+                left: rem(32px);
+            }
+        }
         @include media-query(900px) {
             display: none;
         }
-        &_fixed {
-            position: fixed;
-            left: rem(10px);
-            top: 0;
-            width: 25%;
+        &_active {
             @include media-query(900px) {
-                right: 100%;
-                left: auto;
+                display: block;
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 90%;
+                height: 100%;
+                background: $light-brown;
+                z-index: 1;
+                padding-top: 15%;
+                box-shadow: 0 0 rem(6px) rgba(black, .5);
+                .blog-nav__link {
+                    color: white;
+                    border: none;
+                    &_active {
+                        font-family: 'RobotoBold';
+                    }
+                }
             }
         }
         &-list {
@@ -49,25 +70,55 @@
                 border-color: $light-brown;
             }
         }
+        &__toggle {
+            display: none;
+            @include media-query(900px) {
+                display: block;
+                position: fixed;
+                top: 50%;
+                left: 0;
+                transform: translate(-70%, 0);
+                border-radius: 50%;
+                width: rem(80px);
+                height: rem(80px);
+                background: $light-brown;
+                clip: rect(auto, rem(100px), auto, rem(56px));
+                box-shadow: 0 0 rem(6px) rgba(black, .5);
+                z-index: 1;
+            }
+            &_active {
+                left: 100%;
+                position: absolute;
+            }
+        }
     }
     &-sidebar {
         width: 25%;
-        height: 100%;
-        min-height: 100vh;
         // щоб залишилася ширина, коли меню стане фіксованим
         float: left;
         margin-left: rem(10px);
+        position: relative;
+        padding-top: rem(6px);
+        @include hd {
+            width: 20%;
+            margin-left: rem(32px);
+        }
         @include media-query(900px) {
-            width: 0;
-            margin: 0;
+            position: absolute;
+            // right: 100%;
+            // overflow: hidden;
         }
     }
     &-content {
         float: left;
         width: 65%;
-        padding: rem(68px) 0 0 rem(98px);
+        padding: 0 0 0 rem(99px);
+        @include hd {
+            padding-left: rem(117px);
+        }
         @include media-query(900px) {
             width: 100%;
+            float: none;
             padding: rem(68px) rem(25px) 0;
             p {
                 margin: rem(8px) 0 rem(9px);

@@ -228,45 +228,70 @@ let slider = (function() {
     }
 })();
 
-let blogMenu = function() {
-    if ($('.blog').length) {
-        let sidebar = $('.blog-sidebar'),
-            blogNav = $('.blog-nav'),
-            articles = $('.articles-item'),
-            articlesTop = [],
-            navPos = 0;
+let blogMenu = (function() {
+    return {
+        init: function() {
+            let _this = this;
 
-        for (let i = 0; i < articles.length; i++) {
-            articlesTop.push($(articles[i]).offset().top);
-        }
-
-        $(document).on('scroll', function() {
-            let scrollTop = $(window).scrollTop();
-
-            for (let i = 0; i < articlesTop.length; i++) {
-                if (articlesTop[i] < scrollTop + $(window).height() / 2) {
-                    navPos = i;
-                    $('.blog-nav__link_active').removeClass('blog-nav__link_active');
-                    $('.blog-nav__link').eq(i).addClass('blog-nav__link_active');
+            if ($('.blog').length) {
+                let sidebar = $('.blog-sidebar'),
+                    blogNav = $('.blog-nav'),
+                    articles = $('.articles-item'),
+                    articlesTop = [],
+                    navPos = 0;
+                for (let i = 0; i < articles.length; i++) {
+                    articlesTop.push($(articles[i]).offset().top);
                 }
-            }
+                $(document).on('scroll', function() {
+                    let scrollTop = $(window).scrollTop();
 
-            if (scrollTop > sidebar.offset().top) {
-                blogNav.addClass('blog-nav_fixed');
+                    for (let i = 0; i < articlesTop.length; i++) {
+                        if (articlesTop[i] < scrollTop + $(window).height() / 3) {
+                            navPos = i;
+                            $('.blog-nav__link_active').removeClass('blog-nav__link_active');
+                            $('.blog-nav__link').eq(i).addClass('blog-nav__link_active');
+                        }
+                    }
+                    if (scrollTop > sidebar.offset().top) {
+                        blogNav.addClass('blog-nav_fixed');
+                    } else {
+                        blogNav.removeClass('blog-nav_fixed');
+                    }
+                })
+                $('.blog-nav__link').on('click', function(e) {
+                    e.preventDefault();
+                    let articleIndex = $(this).closest('.blog-nav__item').index(),
+                        articleTop = $('.articles-item').eq(articleIndex).offset().top;
+                    $('body, html').animate({ scrollTop: articleTop - 70 }, 1500);
+                })
+
+
+                $('.blog-nav__toggle').on('click', function() {
+                    _this.activeMenu();
+                })
+            }
+        },
+        activeMenu: function() {
+            let navMenu = $('.blog-nav'),
+                body = $('body'),
+                speed = 500;
+
+            if (navMenu.hasClass('blog-nav_active')) {
+                navMenu.animate({
+                    'left': '-100%'
+                }, speed, function() {
+                    navMenu.removeClass('blog-nav_active');
+                    navMenu.css('left', '')
+                });
             } else {
-                blogNav.removeClass('blog-nav_fixed');
+                navMenu.addClass('blog-nav_active');
+                navMenu.animate({
+                    'left': '0'
+                }, speed);
             }
-        })
-
-        $('.blog-nav__link').on('click', function(e) {
-            e.preventDefault();
-            let articleIndex = $(this).closest('.blog-nav__item').index(),
-                articleTop = $('.articles-item').eq(articleIndex).offset().top;
-            $('body, html').animate({ scrollTop: articleTop - 70 }, 1500);
-        })
+        }
     }
-
-}
+})();
 
 $(document).ready(function() {
     authWindow();
@@ -274,5 +299,5 @@ $(document).ready(function() {
     toggleNav();
     drawCircleChart(110, 20);
     slider.init();
-    blogMenu();
+    blogMenu.init();
 })
