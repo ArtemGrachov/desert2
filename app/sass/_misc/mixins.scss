@@ -54,7 +54,7 @@
     }
 }
 
-@mixin media-query($width) {
+@mixin mediaMax($width) {
     @media screen and (max-width: $width) {
         @content;
     }

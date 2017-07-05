@@ -186,7 +186,7 @@
             width: 75%;
         }
     }
-    @include media-query(828px) {
+    @include mediaMax(828px) {
         width: auto;
         margin: 0 rem(8px) rem(50px);
     }
@@ -207,11 +207,11 @@
         width: rem(380px);
         margin: 0 rem(10px);
         float: left;
-        @include media-query(828px) {
+        @include mediaMax(828px) {
             width: 45%;
             margin: 0 rem(16px);
         }
-        @include iphone {
+        @include mediaMax(670px) {
             width: 100%;
             float: none;
             margin: 0 0 rem(16px);

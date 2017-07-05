@@ -6,42 +6,42 @@
     justify-content: space-between;
     padding: rem(26px) 0 rem(20px);
     line-height: 1.55;
-    @include tablets {
+    @include mediaMax(1199px) {
         padding: rem(26px) rem(24px) rem(20px);
         display: block;
         height: $footer-height-tablets;
     }
-    @include iphone {
-        height: $footer-height-mobile;
+    @include mediaMax(670px) {
+        height: $footer-height-mobiles;
         padding: rem(15px) rem(11px) rem(20px);
         line-height: inherit;
     }
     &-block {
         padding: 0 rem(30px);
-        @include tablets {
+        @include mediaMax(1199px) {
             padding: 0;
         }
         &_left {
             width: rem(418px);
-            @include tablets {
+            @include mediaMax(1199px) {
                 text-align: center;
                 width: 100%;
                 padding-bottom: rem(16px);
                 border-bottom: 1px solid #767b7d;
                 margin-bottom: rem(14px)
             }
-            @include iphone {
+            @include mediaMax(670px) {
                 padding-bottom: rem(14px);
             }
         }
         &_center {
             border-left: 1px solid #767b7d;
-            @include tablets {
+            @include mediaMax(1199px) {
                 width: 60%;
                 float: left;
                 border: none;
             }
-            @include iphone {
+            @include mediaMax(670px) {
                 width: 100%;
                 text-align: center;
                 float: none;
@@ -52,13 +52,13 @@
         }
         &_right {
             border-left: 1px solid #767b7d;
-            @include tablets {
+            @include mediaMax(1199px) {
                 width: 40%;
                 float: right;
                 border: none;
                 text-align: right;
             }
-            @include iphone {
+            @include mediaMax(670px) {
                 width: 100%;
                 float: none;
                 text-align: center;
@@ -68,18 +68,18 @@
     &__descr {
         opacity: .5;
         font-family: 'RobotoLight';
-        @include tablets {
+        @include mediaMax(1199px) {
             display: inline-block;
         }
         &_white {
             font-family: 'RobotoRegular';
             opacity: 1;
             margin-bottom: rem(2px);
-            @include tablets {
+            @include mediaMax(1199px) {
                 display: block;
                 margin-bottom: rem(10px);
             }
-            @include iphone {
+            @include mediaMax(670px) {
                 font-family: 'RobotoLight';
             }
         }
@@ -91,10 +91,10 @@
             list-style: none;
             line-height: 1.6;
             margin: 0 rem(-17px);
-            @include tablets {
+            @include mediaMax(1199px) {
                 margin: 0 rem(-13.5px);
             }
-            @include iphone {
+            @include mediaMax(670px) {
                 margin: 0 rem(-4px);
             }
         }
@@ -105,10 +105,10 @@
             text-decoration: none;
             color: white;
             margin: 0 rem(17px);
-            @include tablets {
+            @include mediaMax(1199px) {
                 margin: 0 rem(13.5px);
             }
-            @include iphone {
+            @include mediaMax(670px) {
                 margin: 0 rem(4px);
             }
             &:hover {
@@ -126,10 +126,10 @@
     .socials {
         margin-top: rem(40px);
         text-align: left;
-        @include tablets {
+        @include mediaMax(1199px) {
             margin-top: rem(10px);
         }
-        @include iphone {
+        @include mediaMax(670px) {
             text-align: center;
             &-list {
                 margin: 0;

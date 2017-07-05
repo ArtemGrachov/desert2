@@ -24,11 +24,11 @@
                 left: rem(32px);
             }
         }
-        @include media-query(900px) {
+        @include mediaMax(900px) {
             display: none;
         }
         &_active {
-            @include media-query(900px) {
+            @include mediaMax(900px) {
                 display: block;
                 position: fixed;
                 top: 0;
@@ -72,12 +72,12 @@
         }
         &__toggle {
             display: none;
-            @include media-query(900px) {
+            @include mediaMax(900px) {
                 display: block;
                 position: fixed;
                 top: 50%;
                 left: 0;
-                transform: translate(-70%, 0);
+                transform: translate(-70%, -50%);
                 border-radius: 50%;
                 width: rem(80px);
                 height: rem(80px);
@@ -103,7 +103,7 @@
             width: 20%;
             margin-left: rem(32px);
         }
-        @include media-query(900px) {
+        @include mediaMax(900px) {
             position: absolute;
             // right: 100%;
             // overflow: hidden;
@@ -116,7 +116,7 @@
         @include hd {
             padding-left: rem(117px);
         }
-        @include media-query(900px) {
+        @include mediaMax(900px) {
             width: 100%;
             float: none;
             padding: rem(68px) rem(25px) 0;

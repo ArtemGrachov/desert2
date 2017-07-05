@@ -1,19 +1,19 @@
 .about {
     @extend %clearfix;
     &-avatar {
-        background: url('../img/misc/avatar-large.jpg');
-        height: rem(390px);
-        background-size: cover;
-        @include tablets {
-            height: rem(416px);
-        }
-        @include iphone {
-            height: rem(283px);
+        overflow: hidden;
+        &__img {
+            object-fit: cover;
+            display: block;
+            margin: auto;
+            @include mediaMax(440px) {
+                max-height: rem(282px);
+            }
         }
     }
     &-title {
         margin: 0 auto rem(39px);
-        @include tablets {
+        @include mediaMax(890px) {
             margin-bottom: rem(35px);
         }
         @include iphone {
@@ -27,7 +27,7 @@
     &-body {
         .header__bg_left {
             fill: #efeee9;
-            @include tablets {
+            @include mediaMax(890px) {
                 fill: $white;
             }
         }
@@ -40,7 +40,7 @@
     width: 50%;
     padding-top: rem(11px);
     padding-bottom: rem(29px);
-    @include tablets {
+    @include mediaMax(890px) {
         background: $white;
         width: auto;
         float: none;
@@ -55,16 +55,16 @@
     &-block {
         width: rem(443px);
         margin: auto;
-        @include tablets {
+        @include mediaMax(890px) {
             width: rem(472px);
         }
-        @include media-query(472px) {
+        @include mediaMax(472px) {
             width: 100%;
         }
     }
     &-title {
         margin: rem(38px) auto rem(23px);
-        @include tablets {
+        @include mediaMax(890px) {
             margin: rem(48px) auto 0;
         }
         @include iphone {
@@ -73,13 +73,13 @@
     }
     &-text {
         line-height: 1.55;
-        @include tablets {
+        @include mediaMax(890px) {
             line-height: 1.76;
             p {
                 margin: rem(4px) 0 rem(9px);
             }
         }
-        @include iphone {
+        @include mediaMax(480px) {
             padding: 0 rem(10px);
             line-height: 1.75;
         }
@@ -90,7 +90,7 @@
     float: left;
     width: 50%;
     padding: rem(15px) 0 0 rem(39px);
-    @include tablets {
+    @include mediaMax(890px) {
         background: #f0ebde;
         width: auto;
         float: none;
@@ -102,7 +102,7 @@
     &-header {
         width: rem(260px);
         margin-bottom: rem(23px);
-        @include tablets {
+        @include mediaMax(890px) {
             margin-bottom: rem(8px);
         }
         @include iphone {
@@ -112,11 +112,11 @@
     &__descr {
         margin: 0 auto rem(42px);
         line-height: 1.6;
-        @include tablets {
+        @include mediaMax(890px) {
             width: rem(472px);
             margin-bottom: rem(36px);
         }
-        @include media-query(472px) {
+        @include mediaMax(472px) {
             width: 100%;
         }
         @include iphone {
@@ -129,7 +129,7 @@
     }
     &-block {
         margin-bottom: rem(14px);
-        @include tablets {
+        @include mediaMax(890px) {
             margin-bottom: rem(26px);
         }
         @include iphone {
@@ -141,14 +141,14 @@
         padding: 0;
         list-style: none;
         margin: 0 rem(-18px);
-        @include tablets {
+        @include mediaMax(890px) {
             text-align: center;
         }
     }
     &-item {
         display: inline-block;
         margin: rem(8px) rem(15px);
-        @include tablets {
+        @include mediaMax(890px) {
             margin: rem(10px) rem(17px) rem(6px);
         }
         @include iphone {
@@ -158,7 +158,7 @@
     &__title {
         font-size: rem(28px);
         font-family: 'RobotoMedium';
-        @include tablets {
+        @include mediaMax(890px) {
             font-size: rem(21px);
             text-align: center;
         }
@@ -217,4 +217,4 @@
 //     background: url('../img/misc/nsb-map.jpg');
 //     background-position: bottom center;
 //     background-repeat: no-repeat;
-// }faf8f0
+// }
