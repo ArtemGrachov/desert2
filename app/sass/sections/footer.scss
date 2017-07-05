@@ -131,6 +131,9 @@
         }
         @include iphone {
             text-align: center;
+            &-list {
+                margin: 0;
+            }
         }
     }
 }

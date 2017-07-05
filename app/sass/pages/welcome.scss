@@ -54,6 +54,9 @@
         height: auto;
         margin: rem(14px) 0;
         text-align: center;
+        @include iphone {
+            margin: 0;
+        }
     }
     .title-medium,
     .title-large {
@@ -67,6 +70,7 @@
             font-size: rem(28px);
             @include iphone {
                 font-size: rem(21px);
+                margin-top: rem(19px);
             }
         }
     }
@@ -90,6 +94,8 @@
     }
     @include iphone {
         align-self: auto;
+        padding-top: rem(9px);
+        padding-bottom: rem(9px);
     }
 }
 

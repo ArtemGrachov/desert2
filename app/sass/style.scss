@@ -11,8 +11,6 @@ body {
     background: $white;
     @include tablets {
         font-size: rem(14px);
-        // line-height: 1.55;
-        background: white;
     }
 }
 
@@ -53,14 +51,17 @@ h6 {
     font-family: 'RobotoMedium';
     padding: rem(11px) rem(27px);
     line-height: 1.45;
+    // vertical-align: middle;
     &:hover {
         background: rgba($dark-brown, 0.85);
     }
     .fa {
         margin-right: rem(10px);
+        vertical-align: bottom;
+        font-size: rem(22px);
     }
     @include iphone {
-        padding: rem(11px) rem(20px);
+        padding: rem(9px) rem(21px);
     }
 }
 
@@ -110,6 +111,9 @@ h6 {
         &__link {
             border-radius: 0;
             width: 100%;
+            @include iphone {
+                padding: rem(12.5px) rem(21px);
+            }
         }
     }
 }
@@ -125,7 +129,7 @@ h6 {
     &-large {
         font-size: rem(63px);
         margin: rem(70px) auto;
-        letter-spacing: rem(1.8px);
+        letter-spacing: rem(1.5px);
         @include tablets {
             font-size: rem(49px);
             letter-spacing: rem(1px);
@@ -142,6 +146,7 @@ h6 {
         }
         @include iphone {
             font-size: rem(21px);
+            margin: 0 auto rem(20px);
             line-height: 1.4;
         }
     }
@@ -156,7 +161,10 @@ h6 {
         font-size: rem(26px);
     }
     @include tablets {
-        margin: rem(38px) 0;
+        margin: rem(38.5px) 0;
+    }
+    @include iphone {
+        margin: rem(35px) 0;
     }
 }
 

@@ -31,6 +31,9 @@ textarea {
             color: $light-brown;
         }
     }
+    @include iphone {
+        padding: rem(10px) rem(20px);
+    }
 }
 
 textarea {

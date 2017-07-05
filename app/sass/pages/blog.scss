@@ -4,9 +4,6 @@
     .avatar {
         margin: auto;
     }
-    .header__bg {
-        fill: white;
-    }
 }
 
 .blog {
@@ -53,7 +50,7 @@
             }
         }
     }
-    .sidebar {
+    &-sidebar {
         width: 25%;
         height: 100%;
         min-height: 100vh;
@@ -65,16 +62,23 @@
             margin: 0;
         }
     }
-    .content {
+    &-content {
         float: left;
         width: 65%;
         padding: rem(68px) 0 0 rem(98px);
         @include media-query(900px) {
             width: 100%;
-            padding: rem(68px) rem(24px) 0;
+            padding: rem(68px) rem(25px) 0;
+            p {
+                margin: rem(8px) 0 rem(9px);
+            }
         }
         @include iphone {
             padding: rem(32px) rem(10px) 0;
+        }
+        img {
+            max-height: 100%;
+            max-width: 100%;
         }
     }
 }
@@ -96,6 +100,10 @@
             padding: 0 0 rem(44px);
             margin: 0 0 rem(46px);
         }
+        @include iphone {
+            margin: 0 0 rem(26px);
+            padding: 0 0 rem(20px);
+        }
     }
     &__title {
         text-align: left;
@@ -107,7 +115,8 @@
             margin: 0 0 rem(6px);
         }
         @include iphone {
-            margin-bottom: rem(7px);
+            margin-bottom: rem(6px);
+            line-height: 1.4;
         }
     }
     &__date {
@@ -120,6 +129,8 @@
         }
     }
     &-content {
-        line-height: 1.55;
+        @include tablets {
+            line-height: 1.55;
+        }
     }
 }

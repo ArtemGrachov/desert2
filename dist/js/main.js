@@ -230,7 +230,7 @@ let slider = (function() {
 
 let blogMenu = function() {
     if ($('.blog').length) {
-        let sidebar = $('.sidebar'),
+        let sidebar = $('.blog-sidebar'),
             blogNav = $('.blog-nav'),
             articles = $('.articles-item'),
             articlesTop = [],

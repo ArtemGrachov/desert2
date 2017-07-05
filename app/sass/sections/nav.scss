@@ -126,3 +126,30 @@
         opacity: 0;
     }
 }
+
+@include iphone {
+    @keyframes nav-toggle-el1 {
+        50% {
+            transform: translateY(rem(9px));
+        }
+        100% {
+            transform: translateY(rem(9px)) rotate(45deg);
+        }
+    }
+    @keyframes nav-toggle-el2 {
+        50% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(-45deg);
+        }
+    }
+    @keyframes nav-toggle-el3 {
+        50% {
+            transform: translateY(rem(-9px));
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+}

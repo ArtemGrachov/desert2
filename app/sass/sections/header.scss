@@ -24,7 +24,7 @@
             }
         }
         @include iphone {
-            padding: rem(8px);
+            padding: rem(11px) rem(8px);
         }
     }
     &__bg {
@@ -38,5 +38,12 @@
         &_right {
             right: 0;
         }
+    }
+    .avatar {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
     }
 }

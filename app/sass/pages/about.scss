@@ -1,12 +1,5 @@
 .about {
     @extend %clearfix;
-    background: #efeee9;
-    padding-bottom: rem(12px);
-    &-body {
-        background: url('../img/misc/nsb-map.jpg');
-        background-position: bottom center;
-        background-repeat: no-repeat;
-    }
     &-avatar {
         background: url('../img/misc/avatar-large.jpg');
         height: rem(390px);
@@ -20,20 +13,42 @@
     }
     &-title {
         margin: 0 auto rem(39px);
+        @include tablets {
+            margin-bottom: rem(35px);
+        }
+        @include iphone {
+            margin-top: rem(26px);
+            margin-bottom: rem(18px);
+        }
+    }
+    @include iphone {
+        background: $white;
+    }
+    &-body {
+        .header__bg_left {
+            fill: #efeee9;
+            @include tablets {
+                fill: $white;
+            }
+        }
     }
 }
 
 .bio {
     float: left;
+    background: #efeee9;
     width: 50%;
-    padding: rem(8px) 0;
+    padding-top: rem(11px);
+    padding-bottom: rem(29px);
     @include tablets {
         background: $white;
         width: auto;
         float: none;
-        padding-bottom: rem(36px);
+        padding-top: rem(46px);
+        padding-bottom: rem(34px);
     }
     @include iphone {
+        padding-top: 0;
         padding-bottom: rem(13px);
         background: none;
     }
@@ -53,11 +68,17 @@
             margin: rem(48px) auto 0;
         }
         @include iphone {
-            margin: rem(28px) auto 0;
+            margin: rem(26px) auto 0;
         }
     }
     &-text {
         line-height: 1.55;
+        @include tablets {
+            line-height: 1.76;
+            p {
+                margin: rem(4px) 0 rem(9px);
+            }
+        }
         @include iphone {
             padding: 0 rem(10px);
             line-height: 1.75;
@@ -68,15 +89,15 @@
 .skills {
     float: left;
     width: 50%;
-    padding: rem(11px) 0 0 rem(40px);
+    padding: rem(15px) 0 0 rem(39px);
     @include tablets {
         background: #f0ebde;
         width: auto;
         float: none;
-        padding: rem(46px) rem(10px) rem(40px);
+        padding: rem(46px) rem(10px) rem(2px);
     }
     @include iphone {
-        padding: rem(29px) rem(10px) rem(40px);
+        padding: rem(27px) rem(10px) rem(8px);
     }
     &-header {
         width: rem(260px);
@@ -85,7 +106,7 @@
             margin-bottom: rem(8px);
         }
         @include iphone {
-            margin-bottom: rem(5px);
+            margin-bottom: rem(7px);
         }
     }
     &__descr {
@@ -99,11 +120,21 @@
             width: 100%;
         }
         @include iphone {
-            margin-bottom: rem(15px);
+            margin-bottom: rem(13px);
+            line-height: 1.75;
+            p {
+                margin: rem(6px) 0;
+            }
         }
     }
     &-block {
         margin-bottom: rem(14px);
+        @include tablets {
+            margin-bottom: rem(26px);
+        }
+        @include iphone {
+            margin-bottom: rem(2px);
+        }
     }
     &-list {
         margin: 0;
@@ -117,6 +148,12 @@
     &-item {
         display: inline-block;
         margin: rem(8px) rem(15px);
+        @include tablets {
+            margin: rem(10px) rem(17px) rem(6px);
+        }
+        @include iphone {
+            margin-bottom: rem(14px);
+        }
     }
     &__title {
         font-size: rem(28px);
@@ -129,10 +166,21 @@
 }
 
 .contacts {
-    height: rem(827px);
+    height: 100vh;
     display: flex;
+    @include iphone {
+        display: block;
+    }
     &-window {
-        background: rgba(#fcfcfc, .85)
+        background: rgba(#fcfcfc, .85);
+        @include iphone {
+            margin: 0;
+            width: auto;
+            background: white;
+        }
+        .window-content {
+            padding-top: rem(27px);
+        }
     }
     &-icon {
         color: $light-brown;
@@ -145,6 +193,10 @@
         margin: 0;
         list-style: none;
         padding: 0 rem(20px);
+        @include iphone {
+            padding: 0 rem(8px);
+            font-size: rem(16px);
+        }
     }
     &__item {
         margin: rem(18px) 0;
@@ -155,3 +207,14 @@
         }
     }
 }
+
+// .test-map {
+//     width: 100%;
+//     height: 100%;
+//     background: grey;
+//     position: absolute;
+//     z-index: -1;
+//     background: url('../img/misc/nsb-map.jpg');
+//     background-position: bottom center;
+//     background-repeat: no-repeat;
+// }faf8f0
