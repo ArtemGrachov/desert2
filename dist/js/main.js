@@ -293,16 +293,45 @@ let blogMenu = (function() {
     }
 })();
 
-let formValidation = function() {
-    console.log('form');
-}
+let formValidation = (function() {
+    return {
+        init: function() {
+            let _this = this;
+
+            $('input').focusout(function() {
+                let $this = $(this);
+                if (_this.checkInput(this)) {
+                    ($this).removeClass('error');
+                } else {
+                    $this.addClass('error');
+                }
+            })
+        },
+        checkInput: function(input) {
+            let $input = $(input),
+                $inputText = $input.val();
+
+            switch ($input.attr('type')) {
+                case 'text':
+                case 'password':
+                    if ($inputText.length > 0) return true
+                    else return false;
+                case 'email':
+                    if ($inputText.indexOf('@') > 0 && $inputText.indexOf('.') > $inputText.indexOf('@')) return true
+                    else return false;
+                default:
+                    return true;
+            }
+        }
+    }
+})()
 
 $(document).ready(function() {
     authWindow();
     scrollBottom();
     toggleNav();
     drawCircleChart(110, 20);
-    formValidation();
+    formValidation.init();
     slider.init();
     blogMenu.init();
 })

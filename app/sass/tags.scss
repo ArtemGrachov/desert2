@@ -13,6 +13,7 @@ input+label:before,
     transition: $transition;
 }
 
+input,
 input[type="text"],
 input[type="password"],
 input[type="email"],
@@ -26,13 +27,19 @@ textarea {
     line-height: inherit;
     margin-bottom: rem(20px);
     &:focus {
-        border: 1px solid $light-brown;
+        border-color: $light-brown;
         +.input-group__icon {
             color: $light-brown;
         }
     }
     @include iphone {
         padding: rem(10px) rem(20px);
+    }
+    &.error {
+        border-color: $red;
+        +.input-group__icon {
+            color: $red;
+        }
     }
 }
 

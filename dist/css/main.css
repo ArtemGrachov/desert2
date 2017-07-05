@@ -286,6 +286,7 @@ input + label:before,
     transition: 500ms;
 }
 
+input,
 input[type="text"],
 input[type="password"],
 input[type="email"],
@@ -300,14 +301,16 @@ textarea {
     margin-bottom: 1.25rem;
 }
 
-input[type="text"]:focus,
+input:focus,
+  input[type="text"]:focus,
   input[type="password"]:focus,
   input[type="email"]:focus,
   textarea:focus {
-    border: 1px solid #e7a731;
+    border-color: #e7a731;
 }
 
-input[type="text"]:focus + .input-group__icon,
+input:focus + .input-group__icon,
+    input[type="text"]:focus + .input-group__icon,
     input[type="password"]:focus + .input-group__icon,
     input[type="email"]:focus + .input-group__icon,
     textarea:focus + .input-group__icon {
@@ -315,12 +318,29 @@ input[type="text"]:focus + .input-group__icon,
 }
 
 @media screen and (max-width: 320px) {
+    input,
     input[type="text"],
     input[type="password"],
     input[type="email"],
     textarea {
         padding: 0.625rem 1.25rem;
     }
+}
+
+input.error,
+  input[type="text"].error,
+  input[type="password"].error,
+  input[type="email"].error,
+  textarea.error {
+    border-color: #e44845;
+}
+
+input.error + .input-group__icon,
+    input[type="text"].error + .input-group__icon,
+    input[type="password"].error + .input-group__icon,
+    input[type="email"].error + .input-group__icon,
+    textarea.error + .input-group__icon {
+    color: #e44845;
 }
 
 textarea {
