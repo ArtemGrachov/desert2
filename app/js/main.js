@@ -293,11 +293,16 @@ let blogMenu = (function() {
     }
 })();
 
+let formValidation = function() {
+    console.log('form');
+}
+
 $(document).ready(function() {
     authWindow();
     scrollBottom();
     toggleNav();
     drawCircleChart(110, 20);
+    formValidation();
     slider.init();
     blogMenu.init();
 })
