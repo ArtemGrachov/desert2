@@ -306,10 +306,23 @@ let formValidation = (function() {
                     $this.addClass('error');
                 }
             })
+            $('textarea').focusout(function() {
+                let $this = $(this);
+                if (_this.checkInput(this)) {
+                    ($this).removeClass('error');
+                } else {
+                    $this.addClass('error');
+                }
+            })
         },
         checkInput: function(input) {
             let $input = $(input),
                 $inputText = $input.val();
+
+            if ($input.is('textarea')) {
+                if ($inputText.length > 0) return true
+                else return false;
+            }
 
             switch ($input.attr('type')) {
                 case 'text':
@@ -326,12 +339,126 @@ let formValidation = (function() {
     }
 })()
 
+let feedbackForm = (function() {
+    return {
+        init: function() {
+            let $form = $('form');
+
+            if ($form.length) {
+                $('#reset').on('click', function(e) {
+                    e.preventDefault();
+                    let $this = $(this),
+                        $form = $this.closest('form');
+                    $form[0].reset();
+                    $form.find('input').removeClass('error');
+                    $form.find('textarea').removeClass('error');
+                })
+            }
+        }
+    }
+})();
+
+
+let preloader = (function() {
+    return {
+        init: function() {
+            let _this = this,
+                imgList = [];
+            $('*').each(function() {
+                let $this = $(this),
+                    background = $this.css('background-image'),
+                    img = $this.is('img');
+
+                if (background != 'none') {
+                    imgList.push(
+                        background.replace('url("', '')
+                        .replace('")', '')
+                    );
+
+                    if (img) {
+                        imgList.push($this.attr('src'));
+                    }
+                }
+            })
+
+            let percents = 1;
+            for (i in imgList) {
+                let image = $('<img>', {
+                    attr: {
+                        src: imgList[i]
+                    }
+                })
+
+                image.on('load', function() {
+                    _this.setPercents(imgList.length, percents);
+                    percents++;
+                })
+            }
+        },
+        setPercents: function(total, current) {
+            let percent = Math.ceil(current / total * 100),
+                $preloader = $('.preloader');
+            $preloader.find('.preloader__info').text(`${percent}%`);
+            if (percent >= 100) {
+                $preloader.fadeOut();
+            }
+        }
+    }
+})();
+
+let parallaxfff = function(block) {
+
+
+
+    console.log(scrollTop);
+}
+
+let parallax = (function() {
+    return {
+        init: function() {
+            _this = this;
+            if ($('header').length) {
+                $(window).on('scroll', function() {
+                    _this.image($('header'));
+                })
+            }
+            if ($('.works-body').length) {
+                $(window).on('scroll', function() {
+                    _this.image($('.works-body'));
+                })
+            }
+        },
+        image: function(block) {
+            let scrollTop = $(window).scrollTop(),
+                coords = `left ${scrollTop / 50}px`;
+            block.css('background-position', coords);
+        }
+    }
+})();
+
+let aboutMap = function() {
+    if ($('#map').length) {
+        let mapCenter = new google.maps.LatLng(48.6967162, 26.5825364);
+        let mapOptions = {
+            center: mapCenter,
+            zoom: 14,
+            scrollwheel: false,
+            disableDefaultUI: true
+        }
+        let map = new google.maps.Map(document.getElementById("map"), mapOptions);
+    }
+};
+
 $(document).ready(function() {
+    preloader.init();
     authWindow();
     scrollBottom();
     toggleNav();
+    aboutMap();
     drawCircleChart(110, 20);
     formValidation.init();
+    parallax.init();
     slider.init();
     blogMenu.init();
+    feedbackForm.init();
 })

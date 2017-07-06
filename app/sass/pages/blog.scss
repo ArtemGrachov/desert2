@@ -9,8 +9,12 @@
     @extend %clearfix;
     padding-top: rem(65px);
     &-title {
-        margin: rem(30px) 0 0;
+        margin: rem(30px) auto 0;
         line-height: 1;
+        &:before,
+        &:after {
+            opacity: .4;
+        }
     }
     &-nav {
         position: absolute;
@@ -162,6 +166,10 @@
         margin: 0 0 rem(10px);
         line-height: 1.2;
         @extend .title-medium;
+        &:before,
+        &:after {
+            display: none;
+        }
         @include tablets {
             margin: 0 0 rem(6px);
         }

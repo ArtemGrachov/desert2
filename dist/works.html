@@ -7,33 +7,23 @@
     <title>Мои работы</title>
     <link rel="stylesheet" href="/css/libs.min.css">
     <link rel="stylesheet" href="/css/main.css">
+    <script src="/js/libs.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
 </head>
 
 <body class="works-body">
+    <div class="preloader">
+        <div class="preloader__info">0</div>
+    </div>
     <div class="wrapper">
         <div class="maincontent">
             <nav class="nav">
                 <ul class="nav-list">
-                    <li class="nav__item">
-                        <a class="nav__link" href="works.html">
-                            <div class="title-block title-block_large "><span class="title-large">Мои работы</span></div>
-                        </a>
-                    </li>
-                    <li class="nav__item">
-                        <a class="nav__link" href="about.html">
-                            <div class="title-block title-block_large "><span class="title-large">Обо мне</span></div>
-                        </a>
-                    </li>
-                    <li class="nav__item">
-                        <a class="nav__link" href="blog.html">
-                            <div class="title-block title-block_large "><span class="title-large">Блог</span></div>
-                        </a>
-                    </li>
-                    <li class="nav__item">
-                        <a class="nav__link" href="index.html">
-                            <div class="title-block title-block_large "><span class="title-large">Авторизация</span></div>
-                        </a>
-                    </li>
+                    <li class="nav__item"><a class="nav__link title-large title-large_white" href="works.html">Мои работы</a></li>
+                    <li class="nav__item"><a class="nav__link title-large title-large_white" href="about.html">Обо мне</a></li>
+                    <li class="nav__item"><a class="nav__link title-large title-large_white" href="blog.html">Блог</a></li>
+                    <li class="nav__item"><a class="nav__link title-large title-large_white" href="index.html">Авторизация</a></li>
                 </ul>
             </nav>
             <header class="header">
@@ -123,7 +113,7 @@
                     </div>
                 </div>
                 <div class="quotes">
-                    <div class="title-large quotes-title">Что обо мне говорят</div>
+                    <div class="title-large quotes-title">Что обо мне<br>говорят</div>
                     <ul class="quotes-list">
                         <li class="quotes__item">
                             <div class="quotes__text">Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!</div>
@@ -148,18 +138,22 @@
                     </ul>
                 </div>
                 <div class="feedback">
-                    <div class="window feedback_window">
+                    <form class="window feedback_window">
                         <div class="window-content">
-                            <div class="title-medium">Связаться со мной </div><input type="text" placeholder="Имя"><input type="email" placeholder="Email"><textarea class="feedback_window__textarea" placeholder="Ваше сообщение"></textarea></div>
+                            <div class="title-medium">Связаться со мной</div>
+                            <div class="feedback-form"><input type="text" placeholder="Имя"><input type="email" placeholder="Email"><textarea class="feedback_window__textarea" placeholder="Ваше сообщение"></textarea></div>
+                        </div>
                         <div class="window-btns">
                             <ul class="window-btns__list">
-                                <li class="window-btns__item"><a class="window-btns__link btn" href="#">Отправить</a></li>
-                                <li class="window-btns__item"><a class="window-btns__link btn" href="#">Очистить</a></li>
+                                <li class="window-btns__item window-btns__item_half"><a class="window-btns__link btn" href="#">Отправить</a></li>
+                                <li class="window-btns__item window-btns__item_half" id="reset"><a class="window-btns__link btn" href="#">Очистить</a></li>
                             </ul>
                         </div>
-                    </div>
+                    </form>
                 </div>
-                <div class="view-toggle"><a class="view-toggle__btn view-toggle__btn_up" href="#"><svg class="icon "><use xlink:href="img/sprite/sprite.svg#portf_arrow_up"></use></svg></a></div>
+                <div class="view-toggle-wrap">
+                    <div class="view-toggle"><a class="view-toggle__btn view-toggle__btn_up" href="#"><svg class="icon "><use xlink:href="img/sprite/sprite.svg#portf_arrow_up"></use></svg></a></div>
+                </div>
             </div>
         </div>
     </div>
@@ -195,8 +189,6 @@
             </ul>
         </div>
     </footer>
-    <script src="/js/libs.min.js"></script>
-    <script src="/js/main.js"></script>
 </body>
 
 </html>

@@ -4,6 +4,7 @@
         background-image: url('../img/works/sand.png');
         background-repeat: no-repeat;
         background-position: center bottom;
+        background-attachment: fixed;
     }
     &-top {
         background: $white;
@@ -175,7 +176,6 @@
     &-title {
         margin-top: rem(66px);
         margin-bottom: rem(43px);
-        width: 50%;
         @include tablets {
             margin-bottom: rem(22px);
             margin-top: rem(44px);

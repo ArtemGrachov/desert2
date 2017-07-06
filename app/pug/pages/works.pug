@@ -33,7 +33,7 @@ block content
                     +slider-item('Атма йога','HTML, CSS, JavaScript','http://atmayoga.ru/','../img/works/slider/work-4.png')
         .quotes
             //- +page-header('Что обо мне говорят','urltest')
-            .title-large.quotes-title Что обо мне говорят
+            .title-large.quotes-title Что обо мне<br>говорят
             ul.quotes-list
                 li.quotes__item
                     .quotes__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
@@ -50,18 +50,20 @@ block content
                             .quotes-author__name Зар Захаров
                             .quotes-author__occ преподаватель
         .feedback
-            .window.feedback_window
+            form.window.feedback_window
                 .window-content
-                    .title-medium Связаться со мной 
-                    input(type="text" placeholder="Имя")
-                    input(type="email" placeholder="Email")
-                    textarea(placeholder="Ваше сообщение").feedback_window__textarea
+                    .title-medium Связаться со мной
+                    .feedback-form
+                        input(type="text" placeholder="Имя")
+                        input(type="email" placeholder="Email")
+                        textarea(placeholder="Ваше сообщение").feedback_window__textarea
                 .window-btns
                     ul.window-btns__list
-                        li.window-btns__item
+                        li.window-btns__item.window-btns__item_half
                             a.window-btns__link.btn(href="#") Отправить
-                        li.window-btns__item
+                        li.window-btns__item.window-btns__item_half#reset
                             a.window-btns__link.btn(href="#") Очистить
-        .view-toggle
-            a.view-toggle__btn.view-toggle__btn_up(href="#")
-                +icon('portf_arrow_up','')
+        .view-toggle-wrap
+            .view-toggle
+                a.view-toggle__btn.view-toggle__btn_up(href="#")
+                    +icon('portf_arrow_up','')

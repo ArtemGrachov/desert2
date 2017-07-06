@@ -1,17 +1,17 @@
 .header {
-    width: 100vw;
     height: 100vh;
     background-image: url('../img/sand.jpg');
     background-color: #faecdc;
     background-position: left center;
+    background-attachment: fixed;
     background-repeat: repeat-x;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    overflow: hidden;
+    position: relative;
     &-top {
         padding: rem(28px);
         @extend %clearfix;
+        position: absolute;
+        width: 100%;
         .socials {
             float: left;
             &__link {
@@ -28,7 +28,7 @@
         }
     }
     &__bg {
-        width: 50vw;
+        width: 50%;
         position: absolute;
         bottom: 0;
         fill: $white;
@@ -38,12 +38,5 @@
         &_right {
             right: 0;
         }
-    }
-    .avatar {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 100%;
     }
 }
