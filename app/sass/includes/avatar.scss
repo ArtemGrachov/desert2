@@ -5,10 +5,8 @@
     margin: auto;
     &__img {
         overflow: hidden;
-        // width: rem(140px);
-        // height: rem(140px);
-        width: 140px;
-        height: 140px;
+        width: rem(140px);
+        height: rem(140px);
         border-radius: 50%;
         background-image: url('../img/misc/avatar.jpg');
         margin: auto;

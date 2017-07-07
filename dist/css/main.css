@@ -132,7 +132,7 @@ h6 {
     }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 360px) {
     .window {
         width: 18.75rem;
     }
@@ -181,7 +181,7 @@ h6 {
     width: 100%;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 360px) {
     .window-btns__link {
         padding: 0.78125rem 1.3125rem;
     }
@@ -208,13 +208,11 @@ h6 {
 .title-large {
     font-size: 3.9375rem;
     margin: 4.375rem auto;
-    letter-spacing: 0.09375rem;
 }
 
 @media screen and (max-width: 768px) {
     .title-large {
         font-size: 3.0625rem;
-        letter-spacing: 0.0625rem;
     }
 }
 
@@ -396,6 +394,52 @@ input + label:before,
     transition: 500ms;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'SansusRegular';
+}
+
+ul {
+    list-style-type: disc;
+}
+
+table {
+    border: 1px solid #e7a731;
+}
+
+caption {
+    color: white;
+    background: #e7a731;
+    padding: 0.3125rem;
+    font-family: 'SansusRegular';
+    font-size: 1.25rem;
+}
+
+thead {
+    font-family: 'RobotoMedium';
+    text-align: center;
+}
+
+td,
+th {
+    border: 1px solid #e7a731;
+    padding: 0.625rem;
+}
+
+hr {
+    border: 1px solid #e7a731;
+}
+
+strong {
+    font-family: 'RobotoMedium';
+    color: #cd8920;
+    font-weight: normal;
+}
+
 input,
 input[type="text"],
 input[type="password"],
@@ -573,8 +617,8 @@ p {
 
 .avatar__img {
     overflow: hidden;
-    width: 140px;
-    height: 140px;
+    width: 8.75rem;
+    height: 8.75rem;
     border-radius: 50%;
     background-image: url("../img/misc/avatar.jpg");
     margin: auto;
@@ -2272,11 +2316,16 @@ p {
     transform: translate(-50%, -50%);
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 360px) {
     .contacts-window {
         margin: 0;
-        width: auto;
+        width: 100%;
         background: white;
+        top: 0;
+        left: 0;
+        -webkit-transform: none;
+        transform: none;
+        border-radius: 0;
     }
 }
 

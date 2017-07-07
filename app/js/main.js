@@ -406,13 +406,6 @@ let preloader = (function() {
     }
 })();
 
-let parallaxfff = function(block) {
-
-
-
-    console.log(scrollTop);
-}
-
 let parallax = (function() {
     return {
         init: function() {
@@ -438,14 +431,28 @@ let parallax = (function() {
 
 let aboutMap = function() {
     if ($('#map').length) {
-        let mapCenter = new google.maps.LatLng(48.6967162, 26.5825364);
-        let mapOptions = {
-            center: mapCenter,
-            zoom: 14,
-            scrollwheel: false,
-            disableDefaultUI: true
-        }
-        let map = new google.maps.Map(document.getElementById("map"), mapOptions);
+        let mapCenter = new google.maps.LatLng(48.69870431365383, 26.572585701942444),
+            mapOptions = {
+                center: mapCenter,
+                zoom: 18,
+                scrollwheel: false,
+                disableDefaultUI: true,
+                styles: [
+                    { elementType: 'all', stylers: [{ "hue": "#cd8920" }] }
+
+                ]
+            }
+
+        let map = new google.maps.Map(document.getElementById("map"), mapOptions),
+            markerCenter = new google.maps.LatLng(48.698314844389024, 26.57563805580139),
+            marker = new google.maps.Marker({
+                position: markerCenter,
+                icon: {
+                    url: 'img/misc/map_marker.svg',
+                    scaledSize: new google.maps.Size(42, 56),
+                }
+            });
+        marker.setMap(map);
     }
 };
 

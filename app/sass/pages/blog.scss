@@ -98,7 +98,6 @@
     }
     &-sidebar {
         width: 25%;
-        // щоб залишилася ширина, коли меню стане фіксованим
         float: left;
         margin-left: rem(10px);
         position: relative;
@@ -109,8 +108,6 @@
         }
         @include mediaMax(900px) {
             position: absolute;
-            // right: 100%;
-            // overflow: hidden;
         }
     }
     &-content {
@@ -183,7 +180,6 @@
         margin: 0 0 rem(16px);
         @include tablets {
             font-size: rem(14px);
-            // margin: 0 0 rem(6px);
             margin: 0;
         }
     }
