@@ -46,10 +46,10 @@
                 <form class="window window_auth window_rotate">
                     <div class="window-content">
                         <div class="title-medium title-medium_white">Авторизуйтесь</div>
-                        <div class="input-group"><input type="text" placeholder="Логин">
+                        <div class="input-group"><input type="text" placeholder="Логин" name="login">
                             <div class="input-group__icon"><svg class="icon "><use xlink:href="img/sprite/sprite.svg#login"></use></svg></div>
                         </div>
-                        <div class="input-group"><input type="password" placeholder="Пароль">
+                        <div class="input-group"><input type="password" placeholder="Пароль" name="password">
                             <div class="input-group__icon"><svg class="icon "><use xlink:href="img/sprite/sprite.svg#password"></use></svg></div>
                         </div>
                         <div class="robot"><input type="checkbox" id="checkHuman"><label for="checkHuman">Я человек</label>
@@ -60,7 +60,7 @@
                     <div class="window-btns">
                         <ul class="window-btns__list">
                             <li class="window-btns__item window-btns__item_half"><a class="window-btns__link btn show-greet" href="#">На главную</a></li>
-                            <li class="window-btns__item window-btns__item_half"><a class="window-btns__link btn" href="#">Войти</a></li>
+                            <li class="window-btns__item window-btns__item_half"><a class="window-btns__link btn" href="#" id="login">Войти</a></li>
                         </ul>
                     </div>
                 </form>

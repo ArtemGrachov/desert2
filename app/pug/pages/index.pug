@@ -25,11 +25,11 @@ block page
                     .window-content
                         .title-medium.title-medium_white Авторизуйтесь
                         .input-group
-                            input(type="text" placeholder="Логин")
+                            input(type="text" placeholder="Логин" name="login")
                             .input-group__icon
                                 +icon('login','')
                         .input-group
-                            input(type="password" placeholder="Пароль")
+                            input(type="password" placeholder="Пароль" name="password")
                             .input-group__icon
                                 +icon('password','')
                         .robot
@@ -46,6 +46,6 @@ block page
                             li.window-btns__item.window-btns__item_half
                                 a.window-btns__link.btn.show-greet(href="#") На главную
                             li.window-btns__item.window-btns__item_half
-                                a.window-btns__link.btn(href="#") Войти
+                                a.window-btns__link.btn(href="#" id="login") Войти
             footer.welcome-footer
                 .welcome-footer__block © Владимир Астахов | создано с любовью в LoftSchool | 2016

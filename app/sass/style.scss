@@ -288,3 +288,25 @@ h6 {
         margin: 0 auto rem(20px);
     }
 }
+
+.input-error {
+    border-radius: rem(5px);
+    background: $red;
+    color: white;
+    position: absolute;
+    transform: translateY(130%);
+    font-family: 'RobotoMedium';
+    padding: rem(10px) rem(20px);
+    &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        border: 9px solid $red;
+        border-top-color: transparent;
+        border-left-color: transparent;
+        border-right-color: transparent;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}

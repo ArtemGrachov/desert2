@@ -398,6 +398,31 @@ h6 {
     margin: 0 auto 1.25rem;
 }
 
+.input-error {
+    border-radius: 0.3125rem;
+    background: #e44845;
+    color: white;
+    position: absolute;
+    -webkit-transform: translateY(130%);
+    transform: translateY(130%);
+    font-family: 'RobotoMedium';
+    padding: 0.625rem 1.25rem;
+}
+
+.input-error:before {
+    content: '';
+    display: block;
+    position: absolute;
+    border: 9px solid #e44845;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    bottom: 100%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
 a {
     color: #6da3bd;
     font-family: 'RobotoMedium';

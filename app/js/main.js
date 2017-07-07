@@ -11,7 +11,9 @@ let authWindow = function() {
     showGreet.on('click', function(e) {
         e.preventDefault();
         $('.window').toggleClass('window_rotate');
-        showAuth.toggleClass('btn-auth_disabled')
+        showAuth.toggleClass('btn-auth_disabled');
+        $('.input-error').remove();
+
     })
 }
 
@@ -330,7 +332,7 @@ let formValidation = (function() {
                     if ($inputText.length > 0) return true
                     else return false;
                 case 'email':
-                    if ($inputText.indexOf('@') > 0 && $inputText.indexOf('.') > $inputText.indexOf('@')) return true
+                    if (validateEmail($inputText)) return true
                     else return false;
                 default:
                     return true;
@@ -366,24 +368,98 @@ let feedBack = (function() {
             if ($feedbackForm.length) {
                 $('#send_feedback').on('click', function(e) {
                     e.preventDefault();
-                    if (_this.checkName() && _this.checkEmail() && _this.checkText()) _this.sendMessage();
+                    $feedbackForm.find('.input-error').remove();
+                    if (_this.checkName($feedbackForm) && _this.checkEmail($feedbackForm) && _this.checkMessage($feedbackForm)) _this.sendMessage();
                 })
-
             }
         },
-        checkName: function() {
-            return true;
+        checkName: function(form) {
+            let name = form.find('input[name="name"]'),
+                regNumbers = /\d/;
+            if (name.val().length > 0 &&
+                regNumbers.exec(name.val()) === null) {
+                return true;
+            } else {
+                inputError('Введите корректное имя!', name);
+                return false;
+            }
         },
-        checkEmail: function() {
-            return true;
-
+        checkEmail: function(form) {
+            let email = form.find('input[name="email"]');
+            if (validateEmail(email.val())) {
+                return true;
+            } else {
+                inputError('Введите корректный Email!', email);
+                return false;
+            }
         },
-        checkText: function() {
-            return true;
+        checkMessage: function(form) {
+            let msg = form.find('textarea[name="message"]'),
+                badWords = ['aaa', 'bbb', 'ccc'];
+            if (msg.val().length > -1) {
+                for (i in badWords) {
+                    if (msg.val().indexOf(badWords[i]) > 0) {
+                        inputError('Введите корректный текст!', msg);
+                        return false;
+                    }
+                }
+                return true;
+            } else {
+                inputError('Введите текст!', msg);
+                return false;
+            }
         },
         sendMessage: function() {
             alertWindow('Сообщение отправлено');
+            // here should be server request
+        }
+    }
+})();
 
+let checkLogin = (function() {
+    return {
+        init: function() {
+            let _this = this;
+            if ($('input[name="login"').length) {
+                $('#login').on('click', function(e) {
+                    e.preventDefault();
+                    $('.input-error').remove();
+                    if (_this.checkLogin() && _this.checkPassword() && _this.checkRobot()) _this.login();
+                })
+            }
+        },
+        checkLogin: function() {
+            let login = $('input[name="login"]');
+            if (login.val().length > 0) {
+                return true;
+            } else {
+                inputError('Введите логин!', login);
+                return false
+            }
+        },
+        checkPassword: function() {
+            let password = $('input[name="password"]');
+            if (password.val().length > 0) {
+                return true;
+            } else {
+                inputError('Введите пароль!', password);
+                return false;
+            }
+        },
+        checkRobot: function() {
+            let humanCheck = $('#checkHuman'),
+                humanRadio = $('#isHuman');
+
+            if (humanCheck.is(':checked') && humanRadio.is(':checked')) {
+                return true;
+            } else {
+                alertWindow('Подтвердите, что вы человек!');
+                return false;
+            }
+        },
+        login: function() {
+            alertWindow('Добро пожаловать!');
+            // here should be authorization
         }
     }
 })();
@@ -400,6 +476,21 @@ let alertWindow = function(message) {
     })
 }
 
+let inputError = function(errorText, element) {
+    let err = $(`<div class="input-error">${errorText}</div>`).insertAfter(element);
+    err.css({ 'top': element.offset().top, 'left': element.offset().left });
+}
+
+let validateEmail = function(email) {
+    if (email.length > 0 &&
+        email.indexOf('@') > 0 &&
+        email.indexOf('.') > email.indexOf('@') + 1 &&
+        email.lastIndexOf('.') < email.length - 1) {
+        return true
+    } else {
+        return false;
+    }
+}
 
 let preloader = (function() {
     return {
@@ -448,7 +539,6 @@ let preloader = (function() {
     }
 })();
 
-
 let parallax = (function() {
     return {
         init: function() {
@@ -484,7 +574,6 @@ let aboutMap = function() {
                 disableDefaultUI: true,
                 styles: [
                     { elementType: 'all', stylers: [{ "hue": "#cd8920" }] }
-
                 ]
             }
 
@@ -514,4 +603,5 @@ $(document).ready(function() {
     blogMenu.init();
     controlForm.init();
     feedBack.init();
+    checkLogin.init();
 })

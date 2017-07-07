@@ -53,9 +53,10 @@ block content
                 .window-content
                     .title-medium Связаться со мной
                     .feedback-form
-                        input(type="text" placeholder="Имя")
-                        input(type="email" placeholder="Email")
-                        textarea(placeholder="Ваше сообщение").feedback_window__textarea
+                        input(type="text" placeholder="Имя" name="name")
+                        //- .input-error Введите корректный Email
+                        input(type="email" placeholder="Email" name="email")
+                        textarea(placeholder="Ваше сообщение" name="message").feedback_window__textarea
                 .window-btns
                     ul.window-btns__list
                         li.window-btns__item.window-btns__item_half
