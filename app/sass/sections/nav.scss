@@ -60,7 +60,7 @@
         @include tablets {
             right: rem(26px);
         }
-        @include iphone {
+        @include mediaMax(425px) {
             right: rem(11px);
         }
         &__el {
@@ -70,7 +70,7 @@
             border-radius: rem(2px);
             position: relative;
             margin: 0 0 rem(10px);
-            @include iphone {
+            @include mediaMax(425px) {
                 width: rem(25px);
                 margin: 0 0 rem(6px);
                 height: rem(3px);
@@ -133,7 +133,7 @@
     }
 }
 
-@include iphone {
+@include mediaMax(425px) {
     @keyframes nav-toggle-el1 {
         50% {
             transform: translateY(rem(9px));

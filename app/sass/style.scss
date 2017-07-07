@@ -9,6 +9,7 @@ body {
     height: 100%;
     line-height: 1.65;
     background: $white;
+    position: relative;
     @include tablets {
         font-size: rem(14px);
     }

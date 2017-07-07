@@ -6,6 +6,7 @@
     justify-content: space-between;
     padding: rem(26px) 0 rem(20px);
     line-height: 1.55;
+    width: 100%;
     @include mediaMax(1199px) {
         padding: rem(26px) rem(24px) rem(20px);
         display: block;

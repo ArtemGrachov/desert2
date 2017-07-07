@@ -37,6 +37,10 @@
                 fill: $white;
             }
         }
+        .footer {
+            position: absolute;
+            bottom: 0;
+        }
     }
     display: flex;
     @include mediaMax(890px) {
@@ -185,14 +189,13 @@
 .contacts {
     height: 100vh;
     position: relative;
-    margin-bottom: -$footer-height;
     @include iphone {
         display: block;
     }
     &-window {
         background: rgba(#fcfcfc, .85);
         position: absolute;
-        top: 50%;
+        top: 35%;
         left: 50%;
         transform: translate(-50%, -50%);
         @include mediaMax(360px) {
