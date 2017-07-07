@@ -180,3 +180,21 @@ p {
         margin: rem(9px) 0;
     }
 }
+
+.page-header {
+    position: relative;
+    &__sprite {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        color: rgba($dark-brown, .1);
+    }
+    padding: rem(42px) 0;
+    margin: rem(30px) 0;
+    .title-large,
+    .title-medium {
+        margin: 0 auto;
+    }
+}

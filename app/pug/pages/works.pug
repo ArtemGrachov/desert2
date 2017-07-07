@@ -8,8 +8,7 @@ block content
     include ../sections/header.pug
     .works
         .works-top
-            //- +page-header('Мои работы','urltest')
-            .title-large.works-title Мои работы
+            +page-header('Мои работы','works_header')
             .slider
                 .slider-ctrl
                     .slider-ctrl-prev
@@ -32,8 +31,8 @@ block content
                     +slider-item('Loftblog','HTML, CSS, JavaScript','https://loftblog.ru','../img/works/slider/work-3.png')
                     +slider-item('Атма йога','HTML, CSS, JavaScript','http://atmayoga.ru/','../img/works/slider/work-4.png')
         .quotes
-            //- +page-header('Что обо мне говорят','urltest')
-            .title-large.quotes-title Что обо мне<br>говорят
+            +page-header('Что обо мне говорят','about_header')
+            //- .title-large.quotes-title Что обо мне<br>говорят
             ul.quotes-list
                 li.quotes__item
                     .quotes__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!

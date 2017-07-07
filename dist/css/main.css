@@ -608,6 +608,27 @@ p {
     }
 }
 
+.page-header {
+    position: relative;
+    padding: 2.625rem 0;
+    margin: 1.875rem 0;
+}
+
+.page-header__sprite {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    color: rgba(205, 137, 32, 0.1);
+}
+
+.page-header .title-large,
+  .page-header .title-medium,
+  .page-header .articles__title {
+    margin: 0 auto;
+}
+
 .avatar {
     color: white;
     text-align: center;
