@@ -271,3 +271,20 @@ h6 {
     width: 100%;
     height: 100%;
 }
+
+.alert-window {
+    background: white;
+    border-radius: rem(5px);
+    padding: rem(20px);
+    box-shadow: 0 0 rem(6px) rgba(black, .5);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 5;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: rem(280px);
+    &__message {
+        margin: 0 auto rem(20px);
+    }
+}

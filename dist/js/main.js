@@ -358,6 +358,48 @@ let controlForm = (function() {
     }
 })();
 
+let feedBack = (function() {
+    return {
+        init: function() {
+            let _this = this,
+                $feedbackForm = $('.feedback_window');
+            if ($feedbackForm.length) {
+                $('#send_feedback').on('click', function(e) {
+                    e.preventDefault();
+                    if (_this.checkName() && _this.checkEmail() && _this.checkText()) _this.sendMessage();
+                })
+
+            }
+        },
+        checkName: function() {
+            return true;
+        },
+        checkEmail: function() {
+            return true;
+
+        },
+        checkText: function() {
+            return true;
+        },
+        sendMessage: function() {
+            alertWindow('Сообщение отправлено');
+
+        }
+    }
+})();
+
+let alertWindow = function(message) {
+    $('body').append(`<div class="alert-window" style="display: none"><div class="alert-window__message">${message}</div><a class="btn" href="#" id="alert-window-close">Закрыть</a></div>`);
+    $('.alert-window').fadeIn();
+    $('#alert-window-close').on('click', function(e) {
+        e.preventDefault();
+        let $alert = $(this).closest('.alert-window');
+        $alert.fadeOut(300, function() {
+            $('.alert-window').remove();
+        });
+    })
+}
+
 
 let preloader = (function() {
     return {
@@ -405,6 +447,7 @@ let preloader = (function() {
         }
     }
 })();
+
 
 let parallax = (function() {
     return {
@@ -470,4 +513,5 @@ $(document).ready(function() {
     slider.init();
     blogMenu.init();
     controlForm.init();
+    feedBack.init();
 })
