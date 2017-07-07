@@ -234,6 +234,7 @@ h6 {
 .chart {
     color: $light-brown;
     font-size: rem(12px);
+    position: relative;
     circle {
         fill: rgba(0, 0, 0, 0);
         stroke: #dfdcd5;
@@ -241,6 +242,14 @@ h6 {
     circle:nth-child(2n) {
         fill: rgba(0, 0, 0, 0);
         stroke: $light-brown;
+    }
+    &__name {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        width: 50%;
     }
 }
 

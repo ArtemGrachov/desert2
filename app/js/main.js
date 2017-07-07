@@ -70,8 +70,8 @@ let drawCircleChart = function(chartDiam, strokeWidth) {
                 <svg width="${chartDiam}" height="${chartDiam}">
                     <circle transform="rotate(-90)" r="${chartRadius}" cx="-50%" cy="50%" stroke-width="${strokeWidth}"/>
                     <circle transform="rotate(-90)" style="stroke-dasharray: ${chartPercentage }px ${charPi}px;" r="${chartRadius}" cx="-50%" cy="50%" stroke-width="${strokeWidth}"/>
-                    <text x="50%" fill="currentColor" y="50%" text-anchor="middle" dominant-baseline="middle">${chartName}</text>
                 </svg>
+                <div class="chart__name">${chartName}</div>
             `
         $(charts[i]).html(chartHTML);
     }
@@ -352,6 +352,7 @@ let controlForm = (function() {
                     let $this = $(this),
                         $form = $this.closest('form');
                     $form[0].reset();
+                    $form.find('.input-error').remove();
                     $form.find('input').removeClass('error');
                     $form.find('textarea').removeClass('error');
                 })
