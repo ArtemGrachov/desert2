@@ -1,7 +1,12 @@
 .header_blog {
     width: auto;
     .avatar {
+        position: relative;
         margin: auto;
+    }
+    .header__svg-title {
+        top: 85%;
+        transform: translate(-50%, -50%);
     }
 }
 

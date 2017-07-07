@@ -339,7 +339,7 @@ let formValidation = (function() {
     }
 })()
 
-let feedbackForm = (function() {
+let controlForm = (function() {
     return {
         init: function() {
             let $form = $('form');
@@ -411,11 +411,13 @@ let parallax = (function() {
         init: function() {
             _this = this;
             if ($('header').length) {
+                _this.image($('header'));
                 $(window).on('scroll', function() {
                     _this.image($('header'));
                 })
             }
             if ($('.works-body').length) {
+                _this.image($('.works-body'));
                 $(window).on('scroll', function() {
                     _this.image($('.works-body'));
                 })
@@ -467,5 +469,5 @@ $(document).ready(function() {
     parallax.init();
     slider.init();
     blogMenu.init();
-    feedbackForm.init();
+    controlForm.init();
 })
