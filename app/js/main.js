@@ -396,9 +396,9 @@ let feedBack = (function() {
         checkMessage: function(form) {
             let msg = form.find('textarea[name="message"]'),
                 badWords = ['aaa', 'bbb', 'ccc'];
-            if (msg.val().length > -1) {
+            if (msg.val().length > 0) {
                 for (i in badWords) {
-                    if (msg.val().indexOf(badWords[i]) > 0) {
+                    if (msg.val().indexOf(badWords[i]) > -1) {
                         inputError('Введите корректный текст!', msg);
                         return false;
                     }
