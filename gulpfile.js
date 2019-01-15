@@ -28,3 +28,15 @@ $.gulp.task('default', [
     'sprite',
     'watch'
 ])
+
+$.gulp.task('build', [
+    'clean',
+    'sass',
+    'pug',
+    'css-libs',
+    'scripts',
+    'js-libs',
+    'img',
+    'fonts',
+    'sprite'
+])
